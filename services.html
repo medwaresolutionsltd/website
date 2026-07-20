@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Medware Solutions Ltd</title>
+<meta name="description" content="Medware Solutions Ltd services: modular operating theatres, medical gas systems, IP nurse call, building management, biomedical equipment repair, calibration and more for hospitals across Kenya and East Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B75BC;         /* Medware primary blue */
+  --blue-d:#0F5A99;
+  --navy:#28316E;         /* profile panel navy */
+  --sky:#5FA8DC;
+  --grey:#6D6E71;         /* profile grey */
+  --ink:#2C3038;
+  --bg:#F4F6F9;
+  --panel:#FFFFFF;
+  --line:#DCE3EC;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--navy)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--blue)}
+.kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.wrap{width:90%;max-width:1140px;margin:0 auto}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* top band — brand blues */
+.band{display:flex;height:5px;width:100%}
+.band span{flex:1}
+.band .b1{background:var(--blue)}
+.band .b2{background:var(--navy)}
+.band .b3{background:var(--sky)}
+.band .b4{background:var(--grey)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:80px;width:auto;display:block}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
+nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav.links .btn{font-weight:700;padding:11px 22px}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:11px 22px;border-radius:8px;transition:background .18s,transform .18s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+/* sections */
+section{padding:80px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-head .kicker::before{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em}
+.sec-head p{margin-top:14px;color:var(--grey)}
+
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:500;text-decoration:none;transition:border-color .15s,color .15s}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.more{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
+.chip.more:hover{background:var(--blue-d)}
+.backlink{display:inline-block;margin-top:6px;font-size:.9rem;font-weight:600;color:var(--blue);text-decoration:none}
+.backlink:hover{text-decoration:underline}
+
+/* footer */
+footer{background:var(--navy);color:#AEBBDF;padding:34px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
+footer .f-brand img{height:52px;width:auto;display:block}
+footer p{font-size:.88rem}
+footer nav{display:flex;gap:22px}
+footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
+footer nav a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
+
+/* services page */
+.page-hero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:72px 0 56px}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:20ch}
+.page-hero p{margin-top:14px;color:#D6E4F5;max-width:62ch}
+.page-hero .kicker{color:#9CC4E8;display:block;margin-bottom:12px}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.jump .chip{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:#fff}
+.jump .chip:hover{background:#fff;border-color:#fff;color:var(--blue)}
+
+.disc{padding:76px 0}
+.disc+.disc{border-top:1px solid var(--line)}
+.disc.alt{background:#fff}
+
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:36px 0}
+.srow+.srow{border-top:1px solid var(--line)}
+.srow-media{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px -24px rgba(15,90,153,.35)}
+.srow-media img{width:100%;height:280px;object-fit:cover;display:block}
+.srow-body h3{font-size:1.3rem;font-weight:800;margin-bottom:10px}
+.srow-body>p{color:var(--grey)}
+.srow-feat{margin-top:16px;list-style:none}
+.srow-feat li{position:relative;padding-left:24px;font-size:.92rem;font-weight:500;margin-top:8px}
+.srow-feat li::before{content:"✓";position:absolute;left:0;top:0;color:var(--blue);font-weight:700}
+.srow-group{margin:44px 0 4px;display:flex;align-items:center;gap:12px;font-family:"Montserrat",sans-serif;font-weight:800;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.srow-group::after{content:"";flex:1;height:1px;background:var(--line)}
+.srow-group:first-child{margin-top:0}
+
+.cta{background:var(--navy);color:#fff;padding:64px 0;text-align:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.cta p{margin:14px auto 28px;color:#D6E4F5;max-width:52ch}
+.cta .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:920px){
+  .srow{grid-template-columns:1fr}
+  .srow-media{order:-1}
+}
+@media (max-width:760px){
+  nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
+  nav.links.open{display:flex}
+  .menu-btn{display:block}
+  .page-hero{padding:52px 0 40px}
+  section,.disc{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Medware Solutions home">
+      <img class="brand-logo" src="assets/images/medwarelogo.png" alt="MedWare Solutions Limited">
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="menu">
+      <a href="products.html">Products</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="btn" href="index.html#contact">Request a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Services</span>
+      <h1>Comprehensive healthcare solutions, <em>built for uptime.</em></h1>
+      <p>From the plant room to the patient bedside, Medware Solutions designs, installs, commissions and maintains the critical systems modern hospitals depend on — engineered to ISO, HTM and EN standards, and backed by our own biomedical engineering team long after handover.</p>
+      <div class="jump">
+        <a class="chip" href="#infrastructure">Healthcare Infrastructure Development</a>
+        <a class="chip" href="#biomedical">Biomedical Engineering Services</a>
+        <a class="chip" href="#ict">Healthcare ICT</a>
+        <a class="chip" href="products.html">Browse product catalog →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE -->
+  <section class="disc" id="infrastructure">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">1.0 — Healthcare Infrastructure Development</span>
+        <h2>Building systems that keep <em>hospitals running.</em></h2>
+        <p>Design, installation, commissioning and maintenance of the critical building infrastructure that supports safe, continuous patient care — from the operating theatre envelope to the gas outlet at the bedside.</p>
+        <a class="backlink" href="projects.html#infrastructure">See completed projects →</a>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/modular-theatre.jpg" alt="Modular operating theatre installation" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Modular Operating Theatres</h3>
+          <p>Prefabricated, sealed theatre environments engineered for laminar airflow, infection control and rapid installation — cutting the downtime a traditional build-out would demand on a live hospital site.</p>
+          <ul class="srow-feat">
+            <li>Laminar airflow ceilings &amp; HEPA filtration</li>
+            <li>Antimicrobial, seamless wall &amp; ceiling panels</li>
+            <li>Integrated theatre control panels, lighting &amp; pendants</li>
+            <li>Fast-track installation with minimal clinical disruption</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Medical Service Pendants &amp; Bed Head Units</h3>
+          <p>Ceiling-mounted and wall-mounted service units from TLV Healthcare (France) that bring gases, power and data outlets directly to the point of care — in theatres, ICUs and general wards — while keeping floors and walkways clear.</p>
+          <ul class="srow-feat">
+            <li>Single- and dual-arm theatre pendants</li>
+            <li>ICU &amp; ward bed head trunking</li>
+            <li>Integrated gas, power &amp; data outlets</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/pendants.png" alt="Medical service pendant above a hospital bed" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/lead-doors.png" alt="Lead-lined door for a radiology suite" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Lead-Lined Doors &amp; Radiation Shielding</h3>
+          <p>Custom-fabricated lead-lined doors, walls and viewing windows for radiology, oncology and nuclear medicine suites — sized and rated to the radiation physicist's specification and installed to seal every gap in the shielding envelope.</p>
+          <ul class="srow-feat">
+            <li>Lead-lined doors, frames &amp; observation windows</li>
+            <li>Wall &amp; floor shielding for imaging and brachytherapy suites</li>
+            <li>Installed to radiation safety specification</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Medical Handrails &amp; Support Bars</h3>
+          <p>Corridor handrails, grab bars and bumper rails that protect patients, staff and equipment while meeting infection-control finishes required in clinical areas.</p>
+          <ul class="srow-feat">
+            <li>Corridor &amp; ward handrails</li>
+            <li>Bathroom &amp; toilet grab bars</li>
+            <li>Wall &amp; corner bumper guards</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/handrails.png" alt="Hospital corridor handrail installation" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/air-filtration.jpg" alt="Medical-grade air filtration and HVAC plant" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Hospital HVAC &amp; Medical-Grade Air Filtration</h3>
+          <p>Climate control and air filtration systems from ATA Medica and ClinicAir that maintain pressure regimes, temperature and air quality across theatres, isolation rooms and general wards.</p>
+          <ul class="srow-feat">
+            <li>Theatre &amp; isolation room HVAC</li>
+            <li>HEPA and medical-grade air filtration</li>
+            <li>Pressure regime monitoring &amp; validation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow-group reveal">Medical Gas Systems</div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Medical Gas Pipeline Services</h3>
+          <p>Design, installation, testing and commissioning of medical gas pipeline systems — station sources, manifolds, pipelines, alarms and terminal units — engineered to ISO 7396‑1 with partners STM sistemi tecnologie (Italy), Lawton Tubes (UK) and Precision UK, so supply stays continuous, contamination-free and life-safe.</p>
+          <ul class="srow-feat">
+            <li>Manifolds, pipelines &amp; terminal units</li>
+            <li>Area valve service units &amp; gas alarms</li>
+            <li>ISO 7396‑1 design, testing &amp; commissioning</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/medical-gas.png" alt="Medical gas pipeline manifold room" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/vacuum.jpg" alt="Medical vacuum and air plant" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Vacuum &amp; Medical Air Plants</h3>
+          <p>Vacuum pumps and medical air compressor plants from Busch Vacuum (Germany), sized and installed to deliver reliable suction and breathing air across the entire facility with built-in redundancy.</p>
+          <ul class="srow-feat">
+            <li>Duplex &amp; triplex vacuum plants</li>
+            <li>Medical air compressor plants</li>
+            <li>Built-in redundancy &amp; remote alarm monitoring</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Oxygen Generating Plants</h3>
+          <p>On-site PSA oxygen generating plants that give hospitals an independent, continuous medical oxygen supply — reducing reliance on cylinder logistics and bulk liquid oxygen deliveries.</p>
+          <ul class="srow-feat">
+            <li>PSA on-site oxygen generation</li>
+            <li>Backup cylinder manifold integration</li>
+            <li>Continuous supply monitoring</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/oxygen.jpg" alt="On-site oxygen generating plant" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/pneumatic.jpg" alt="Pneumatic tube system station" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Pneumatic Tube Systems</h3>
+          <p>Sumetzberger (Austria) pneumatic tube networks that move samples, medication and documents between wards, labs and pharmacy in seconds — cutting courier time and turnaround on urgent lab results.</p>
+          <ul class="srow-feat">
+            <li>Ward-to-lab &amp; ward-to-pharmacy routing</li>
+            <li>Carrier tracking &amp; priority dispatch</li>
+            <li>Scalable station &amp; network design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOMEDICAL -->
+  <section class="disc alt" id="biomedical">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">2.0 — Biomedical Engineering Services</span>
+        <h2>Keeping clinical <em>equipment ready.</em></h2>
+        <p>Certified biomedical engineers providing on-site and depot services for imaging systems, patient monitors, ventilators and surgical instruments — with diagnostics, calibration and preventive maintenance that minimize downtime and keep facilities compliant.</p>
+        <a class="backlink" href="projects.html#biomedical">See completed projects →</a>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/repairs.jpeg" alt="Biomedical engineer repairing hospital equipment" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Equipment Repairs &amp; Calibration</h3>
+          <p>Prompt fault diagnosis, repair and preventive maintenance for imaging systems, patient monitors, ventilators and surgical instruments, paired with calibration and performance assessments carried out to ISO 13485, ISO 17025 and FDA-aligned standards.</p>
+          <ul class="srow-feat">
+            <li>On-site &amp; depot equipment repair</li>
+            <li>Scheduled preventive maintenance</li>
+            <li>Calibration &amp; performance verification</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Accessories &amp; Spare Parts Supply</h3>
+          <p>Genuine, OEM-compatible components sourced from trusted manufacturers across Europe, Asia and the Americas — from ventilator filters and ultrasound probes to defibrillator batteries and surgical instrument parts — so repairs are completed with parts you can trust.</p>
+          <ul class="srow-feat">
+            <li>OEM &amp; OEM-compatible consumables</li>
+            <li>Global sourcing network</li>
+            <li>Stock planning for critical spares</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/spares.jpg" alt="Biomedical equipment spare parts and accessories" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/engineer.jpg" alt="Biomedical engineer placed on-site at a hospital" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Biomedical Engineer Placement &amp; Equipment Planning</h3>
+          <p>Qualified biomedical engineers placed on-site under long-term service contracts, plus equipment planning and budgeting support for new facilities and expansions — matching the right technology to your clinical workload and capital plan.</p>
+          <ul class="srow-feat">
+            <li>On-site engineer placement &amp; managed contracts</li>
+            <li>Equipment lifecycle planning &amp; budgeting</li>
+            <li>Technology specification support for new facilities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICT -->
+  <section class="disc" id="ict">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">3.0 — Healthcare ICT</span>
+        <h2>Intelligent systems that <em>connect care.</em></h2>
+        <p>Building and communication systems that connect patients, clinicians and facilities — led by the Visocall IP nurse call platform by Schrack Seconet, a fully digital system integrating voice, data and alarm functions into one unified network.</p>
+        <a class="backlink" href="projects.html#ict">See completed projects →</a>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/nursecall.jpg" alt="Visocall IP nurse call panel" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>IP Nurse Call Systems</h3>
+          <p>Visocall IP by Schrack Seconet (Austria) — a fully digital nurse call network that integrates voice, data and alarm functions, giving staff real-time patient status across wards, ICUs and theatres from a single unified system.</p>
+          <ul class="srow-feat">
+            <li>Ward, ICU &amp; theatre call points</li>
+            <li>Voice, data &amp; alarm integration</li>
+            <li>Real-time staff status &amp; escalation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Building Management Systems (BMS)</h3>
+          <p>Schneider Electric building management platforms that centralize monitoring and control of HVAC, power, lighting and critical plant — giving facilities teams a single point of oversight and faster response to faults.</p>
+          <ul class="srow-feat">
+            <li>Centralized HVAC, power &amp; plant monitoring</li>
+            <li>Fault alerting &amp; trend reporting</li>
+            <li>Integration with critical infrastructure</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/bms.jpg" alt="Building management system control room" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/fire.jpg" alt="Fire alarm system panel" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Fire Alarm Systems</h3>
+          <p>EN 54‑compliant fire detection and alarm systems from Schrack Seconet, designed and installed to protect patients, staff and critical equipment across every zone of the facility.</p>
+          <ul class="srow-feat">
+            <li>EN 54‑compliant detection &amp; alarm</li>
+            <li>Zone-based facility coverage</li>
+            <li>Integration with evacuation &amp; BMS systems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-body">
+          <h3>Queue Management Systems</h3>
+          <p>Dnake queue management systems that organize patient flow at outpatient, pharmacy and records desks — reducing waiting-room congestion and giving front-desk staff a clear, fair calling sequence.</p>
+          <ul class="srow-feat">
+            <li>Ticketing &amp; digital signage</li>
+            <li>Multi-counter queue routing</li>
+            <li>Outpatient &amp; pharmacy deployment</li>
+          </ul>
+        </div>
+        <div class="srow-media"><img src="assets/images/queuesystem.jpg" alt="Hospital queue management display" loading="lazy"></div>
+      </div>
+
+      <div class="srow reveal">
+        <div class="srow-media"><img src="assets/images/cmms1.jpg" alt="Computerized maintenance management software dashboard" loading="lazy"></div>
+        <div class="srow-body">
+          <h3>Computerized Maintenance Management (CMMS)</h3>
+          <p>A CMMS platform built by MedWare's own software department to track equipment inventories, schedule preventive maintenance and log service history — giving biomedical and facilities teams one system of record for every asset.</p>
+          <ul class="srow-feat">
+            <li>Asset inventory &amp; service history</li>
+            <li>Preventive maintenance scheduling</li>
+            <li>Built &amp; supported in-house by MedWare</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="wrap">
+      <h2>Ready to start your project?</h2>
+      <p>Tell us about your facility and we'll put together a scope, timeline and budget — from a single theatre pendant to a full hospital fit-out.</p>
+      <div class="hero-cta">
+        <a class="btn" href="index.html#contact">Talk to our team</a>
+        <a class="btn ghost" href="projects.html">See completed projects</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand"><img src="assets/images/medwarelogo.png" alt="MedWare Solutions Limited"></div>
+      <p>Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+<script>
+function toggleMenu(btn){
+  const m=document.getElementById('menu');
+  const open=m.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('menu').classList.remove('open');
+}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

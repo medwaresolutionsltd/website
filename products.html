@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Medware Solutions Ltd</title>
+<meta name="description" content="Browse Medware Solutions' product catalog: modular operating theatres, medical gas equipment, IP nurse call devices, fire alarm panels, building management hardware and biomedical spares — for hospitals across Kenya and East Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B75BC;         /* Medware primary blue */
+  --blue-d:#0F5A99;
+  --navy:#28316E;         /* profile panel navy */
+  --sky:#5FA8DC;
+  --grey:#6D6E71;         /* profile grey */
+  --ink:#2C3038;
+  --bg:#F4F6F9;
+  --panel:#FFFFFF;
+  --line:#DCE3EC;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--navy)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--blue)}
+.kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.wrap{width:90%;max-width:1140px;margin:0 auto}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* top band — brand blues */
+.band{display:flex;height:5px;width:100%}
+.band span{flex:1}
+.band .b1{background:var(--blue)}
+.band .b2{background:var(--navy)}
+.band .b3{background:var(--sky)}
+.band .b4{background:var(--grey)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:80px;width:auto;display:block}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
+nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav.links .btn{font-weight:700;padding:11px 22px}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:11px 22px;border-radius:8px;transition:background .18s,transform .18s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+/* sections */
+section{padding:80px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-head .kicker::before{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em}
+.sec-head p{margin-top:14px;color:var(--grey)}
+
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:500;text-decoration:none;transition:border-color .15s,color .15s}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.more{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
+.chip.more:hover{background:var(--blue-d)}
+.backlink{display:inline-block;margin-top:6px;font-size:.9rem;font-weight:600;color:var(--blue);text-decoration:none}
+.backlink:hover{text-decoration:underline}
+
+/* footer */
+footer{background:var(--navy);color:#AEBBDF;padding:34px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
+footer .f-brand img{height:52px;width:auto;display:block}
+footer p{font-size:.88rem}
+footer nav{display:flex;gap:22px}
+footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
+footer nav a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
+
+/* products page */
+.page-hero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:72px 0 56px}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:20ch}
+.page-hero p{margin-top:14px;color:#D6E4F5;max-width:62ch}
+.page-hero .kicker{color:#9CC4E8;display:block;margin-bottom:12px}
+
+/* shop filter bar */
+.shop-bar{position:sticky;top:96px;z-index:40;background:rgba(244,246,249,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:18px 0}
+.shop-filter{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.shop-filter span.count{margin-left:auto;font-size:.84rem;color:var(--grey);font-weight:500}
+.shop-filter button{font-family:"Inter",sans-serif;font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.shop-filter button:hover{border-color:var(--blue);color:var(--blue)}
+.shop-filter button.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* product grid */
+.shop{padding:56px 0 80px}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px}
+.product-card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s ease,transform .2s ease}
+.product-card:hover{box-shadow:0 20px 44px -26px rgba(15,90,153,.4);transform:translateY(-3px)}
+.product-card .p-media{aspect-ratio:4/3;overflow:hidden;background:var(--bg)}
+.product-card .p-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.product-card:hover .p-media img{transform:scale(1.04)}
+.product-card .p-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.product-card .p-cat{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.product-card h3{font-size:1.04rem;font-weight:800;margin-top:6px}
+.product-card p{color:var(--grey);font-size:.89rem;margin-top:8px;flex:1}
+.product-card .p-cta{margin-top:16px;font-size:.85rem;font-weight:700;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.product-card .p-cta:hover{color:var(--blue-d)}
+.product-card.hide{display:none}
+
+.cta{background:var(--navy);color:#fff;padding:64px 0;text-align:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.cta p{margin:14px auto 28px;color:#D6E4F5;max-width:52ch}
+.cta .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:760px){
+  nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
+  nav.links.open{display:flex}
+  .menu-btn{display:block}
+  .page-hero{padding:52px 0 40px}
+  section{padding:52px 0}
+  .shop{padding:40px 0 56px}
+  .shop-bar{top:96px}
+  .shop-filter span.count{width:100%;margin:6px 0 0;order:9}
+}
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Medware Solutions home">
+      <img class="brand-logo" src="assets/images/medwarelogo.png" alt="MedWare Solutions Limited">
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="menu">
+      <a href="products.html" class="active">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="btn" href="index.html#contact">Request a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Products</span>
+      <h1>Equipment &amp; hardware, <em>browse the catalog.</em></h1>
+      <p>The physical products behind our services — modular theatre systems, medical gas equipment, healthcare ICT hardware and biomedical spares, sourced from vetted global manufacturers and available for supply across Kenya and East Africa.</p>
+    </div>
+  </section>
+
+  <!-- SHOP FILTER BAR -->
+  <div class="shop-bar">
+    <div class="wrap shop-filter" role="group" aria-label="Filter products by category">
+      <button type="button" class="active" data-filter="all">All products</button>
+      <button type="button" data-filter="infrastructure">Infrastructure Equipment</button>
+      <button type="button" data-filter="gas">Medical Gas Systems</button>
+      <button type="button" data-filter="ict">Healthcare ICT</button>
+      <button type="button" data-filter="spares">Spares &amp; Accessories</button>
+      <span class="count" id="shop-count"></span>
+    </div>
+  </div>
+
+  <!-- SHOP -->
+  <section class="shop">
+    <div class="wrap">
+      <div class="shop-grid" id="shop-grid">
+
+        <article class="product-card reveal" data-category="infrastructure">
+          <div class="p-media"><img src="assets/images/modular-theatre.jpg" alt="Modular operating theatre system" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Infrastructure Equipment</span>
+            <h3>Modular Operating Theatre Systems</h3>
+            <p>Prefabricated, sealed theatre wall and ceiling panels engineered for laminar airflow and infection control.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Modular%20Operating%20Theatre%20Systems">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="infrastructure">
+          <div class="p-media"><img src="assets/images/pendants.png" alt="Medical service pendant" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Infrastructure Equipment</span>
+            <h3>Medical Service Pendants</h3>
+            <p>Ceiling- and wall-mounted units from TLV Healthcare bringing gases, power and data to the point of care.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Medical%20Service%20Pendants">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="infrastructure">
+          <div class="p-media"><img src="assets/images/lead-doors.png" alt="Lead-lined radiology door" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Infrastructure Equipment</span>
+            <h3>Lead-Lined Doors &amp; Shielding</h3>
+            <p>Custom-fabricated doors, frames and viewing windows rated to radiation-safety specification.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Lead-Lined%20Doors%20%26%20Shielding">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="infrastructure">
+          <div class="p-media"><img src="assets/images/handrails.png" alt="Hospital corridor handrail" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Infrastructure Equipment</span>
+            <h3>Medical Handrails &amp; Support Bars</h3>
+            <p>Corridor handrails, grab bars and bumper guards finished for clinical infection control.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Medical%20Handrails%20%26%20Support%20Bars">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="infrastructure">
+          <div class="p-media"><img src="assets/images/air-filtration.jpg" alt="Medical-grade air filtration unit" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Infrastructure Equipment</span>
+            <h3>Medical-Grade Air Filtration Units</h3>
+            <p>HEPA and HVAC filtration equipment for theatres, isolation rooms and general wards.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Medical-Grade%20Air%20Filtration%20Units">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="gas">
+          <div class="p-media"><img src="assets/images/medicalgas.jpg" alt="Medical gas pipeline components" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Medical Gas Systems</span>
+            <h3>Medical Gas Pipeline Components</h3>
+            <p>Manifolds, pipelines, area valve service units and terminal units engineered to ISO 7396‑1.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Medical%20Gas%20Pipeline%20Components">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="gas">
+          <div class="p-media"><img src="assets/images/vacuum.jpg" alt="Medical vacuum and air plant" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Medical Gas Systems</span>
+            <h3>Vacuum &amp; Medical Air Plants</h3>
+            <p>Busch Vacuum duplex and triplex plants delivering reliable suction and breathing air with redundancy.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Vacuum%20%26%20Medical%20Air%20Plants">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="gas">
+          <div class="p-media"><img src="assets/images/oxygen.jpg" alt="On-site oxygen generating plant" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Medical Gas Systems</span>
+            <h3>Oxygen Generating Plants</h3>
+            <p>On-site PSA oxygen generation for an independent, continuous medical oxygen supply.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Oxygen%20Generating%20Plants">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="gas">
+          <div class="p-media"><img src="assets/images/pneumatic.jpg" alt="Pneumatic tube system station" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Medical Gas Systems</span>
+            <h3>Pneumatic Tube Systems</h3>
+            <p>Sumetzberger station-to-station networks for samples, medication and documents.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Pneumatic%20Tube%20Systems">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="ict">
+          <div class="p-media"><img src="assets/images/nursecall.jpg" alt="Visocall IP nurse call device" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Healthcare ICT</span>
+            <h3>Visocall IP Nurse Call Devices</h3>
+            <p>Schrack Seconet call points, displays and staff terminals for the Visocall IP network.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Visocall%20IP%20Nurse%20Call%20Devices">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="ict">
+          <div class="p-media"><img src="assets/images/fire1.jpg" alt="Fire alarm panel and detectors" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Healthcare ICT</span>
+            <h3>Fire Alarm Panels &amp; Detectors</h3>
+            <p>EN 54‑compliant detection and alarm hardware from Schrack Seconet.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Fire%20Alarm%20Panels%20%26%20Detectors">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="ict">
+          <div class="p-media"><img src="assets/images/queuesystem.jpg" alt="Queue management kiosk" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Healthcare ICT</span>
+            <h3>Queue Management Kiosks</h3>
+            <p>Dnake ticketing kiosks and digital signage for outpatient and pharmacy desks.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Queue%20Management%20Kiosks">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="ict">
+          <div class="p-media"><img src="assets/images/bms1.jpg" alt="Building management system hardware" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Healthcare ICT</span>
+            <h3>Building Management System Hardware</h3>
+            <p>Schneider Electric controllers and sensors for centralized HVAC, power and plant monitoring.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Building%20Management%20System%20Hardware">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="ict">
+          <div class="p-media"><img src="assets/images/cmms1.jpg" alt="CMMS software dashboard" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Healthcare ICT</span>
+            <h3>MedWare CMMS Software Licensing</h3>
+            <p>Our in-house computerized maintenance management platform, licensed for your facility.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20MedWare%20CMMS%20Software%20Licensing">Enquire →</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="spares">
+          <div class="p-media"><img src="assets/images/spares.jpg" alt="Biomedical spare parts and accessories" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Spares &amp; Accessories</span>
+            <h3>OEM Spare Parts &amp; Consumables</h3>
+            <p>Genuine, OEM-compatible components — from ventilator filters to defibrillator batteries.</p>
+            <a class="p-cta" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20OEM%20Spare%20Parts%20%26%20Consumables">Enquire →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="wrap">
+      <h2>Need it installed or maintained too?</h2>
+      <p>Every product in this catalog is backed by our own design, installation and biomedical engineering teams.</p>
+      <div class="hero-cta">
+        <a class="btn" href="services.html">See our services</a>
+        <a class="btn ghost" href="index.html#contact">Talk to our team</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand"><img src="assets/images/medwarelogo.png" alt="MedWare Solutions Limited"></div>
+      <p>Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+<script>
+function toggleMenu(btn){
+  const m=document.getElementById('menu');
+  const open=m.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('menu').classList.remove('open');
+}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const filterBtns=document.querySelectorAll('.shop-filter button');
+const cards=document.querySelectorAll('.product-card');
+const countEl=document.getElementById('shop-count');
+function applyFilter(filter){
+  let shown=0;
+  cards.forEach(c=>{
+    const match=filter==='all'||c.dataset.category===filter;
+    c.classList.toggle('hide',!match);
+    if(match)shown++;
+  });
+  countEl.textContent=shown+' item'+(shown===1?'':'s');
+}
+filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+  filterBtns.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilter(btn.dataset.filter);
+}));
+applyFilter('all');
+</script>
+</body>
+</html>
