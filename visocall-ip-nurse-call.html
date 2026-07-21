@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visocall IP Nurse Call Devices — Medware Solutions Ltd</title>
+<meta name="description" content="Schrack Seconet Visocall IP nurse call devices supplied by Medware Solutions: system switches, staff terminals, patient terminals, push buttons and light modules for hospitals across Kenya and East Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B75BC;
+  --blue-d:#0F5A99;
+  --navy:#28316E;
+  --sky:#5FA8DC;
+  --grey:#6D6E71;
+  --ink:#2C3038;
+  --bg:#F4F6F9;
+  --panel:#FFFFFF;
+  --line:#DCE3EC;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--navy)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--blue)}
+.kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.wrap{width:90%;max-width:1140px;margin:0 auto}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+.band{display:flex;height:5px;width:100%}
+.band span{flex:1}
+.band .b1{background:var(--blue)}
+.band .b2{background:var(--navy)}
+.band .b3{background:var(--sky)}
+.band .b4{background:var(--grey)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:80px;width:auto;display:block}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
+nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav.links .btn{font-weight:700;padding:11px 22px}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:11px 22px;border-radius:8px;transition:background .18s,transform .18s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+section{padding:80px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-head .kicker::before{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em}
+.sec-head p{margin-top:14px;color:var(--grey)}
+
+.backlink{display:inline-block;margin-top:6px;font-size:.9rem;font-weight:600;color:var(--blue);text-decoration:none}
+.backlink:hover{text-decoration:underline}
+
+footer{background:var(--navy);color:#AEBBDF;padding:34px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
+footer .f-brand img{height:52px;width:auto;display:block}
+footer p{font-size:.88rem}
+footer nav{display:flex;gap:22px}
+footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
+footer nav a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
+
+/* product detail page */
+.page-hero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:72px 0 56px}
+.page-hero .kicker{color:#9CC4E8;display:block;margin-bottom:12px}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:24ch}
+.page-hero p{margin-top:14px;color:#D6E4F5;max-width:62ch}
+
+/* video */
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -28px rgba(15,90,153,.45);background:#000}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-caption{margin-top:14px;color:var(--grey);font-size:.9rem}
+
+.item-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+.item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.item .i-media{aspect-ratio:4/3;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:18px}
+.item .i-media img{max-width:100%;max-height:100%;object-fit:contain}
+.item .i-body{padding:22px}
+.item .p-cat{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.item h4{font-size:1.02rem;font-weight:800;margin-top:6px}
+.item p{color:var(--grey);font-size:.9rem;margin-top:8px}
+
+.cta{background:var(--navy);color:#fff;padding:64px 0;text-align:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.cta p{margin:14px auto 28px;color:#D6E4F5;max-width:52ch}
+.cta .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:900px){
+  .item-list{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
+  nav.links.open{display:flex}
+  .menu-btn{display:block}
+  .page-hero{padding:52px 0 40px}
+  section{padding:52px 0}
+  .item-list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Medware Solutions home">
+      <img class="brand-logo" src="assets/images/medwarelogo.png" alt="MedWare Solutions Limited">
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="menu">
+      <a href="products.html" class="active">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="btn" href="index.html#contact">Request a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Products / Healthcare ICT / Visocall IP Nurse Call Devices</span>
+      <h1>Visocall IP Nurse Call Devices</h1>
+      <p>Schrack Seconet's IP-based nurse call platform — system switches, staff and patient terminals, push buttons and indicator lights that connect every bed, room and corridor into one call network.</p>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section>
+    <div class="wrap">
+      <div class="video-wrap reveal">
+        <iframe src="https://www.youtube.com/embed/Gy3u--78fYc" title="Visocall IP Nurse Call System overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Overview: how the Visocall IP nurse call system works.</p>
+      <a class="backlink" href="healthcare-ict.html">← Back to Healthcare ICT</a>
+    </div>
+  </section>
+
+  <!-- KEY PRODUCTS -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Key components</span>
+        <h2>12 core Visocall IP devices</h2>
+        <p>The devices below are the most commonly specified building blocks of a Visocall IP installation, from the network switch through to the patient's call button.</p>
+      </div>
+      <div class="item-list">
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-swi9.png" alt="SWI9 system switch" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Network</span>
+            <h4>SWI9 — System Switch</h4>
+            <p>Decentralised communication node for data exchange between system devices. Provides IP ports for IP-enabled devices, interfaces for IO-bus and C-bus devices, and 24V outputs for additional power supply — designed for redundant operation.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-sm-s.png" alt="SM-S connection module" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">C-bus connection module</span>
+            <h4>SM-S — Connection Module</h4>
+            <p>Connection module for connecting a Staff Terminal or patient handset.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-st-touch.png" alt="ST-TOUCH staff terminal" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Staff terminal</span>
+            <h4>ST-TOUCH — Staff Terminal</h4>
+            <p>Central communication and information centre for staff within a ward. Integrated VoIP telephone, 7-inch touch display, overview of all events, intuitive icon-driven operation, direct dialling of communication terminals and patient handsets — also suitable for wall-mounting.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-kmt.png" alt="KMT communications terminal" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Communication terminal</span>
+            <h4>KMT — Communications Terminal</h4>
+            <p>Optical and acoustic call forwarding for rooms where a speech connection to staff is required. Fully graphic display plus call, presence and function buttons (radio, timer function, etc.).</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-pat.png" alt="PAT patient handset" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Patient handset</span>
+            <h4>PAT — Patient Handset</h4>
+            <p>Base model of the patient handset range. Red call button with locating and reassurance light, room and reading light control (optional KNX), antibacterial case and keypad design, and an Intellifix ejector plug.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-ztd-b.png" alt="ZTD-B room terminal with display" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Room terminal</span>
+            <h4>ZTD-B — Room Terminal with Display</h4>
+            <p>Room terminal with optical and acoustic call forwarding for rooms where no speech connection is required. Has call, presence and function buttons (display brightness/contrast, volume) and connects up to 5 basic components.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-bt-b.png" alt="BT-B pear pushbutton" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Basic component</span>
+            <h4>BT-B — Pear Pushbutton</h4>
+            <p>Pear pushbutton with 2 call buttons, integrated locating and reassurance light, and two light buttons.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-sm-b.png" alt="SM-B connection module" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Basic connection module</span>
+            <h4>SM-B — Connection Module</h4>
+            <p>Connection module with call and presence button with integrated locating and reassurance light, for connecting BT-B pear pushbuttons, diagnostic devices or radio receivers with power supply unit (with disconnection call). Connects up to 4 basic components.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-arat-p-io.png" alt="ARAT-P-IO doctor call pushbutton" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">IO-bus component</span>
+            <h4>ARAT-P-IO — Doctor Call Pushbutton</h4>
+            <p>Doctor call pushbutton with cancel button, integrated locating and reassurance light, and piezo buzzer.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/visocall-lm-io.png" alt="LM-IO light module" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">IO-bus component</span>
+            <h4>LM-IO — Light Module</h4>
+            <p>Overdoor light visible from afar for visual signalling of information, configurable as a room, direction, care group or ward lamp.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/ztb-io.png" alt="ZTB-IO pull cord switch" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">IO-bus component</span>
+            <h4>ZTB-IO — Pull Cord Switch</h4>
+            <p>Pull cord switch with integrated locating and reassurance light and 2 m pull cord.</p>
+          </div>
+        </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/rat-io.png" alt="RAT-IO call and cancel pushbutton" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">IO-bus component</span>
+            <h4>RAT-IO — Call &amp; Cancel Pushbutton</h4>
+            <p>Call and cancel pushbutton with integrated locating and reassurance light.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="wrap">
+      <h2>Need it installed or maintained too?</h2>
+      <p>Every device in this range is backed by our own design, installation and biomedical engineering teams.</p>
+      <div class="hero-cta">
+        <a class="btn" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Visocall%20IP%20Nurse%20Call%20Devices">Enquire about this product</a>
+        <a class="btn ghost" href="index.html#contact">Talk to our team</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand"><img src="assets/images/medwarelogo.png" alt="MedWare Solutions Limited"></div>
+      <p>Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+<script>
+function toggleMenu(btn){
+  const m=document.getElementById('menu');
+  const open=m.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('menu').classList.remove('open');
+}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
