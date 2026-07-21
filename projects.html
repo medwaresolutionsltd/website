@@ -59,6 +59,13 @@ nav.links .btn{font-weight:700;padding:11px 22px}
 .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
 .menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
 
+.nav-item{position:relative;display:flex;align-items:center}
+.nav-item>a{display:inline-flex;align-items:center}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 44px -20px rgba(15,90,153,.35);padding:8px;min-width:250px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease;z-index:60}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;pointer-events:auto}
+nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size:.86rem;font-weight:600;color:var(--ink);border-bottom:0}
+nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);border-bottom:0}
+
 /* sections */
 section{padding:80px 0}
 .sec-head{max-width:680px;margin-bottom:48px}
@@ -107,6 +114,9 @@ footer nav a:hover{color:#fff}
 @media (max-width:760px){
   nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
   nav.links.open{display:flex}
+  .nav-item{flex-direction:column;align-items:flex-start;width:100%}
+  .dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:0;background:transparent;padding:2px 0 0 14px;margin:0;min-width:0}
+  nav.links .dropdown a{padding:6px 0;font-size:.85rem;font-weight:600;color:var(--grey)}
   .menu-btn{display:block}
   .page-hero{padding:52px 0 40px}
   section,.disc{padding:56px 0}
@@ -127,9 +137,30 @@ footer nav a:hover{color:#fff}
       <span></span><span></span><span></span>
     </button>
     <nav class="links" id="menu">
-      <a href="products.html">Products</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="index.html">Home</a>
+      <div class="nav-item">
+        <a href="products.html">Products</a>
+        <div class="dropdown">
+          <a href="healthcare-ict.html">Healthcare ICT</a>
+          <a href="medical-gas-systems.html">Medical Gas Systems</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services.html">Services</a>
+        <div class="dropdown">
+          <a href="services.html#infrastructure">Healthcare Infrastructure Development</a>
+          <a href="services.html#biomedical">Biomedical Engineering Services</a>
+          <a href="services.html#ict">Healthcare ICT</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="projects.html#infrastructure">Healthcare Infrastructure Development</a>
+          <a href="projects.html#biomedical">Biomedical Engineering</a>
+          <a href="projects.html#ict">Healthcare ICT</a>
+        </div>
+      </div>
       <a href="index.html#partners">Partners</a>
       <a href="index.html#about">About Us</a>
       <a href="index.html#contact">Contact</a>
