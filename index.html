@@ -74,6 +74,8 @@ nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);bor
 .hero p.lede{max-width:600px;margin:24px 0 32px;font-size:1.12rem;color:#E3ECFA}
 .hero .kicker{display:block;margin-bottom:16px;color:#EAF3FF;text-shadow:0 1px 4px rgba(0,0,0,.35);font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.08em}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-cta .btn.ghost{color:#fff;border-color:rgba(255,255,255,.75)}
+.hero-cta .btn.ghost:hover{background:#fff;color:var(--blue-d);border-color:#fff}
 .hero-meta{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.25)}
 .hero-meta div{padding:20px 20px 4px;border-left:1px solid rgba(255,255,255,.25)}
 .hero-meta div:first-child{border-left:0;padding-left:0}
@@ -224,6 +226,7 @@ footer nav a:hover{color:#fff}
 }
 
 </style>
+<link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
 
@@ -473,7 +476,7 @@ footer nav a:hover{color:#fff}
       </div>
       <div class="contact-grid">
         <div class="map-embed reveal">
-          <iframe src="https://www.google.com/maps?q=Medware+Solutions+Ltd,+2nd+Floor,+Doctors+Park,+3rd+Parklands+Avenue,+Nairobi,+Kenya&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Medware Solutions Ltd location on Google Maps"></iframe>
+          <iframe src="https://www.google.com/maps?q=-1.2612837,36.8215773&amp;z=17&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Medware Solutions Ltd location on Google Maps"></iframe>
         </div>
         <div class="c-card reveal">
           <div class="c-field">
@@ -518,20 +521,8 @@ footer nav a:hover{color:#fff}
 </footer>
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
+<script src="assets/js/motion.js" defer></script>
 <script>
-function toggleMenu(btn){
-  const m=document.getElementById('menu');
-  const open=m.classList.toggle('open');
-  btn.setAttribute('aria-expanded',open);
-}
-document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('menu').classList.remove('open');
-}));
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
-}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
 document.getElementById('contact-form').addEventListener('submit',e=>{
   e.preventDefault();
   const name=document.getElementById('cf-name').value;

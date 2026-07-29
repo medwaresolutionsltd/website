@@ -119,6 +119,7 @@ footer nav a:hover{color:#fff}
   .product-intro{grid-template-columns:1fr}
 }
 </style>
+<link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
 
@@ -248,19 +249,6 @@ footer nav a:hover{color:#fff}
 </footer>
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
-<script>
-function toggleMenu(btn){
-  const m=document.getElementById('menu');
-  const open=m.classList.toggle('open');
-  btn.setAttribute('aria-expanded',open);
-}
-document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('menu').classList.remove('open');
-}));
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
-}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+<script src="assets/js/motion.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+/* Medware — shared motion & interaction layer
+   Loaded on every page after the page's own <style> block, so equal-specificity
+   rules here intentionally win over the base styles they refine. */
+
+@keyframes motionUp{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Hero entrance — headline/kicker/CTA sequenced in on load, no scroll trigger needed */
+.hero-top>*{opacity:0;animation:motionUp .8s cubic-bezier(.16,1,.3,1) forwards}
+.hero-top>*:nth-child(1){animation-delay:.08s}
+.hero-top>*:nth-child(2){animation-delay:.2s}
+.hero-top>*:nth-child(3){animation-delay:.32s}
+.hero-top>*:nth-child(4){animation-delay:.44s}
+
+.page-hero .wrap>*{opacity:0;animation:motionUp .8s cubic-bezier(.16,1,.3,1) forwards}
+.page-hero .wrap>*:nth-child(1){animation-delay:.08s}
+.page-hero .wrap>*:nth-child(2){animation-delay:.2s}
+.page-hero .wrap>*:nth-child(3){animation-delay:.32s}
+.page-hero .wrap>*:nth-child(4){animation-delay:.44s}
+.page-hero .wrap>*:nth-child(5){animation-delay:.56s}
+
+/* Scroll-reveal — smoother ease; per-element delay is assigned by motion.js for stagger */
+.reveal{transition-timing-function:cubic-bezier(.16,1,.3,1)}
+
+/* Card & chip micro-interactions */
+.svc{transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.svc:hover{border-color:var(--blue);box-shadow:0 24px 48px -32px rgba(15,90,153,.35);transform:translateY(-3px)}
+.svc-media img{transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.svc:hover .svc-media img{transform:scale(1.045)}
+
+.proj{transition:border-color .25s ease,box-shadow .25s ease}
+.proj:hover{border-color:var(--blue);box-shadow:0 20px 40px -30px rgba(15,90,153,.35)}
+
+.product-card{transition:box-shadow .25s cubic-bezier(.16,1,.3,1),transform .25s cubic-bezier(.16,1,.3,1)}
+
+.chip{transition:border-color .18s ease,color .18s ease,transform .18s ease,background .18s ease}
+.chip:hover{transform:translateY(-2px)}
+
+.c-card{transition:box-shadow .25s ease,transform .25s ease}
+.c-card:hover{box-shadow:0 24px 48px -32px rgba(15,90,153,.3);transform:translateY(-2px)}
+
+.btn{transition:background .2s ease,transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s ease}
+.btn:hover{box-shadow:0 12px 24px -12px rgba(15,90,153,.45)}
+
+/* Nav dropdown — add motion instead of a hard opacity cut */
+.dropdown{transform:translateY(-6px) scale(.98);transition:opacity .2s ease,transform .2s cubic-bezier(.16,1,.3,1),visibility .2s}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{transform:translateY(0) scale(1)}
+
+/* Animated mobile menu (swap the hard display:none cut for a slide/fade) */
+@media (max-width:760px){
+  nav.links{
+    display:flex;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    pointer-events:none;
+    transition:opacity .25s ease,transform .25s cubic-bezier(.16,1,.3,1),visibility .25s;
+  }
+  nav.links.open{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+}
+
+/* Hamburger morphs into a close (×) icon while the menu is open */
+.menu-btn span{transition:transform .25s ease,opacity .25s ease}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-top>*,.page-hero .wrap>*{animation:none!important;opacity:1!important}
+}
