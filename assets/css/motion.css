@@ -76,6 +76,57 @@
 .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
 .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+/* Section sub-nav — stays hidden while the hero (which has its own jump
+   chips) is in view, then fades in fixed under the header once you scroll
+   past it, so the two link rows never show at the same time. */
+.subnav{
+  position:fixed;
+  top:96px;
+  left:0;
+  right:0;
+  z-index:45;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-8px);
+  pointer-events:none;
+  transition:opacity .25s ease,transform .25s cubic-bezier(.16,1,.3,1),visibility .25s;
+}
+.subnav.visible{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.subnav-track{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:14px 0;
+  scrollbar-width:none;
+}
+.subnav-track::-webkit-scrollbar{display:none}
+.subnav-track a{
+  flex:0 0 auto;
+  white-space:nowrap;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:.84rem;
+  font-weight:600;
+  color:var(--ink);
+  text-decoration:none;
+  border:1px solid var(--line);
+  transition:border-color .18s ease,color .18s ease,background .18s ease;
+}
+.subnav-track a:hover{border-color:var(--blue);color:var(--blue)}
+.subnav-track a.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* Offset anchor-jump targets so their heading clears the sticky header (96px)
+   + subnav (~69px) instead of landing underneath them. */
+#infrastructure,#biomedical,#ict{scroll-margin-top:180px}
+
 @media (prefers-reduced-motion: reduce){
   .hero-top>*,.page-hero .wrap>*{animation:none!important;opacity:1!important}
 }

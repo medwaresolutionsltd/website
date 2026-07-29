@@ -40,3 +40,33 @@ document.querySelectorAll('[data-href]').forEach(card=>{
     }
   });
 });
+
+/* Section sub-nav: fade it in once the hero (which has its own jump chips)
+   scrolls out from under the sticky header, and highlight whichever linked
+   section is currently in view. No-op on pages without a .subnav. */
+const subnav=document.querySelector('.subnav');
+if(subnav){
+  const hero=document.querySelector('.hero, .page-hero');
+  if(hero){
+    const heroIO=new IntersectionObserver(es=>{
+      subnav.classList.toggle('visible',!es[0].isIntersecting);
+    },{rootMargin:'-96px 0px 0px 0px'});
+    heroIO.observe(hero);
+  }
+
+  const subnavLinks=Array.from(subnav.querySelectorAll('a[href^="#"]'));
+  const sections=subnavLinks
+    .map(a=>document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if(sections.length){
+    const spyIO=new IntersectionObserver(es=>{
+      es.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id='#'+entry.target.id;
+          subnavLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));
+        }
+      });
+    },{rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(s=>spyIO.observe(s));
+  }
+}
