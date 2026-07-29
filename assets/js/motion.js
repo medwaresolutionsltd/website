@@ -25,3 +25,18 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
 }),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Clickable cards: whole element navigates to data-href, but clicks on a
+   nested <a> (e.g. chips inside a service card) keep following their own href. */
+document.querySelectorAll('[data-href]').forEach(card=>{
+  card.addEventListener('click',e=>{
+    if(e.target.closest('a'))return;
+    window.location.href=card.dataset.href;
+  });
+  card.addEventListener('keydown',e=>{
+    if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){
+      e.preventDefault();
+      window.location.href=card.dataset.href;
+    }
+  });
+});
