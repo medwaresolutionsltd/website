@@ -1,0 +1,277 @@
+<?php
+$page_title = "Projects Map - Medware Solutions Ltd";
+$page_desc = "Interactive map of our completed healthcare infrastructure projects across Kenya and East Africa.";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?= htmlspecialchars($page_title) ?></title>
+<meta name="description" content="<?= htmlspecialchars($page_desc) ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/motion.css">
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+/* Base styles */
+:root{
+  --blue:#1B75BC;
+  --blue-d:#0F5A99;
+  --navy:#28316E;
+  --sky:#5FA8DC;
+  --grey:#6D6E71;
+  --ink:#2C3038;
+  --bg:#F4F6F9;
+  --line:#DCE3EC;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px; display:flex; flex-direction:column; min-height:100vh;}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--navy)}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%;display:block}
+
+/* Header/Footer generics */
+.band{display:flex;height:5px;width:100%}
+.band span{flex:1}
+.band .b1{background:var(--blue)}
+.band .b2{background:var(--navy)}
+.band .b3{background:var(--sky)}
+.band .b4{background:var(--grey)}
+
+header{position:sticky;top:0;z-index:9999;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px;width:90%;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:80px;width:auto;display:block}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
+nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav.links .btn{font-weight:700;padding:11px 22px;background:var(--blue);color:#fff;border-radius:8px;}
+nav.links .btn:hover{background:var(--blue-d);color:#fff;}
+.nav-item{position:relative;display:flex;align-items:center}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 44px -20px rgba(15,90,153,.35);padding:8px;min-width:250px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease;z-index:60}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;pointer-events:auto}
+nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size:.86rem;font-weight:600;color:var(--ink);border-bottom:0}
+nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);}
+
+footer{background:var(--navy);color:#AEBBDF;padding:34px 0; margin-top:auto;}
+footer .wrap{width:90%;max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
+footer .f-brand img{height:52px;width:auto;display:block}
+footer p{font-size:.88rem}
+footer nav{display:flex;gap:22px}
+footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
+footer nav a:hover{color:#fff}
+
+/* Map Layout */
+.map-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 101px - 120px); /* Adjust for header/footer */
+    min-height: 600px;
+    width: 100%;
+}
+
+.map-sidebar {
+    width: 380px;
+    background: #fff;
+    border-right: 1px solid var(--line);
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-sidebar h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--navy);
+}
+
+.map-sidebar p {
+    color: var(--grey);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.map-sidebar .status-area {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+#project-details {
+    display: none;
+}
+#project-details h3 {
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+#project-details .loc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+}
+#project-details .loc svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--grey);
+}
+
+#default-text {
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+}
+#default-text h3 {
+    font-size: 1.2rem;
+    color: var(--grey);
+}
+
+#map {
+    flex: 1;
+    min-height: 600px;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    background: #e5e5e5; /* fallback color */
+}
+
+@media (max-width: 900px) {
+    .map-container { flex-direction: column; height: auto; }
+    .map-sidebar { width: 100%; height: auto; padding: 24px; border-right: none; border-bottom: 1px solid var(--line); }
+    #map { height: 600px; }
+}
+</style>
+</head>
+<body>
+
+<?php include 'partials/header.php'; ?>
+
+<div class="map-container">
+    <div class="map-sidebar">
+        <h1>Projects Review</h1>
+        <p>Explore our successfully delivered healthcare infrastructure, medical equipment, and ICT projects across East Africa and beyond.</p>
+        
+        <div class="status-area">
+            <div id="default-text">
+                <h3>All Projects</h3>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Select a hospital icon on the map to view project details.</p>
+            </div>
+            
+            <div id="project-details">
+                <h3 id="pd-name">Hospital Name</h3>
+                <div class="loc">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span id="pd-loc">Location</span>
+                </div>
+                <p id="pd-desc" style="font-size: 0.95rem;">Project details will appear here.</p>
+                <a href="projects" class="btn" style="margin-top: 20px; display: inline-block; padding: 8px 16px;">View All Projects</a>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+</div>
+
+<?php include 'partials/footer.php'; ?>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Initialize map
+    const map = L.map('map').setView([3.0, 38.0], 5);
+    
+    // Fix flexbox size issue
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 100); // Centered on Nairobi with regional zoom
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Custom Hospital Icon
+    const hospitalIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: #1B75BC; width: 30px; height: 30px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">+</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+    });
+
+    // Projects Data
+    const projects = [
+        { name: "The Nairobi West Hospital", location: "Nairobi, Kenya", lat: -1.3075, lng: 36.8186, desc: "Comprehensive healthcare infrastructure and biomedical engineering services." },
+        { name: "Pandya Memorial Hospital", location: "Mombasa, Kenya", lat: -4.0673, lng: 39.6687, desc: "Specialized medical equipment installation and maintenance." },
+        { name: "The Nairobi Hospital", location: "Nairobi, Kenya", lat: -1.2952, lng: 36.8055, desc: "Medical service pendants, nurse call systems, and medical gas pipeline installation." },
+        { name: "Metropolitan Hospital", location: "Nairobi, Kenya", lat: -1.3060, lng: 36.8836, desc: "Hospital infrastructure solutions and equipment deployment." },
+        { name: "Avenue Healthcare", location: "Nairobi, Kenya", lat: -1.2642, lng: 36.8202, desc: "Healthcare ICT and building management systems integration." },
+        { name: "Tenwek Hospital", location: "Bomet, Kenya", lat: -0.7410, lng: 35.3400, desc: "Medical gas pipeline systems and critical care equipment installation." },
+        { name: "Jalaram Medical Services", location: "Nairobi, Kenya", lat: -1.2727, lng: 36.8200, desc: "Biomedical engineering support and technology management." },
+        { name: "Third Park Hospital", location: "Parklands, Nairobi, Kenya", lat: -1.2605, lng: 36.8248, desc: "Turnkey hospital infrastructure and operating theatre setup." },
+        { name: "Medware Project Djibouti", location: "Djibouti City, Djibouti", lat: 11.5721, lng: 43.1456, desc: "International healthcare infrastructure and medical equipment supply." },
+        { name: "Medware Project Uganda", location: "Kampala, Uganda", lat: 0.3476, lng: 32.5825, desc: "Cross-border hospital equipment procurement and commissioning." },
+        { name: "Medware Project Tanzania", location: "Dar es Salaam, Tanzania", lat: -6.7924, lng: 39.2083, desc: "Regional expansion of medical gas and biomedical engineering services." }
+    ];
+
+    // DOM Elements
+    const defaultText = document.getElementById('default-text');
+    const projectDetails = document.getElementById('project-details');
+    const pdName = document.getElementById('pd-name');
+    const pdLoc = document.getElementById('pd-loc');
+    const pdDesc = document.getElementById('pd-desc');
+
+    // Add markers to map
+    projects.forEach(project => {
+        const marker = L.marker([project.lat, project.lng], {icon: hospitalIcon}).addTo(map);
+        
+        // Add tooltip for quick hover
+        marker.bindTooltip(`<b>${project.name}</b><br>${project.location}`);
+        
+        // Add click event
+        marker.on('click', () => {
+            // Update sidebar
+            defaultText.style.display = 'none';
+            projectDetails.style.display = 'block';
+            
+            pdName.textContent = project.name;
+            pdLoc.textContent = project.location;
+            pdDesc.textContent = project.desc;
+            
+            // Pan to marker
+            map.flyTo([project.lat, project.lng], 12, {
+                duration: 1.5
+            });
+        });
+    });
+
+    // Reset view when clicking on map background
+    map.on('click', function(e) {
+        // Only trigger if clicking exactly on map (not a marker)
+        if (e.originalEvent.target.id === 'map') {
+            defaultText.style.display = 'block';
+            projectDetails.style.display = 'none';
+            map.flyTo([-1.2921, 36.8219], 6);
+        }
+    });
+</script>
+</body>
+</html>
+
+
+

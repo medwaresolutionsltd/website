@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare ICT — Medware Solutions Ltd</title>
+<meta name="description" content="Healthcare ICT hardware and software from Medware Solutions: nurse call, fire alarm, queue management, building management systems and CMMS licensing for hospitals across Kenya and East Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B75BC;
+  --blue-d:#0F5A99;
+  --navy:#28316E;
+  --sky:#5FA8DC;
+  --grey:#6D6E71;
+  --ink:#2C3038;
+  --bg:#F4F6F9;
+  --panel:#FFFFFF;
+  --line:#DCE3EC;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--navy)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--blue)}
+.kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.wrap{width:90%;max-width:1140px;margin:0 auto}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+.band{display:flex;height:5px;width:100%}
+.band span{flex:1}
+.band .b1{background:var(--blue)}
+.band .b2{background:var(--navy)}
+.band .b3{background:var(--sky)}
+.band .b4{background:var(--grey)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:80px;width:auto;display:block}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
+nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav.links .btn{font-weight:700;padding:11px 22px}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:11px 22px;border-radius:8px;transition:background .18s,transform .18s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+.nav-item{position:relative;display:flex;align-items:center}
+.nav-item>a{display:inline-flex;align-items:center}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 44px -20px rgba(15,90,153,.35);padding:8px;min-width:250px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease;z-index:60}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;pointer-events:auto}
+nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size:.86rem;font-weight:600;color:var(--ink);border-bottom:0}
+nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);border-bottom:0}
+
+section{padding:80px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-head .kicker::before{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em}
+.sec-head p{margin-top:14px;color:var(--grey)}
+
+.backlink{display:inline-block;margin-top:6px;font-size:.9rem;font-weight:600;color:var(--blue);text-decoration:none}
+.backlink:hover{text-decoration:underline}
+
+footer{background:var(--navy);color:#AEBBDF;padding:34px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
+footer .f-brand img{height:52px;width:auto;display:block}
+footer p{font-size:.88rem}
+footer nav{display:flex;gap:22px}
+footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
+footer nav a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
+
+/* product detail page */
+.page-hero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:72px 0 56px}
+.page-hero .kicker{color:#9CC4E8;display:block;margin-bottom:12px}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:20ch}
+.page-hero p{margin-top:14px;color:#D6E4F5;max-width:62ch}
+
+.product-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.product-intro img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.product-intro p{color:var(--grey);margin-top:14px}
+
+.item-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;margin-top:16px}
+.item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.item h4{font-size:1.02rem;font-weight:800}
+.item p{color:var(--grey);font-size:.9rem;margin-top:8px}
+.item-link{text-decoration:none;display:block;transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
+.item-link:hover{box-shadow:0 20px 44px -26px rgba(15,90,153,.4);transform:translateY(-3px);border-color:var(--blue)}
+.item-cta{margin-top:12px;font-size:.84rem;font-weight:700;color:var(--blue);display:inline-flex}
+
+.cta{background:var(--navy);color:#fff;padding:64px 0;text-align:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.cta p{margin:14px auto 28px;color:#D6E4F5;max-width:52ch}
+.cta .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:760px){
+  nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
+  nav.links.open{display:flex}
+  .nav-item{flex-direction:column;align-items:flex-start;width:100%}
+  .dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:0;background:transparent;padding:2px 0 0 14px;margin:0;min-width:0}
+  nav.links .dropdown a{padding:6px 0;font-size:.85rem;font-weight:600;color:var(--grey)}
+  .menu-btn{display:block}
+  .page-hero{padding:52px 0 40px}
+  section{padding:52px 0}
+  .product-intro{grid-template-columns:1fr}
+}
+</style>
+<link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body>
+
+<?php include 'partials/header.php'; ?>
+
+<main id="top">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Products / Healthcare ICT</span>
+      <h1>Healthcare ICT</h1>
+      <p>Networked ICT hardware and software purpose-built for hospitals — nurse call, fire detection, patient flow, building management and maintenance management brought together on one connected infrastructure.</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section>
+    <div class="wrap product-intro">
+      <img src="assets/images/nursecall.jpg" alt="Healthcare ICT hardware" loading="lazy">
+      <div>
+        <h2>What it is</h2>
+        <p>Healthcare ICT covers the communication, safety and monitoring systems that keep a hospital running day to day. We supply and integrate proven platforms from Schrack Seconet, Dnake and Schneider Electric, alongside our own MedWare CMMS software, so nurse call, fire alarm, patient flow and facility monitoring all work as one system rather than isolated boxes.</p>
+        <a class="backlink" href="products.php">← Back to all products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">What's included</span>
+        <h2>Hardware &amp; software in this product line</h2>
+      </div>
+      <div class="item-list">
+        <a class="item item-link reveal" href="visocall-ip-nurse-call">
+          <h4>Visocall IP Nurse Call Devices</h4>
+          <p>Schrack Seconet call points, displays and staff terminals for the Visocall IP network.</p>
+          <span class="item-cta">Explore devices →</span>
+        </a>
+        <a class="item item-link reveal" href="fire-alarm-systems"><h4>Fire Alarm Panels &amp; Detectors</h4><p>EN 54-compliant detection and alarm hardware from Schrack Seconet.</p><span class="item-cta">Explore panels &rarr;</span></a>
+        <a class="item item-link reveal" href="queue-management-kiosks"><h4>Queue Management Kiosks</h4><p>Dnake ticketing kiosks and digital signage for outpatient and pharmacy desks.</p><span class="item-cta">Explore kiosks &rarr;</span></a>
+        <a class="item item-link reveal" href="bms-hardware"><h4>Building Management System Hardware</h4><p>Schneider Electric controllers and sensors for centralized HVAC, power and plant monitoring.</p><span class="item-cta">Explore hardware &rarr;</span></a>
+        <a class="item item-link reveal" href="medware-cmms"><h4>MedWare CMMS Software</h4><p>Our in-house computerized maintenance management platform, licensed for your facility.</p><span class="item-cta">Explore software &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="wrap">
+      <h2>Need it installed or maintained too?</h2>
+      <p>Every product in this line is backed by our own design, installation and biomedical engineering teams.</p>
+      <div class="hero-cta">
+        <a class="btn" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Healthcare%20ICT">Enquire about this product</a>
+        <a class="btn ghost" href="index.php#contact">Talk to our team</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<?php include 'partials/footer.php'; ?>
+
+<script src="assets/js/motion.js" defer=""></script>
+
+
+</body></html>
+
+

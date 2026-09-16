@@ -1,0 +1,21 @@
+﻿# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swo
+
+# Logs
+*.log
+
+# Local / XAMPP config
+config.local.php
+.env
+.env.local
+
+# Temporary
+tmp/
+cache/

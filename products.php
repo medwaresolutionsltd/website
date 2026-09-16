@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Medware Solutions Ltd</title>
+<meta name="description" content="Browse Medware Solutions' product catalog: modular operating theatres, medical gas equipment, IP nurse call devices, fire alarm panels, building management hardware and biomedical spares — for hospitals across Kenya and East Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B75BC;         /* Medware primary blue */
+  --blue-d:#0F5A99;
+  --navy:#28316E;         /* profile panel navy */
+  --sky:#5FA8DC;
+  --grey:#6D6E71;         /* profile grey */
+  --ink:#2C3038;
+  --bg:#F4F6F9;
+  --panel:#FFFFFF;
+  --line:#DCE3EC;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px}
+h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--navy)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--blue)}
+.kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.wrap{width:90%;max-width:1140px;margin:0 auto}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* top band — brand blues */
+.band{display:flex;height:5px;width:100%}
+.band span{flex:1}
+.band .b1{background:var(--blue)}
+.band .b2{background:var(--navy)}
+.band .b3{background:var(--sky)}
+.band .b4{background:var(--grey)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:80px;width:auto;display:block}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
+nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav.links .btn{font-weight:700;padding:11px 22px}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:11px 22px;border-radius:8px;transition:background .18s,transform .18s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+.nav-item{position:relative;display:flex;align-items:center}
+.nav-item>a{display:inline-flex;align-items:center}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 44px -20px rgba(15,90,153,.35);padding:8px;min-width:250px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease;z-index:60}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;pointer-events:auto}
+nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size:.86rem;font-weight:600;color:var(--ink);border-bottom:0}
+nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);border-bottom:0}
+
+/* sections */
+section{padding:80px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-head .kicker::before{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em}
+.sec-head p{margin-top:14px;color:var(--grey)}
+
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:500;text-decoration:none;transition:border-color .15s,color .15s}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.more{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
+.chip.more:hover{background:var(--blue-d)}
+.backlink{display:inline-block;margin-top:6px;font-size:.9rem;font-weight:600;color:var(--blue);text-decoration:none}
+.backlink:hover{text-decoration:underline}
+
+/* footer */
+footer{background:var(--navy);color:#AEBBDF;padding:34px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
+footer .f-brand img{height:52px;width:auto;display:block}
+footer p{font-size:.88rem}
+footer nav{display:flex;gap:22px}
+footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
+footer nav a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
+
+/* products page */
+.page-hero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:72px 0 56px}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:20ch}
+.page-hero p{margin-top:14px;color:#D6E4F5;max-width:62ch}
+.page-hero .kicker{color:#9CC4E8;display:block;margin-bottom:12px}
+
+/* product grid */
+.shop{padding:56px 0 80px}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;max-width:760px}
+.product-card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:box-shadow .2s ease,transform .2s ease}
+.product-card:hover{box-shadow:0 20px 44px -26px rgba(15,90,153,.4);transform:translateY(-3px)}
+.product-card .p-media{aspect-ratio:4/3;overflow:hidden;background:var(--bg)}
+.product-card .p-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.product-card:hover .p-media img{transform:scale(1.04)}
+.product-card .p-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.product-card .p-cat{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.product-card h3{font-size:1.04rem;font-weight:800;margin-top:6px}
+.product-card p{color:var(--grey);font-size:.89rem;margin-top:8px;flex:1}
+.product-card .p-cta{margin-top:16px;font-size:.85rem;font-weight:700;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.product-card .p-cta:hover{color:var(--blue-d)}
+
+.cta{background:var(--navy);color:#fff;padding:64px 0;text-align:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.cta p{margin:14px auto 28px;color:#D6E4F5;max-width:52ch}
+.cta .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:760px){
+  nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
+  nav.links.open{display:flex}
+  .nav-item{flex-direction:column;align-items:flex-start;width:100%}
+  .dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:0;background:transparent;padding:2px 0 0 14px;margin:0;min-width:0}
+  nav.links .dropdown a{padding:6px 0;font-size:.85rem;font-weight:600;color:var(--grey)}
+  .menu-btn{display:block}
+  .page-hero{padding:52px 0 40px}
+  section{padding:52px 0}
+  .shop{padding:40px 0 56px}
+}
+</style>
+<link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body>
+
+<?php include 'partials/header.php'; ?>
+
+<main id="top">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Products</span>
+      <h1>Our two product lines, <em>browse the range.</em></h1>
+      <p>The physical products behind our services — healthcare ICT hardware and medical gas equipment, sourced from vetted global manufacturers and available for supply across Kenya and East Africa.</p>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop">
+    <div class="wrap">
+      <div class="shop-grid" id="shop-grid">
+
+        <a class="product-card reveal" href="healthcare-ict.php">
+          <div class="p-media"><img src="assets/images/nursecall.jpg" alt="Healthcare ICT hardware" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Healthcare ICT</span>
+            <h3>Healthcare ICT</h3>
+            <p>Nurse call, fire alarm, queue management, building management and CMMS hardware and software for the connected hospital.</p>
+            <span class="p-cta">View product →</span>
+          </div>
+        </a>
+
+        <a class="product-card reveal" href="medical-gas-systems.php">
+          <div class="p-media"><img src="assets/images/medicalgas.jpg" alt="Medical gas system equipment" loading="lazy"></div>
+          <div class="p-body">
+            <span class="p-cat">Medical Gas Systems</span>
+            <h3>Medical Gas Systems</h3>
+            <p>Pipeline components, vacuum and medical air plants, oxygen generating plants and pneumatic tube systems engineered to ISO 7396‑1.</p>
+            <span class="p-cta">View product →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="wrap">
+      <h2>Need it installed or maintained too?</h2>
+      <p>Every product in this catalog is backed by our own design, installation and biomedical engineering teams.</p>
+      <div class="hero-cta">
+        <a class="btn" href="services.php">See our services</a>
+        <a class="btn ghost" href="index.php#contact">Talk to our team</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<?php include 'partials/footer.php'; ?>
+
+<script src="assets/js/motion.js" defer=""></script>
+
+
+</body></html>
