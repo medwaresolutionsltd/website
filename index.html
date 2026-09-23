@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Medware Solutions Ltd — Healthcare Infrastructure Development, Biomedical Engineering & Healthcare ICT</title>
 <meta name="description" content="Medware Solutions Ltd delivers healthcare infrastructure development, biomedical engineering services and healthcare ICT for hospitals across Kenya and East Africa.">
+<link rel="canonical" href="https://www.medwaresol.com/">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/images/brand/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#1B75BC">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Medware Solutions Ltd">
+<meta property="og:locale" content="en_KE">
+<meta property="og:title" content="Medware Solutions Ltd — Healthcare Infrastructure Development, Biomedical Engineering &amp; Healthcare ICT">
+<meta property="og:description" content="Medware Solutions Ltd delivers healthcare infrastructure development, biomedical engineering services and healthcare ICT for hospitals across Kenya and East Africa.">
+<meta property="og:url" content="https://www.medwaresol.com/">
+<meta property="og:image" content="https://www.medwaresol.com/assets/images/brand/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Medware Solutions Ltd logo over a hospital project photo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/images/brand/hero-team.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -33,7 +50,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--blue)}
 .kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
 .wrap{width:90%;max-width:1140px;margin:0 auto}
 a{color:inherit}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 
 /* top band — brand blues */
 .band{display:flex;height:5px;width:100%}
@@ -67,7 +84,7 @@ nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size
 nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);border-bottom:0}
 
 /* hero */
-.hero{padding:130px 0 76px;position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,rgba(40,49,110,.86),rgba(27,117,188,.8)),url('assets/images/hero_1.jpeg') center/cover no-repeat}
+.hero{padding:130px 0 76px;position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,rgba(40,49,110,.86),rgba(27,117,188,.8)),url('assets/images/brand/hero-team.webp') center/cover no-repeat}
 .hero .wrap{position:relative}
 .hero-top{max-width:760px}
 .hero h1{color:#fff;font-size:clamp(2.2rem,5.2vw,3.8rem);font-weight:800;letter-spacing:-.02em;max-width:16ch}
@@ -227,6 +244,55 @@ footer nav a:hover{color:#fff}
 
 </style>
 <link rel="stylesheet" href="assets/css/motion.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.medwaresol.com/#business",
+  "name": "Medware Solutions Ltd",
+  "url": "https://www.medwaresol.com/",
+  "logo": "https://www.medwaresol.com/assets/images/brand/medware-logo.webp",
+  "image": "https://www.medwaresol.com/assets/images/brand/og-image.jpg",
+  "description": "Medware Solutions Ltd delivers healthcare infrastructure development, biomedical engineering services and healthcare ICT for hospitals across Kenya and East Africa.",
+  "email": "info@medwaresol.com",
+  "telephone": "+254714363333",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+254714363333",
+      "contactType": "customer service",
+      "areaServed": "KE"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+254735888323",
+      "contactType": "customer service",
+      "areaServed": "KE"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2nd Floor, Doctors Park, 3rd Parklands Avenue",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.2612837,
+    "longitude": 36.8215773
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Kenya"
+    },
+    {
+      "@type": "Place",
+      "name": "East Africa"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -235,7 +301,7 @@ footer nav a:hover{color:#fff}
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Medware Solutions home">
-      <img class="brand-logo" src="assets/images/logo/medware_logo.png" alt="MedWare Solutions Limited">
+      <img class="brand-logo" src="assets/images/brand/medware-logo.webp" width="376" height="160" alt="MedWare Solutions Limited">
     </a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
       <span></span><span></span><span></span>
@@ -310,7 +376,7 @@ footer nav a:hover{color:#fff}
       </div>
 
       <article class="svc reveal" id="svc-infrastructure" data-href="services.html#infrastructure" tabindex="0" role="link" aria-label="View Healthcare Infrastructure Development on the services page">
-        <div class="svc-media"><img src="assets/images/modular-theatre.jpg" alt="Modular operating theatre installation" loading="lazy"></div>
+        <div class="svc-media"><img src="assets/images/services/modular-theatre.webp" width="2140" height="1705" alt="Modular operating theatre installation" loading="lazy"></div>
         <div class="svc-top"><h3>Healthcare Infrastructure Development</h3><span class="num">1.0</span></div>
         <p>Design, installation, commissioning and maintenance of the critical building systems modern hospitals depend on. Our medical gas work spans station sources, manifolds, pipelines, alarms, bed head units and terminal units — engineered to ISO 7396‑1 so supply is continuous, contamination-free and life-safe.</p>
         <ul class="svc-list">
@@ -334,7 +400,7 @@ footer nav a:hover{color:#fff}
       </article>
 
       <article class="svc reveal" id="svc-biomedical" data-href="services.html#biomedical" tabindex="0" role="link" aria-label="View Biomedical Engineering Services on the services page">
-        <div class="svc-media"><img src="assets/images/repairs.jpeg" alt="Biomedical engineer repairing hospital equipment" loading="lazy"></div>
+        <div class="svc-media"><img src="assets/images/services/equipment-repairs.webp" width="1600" height="914" alt="Biomedical engineer repairing hospital equipment" loading="lazy"></div>
         <div class="svc-top"><h3>Biomedical Engineering Services</h3><span class="num">2.0</span></div>
         <p>Certified biomedical engineers providing on-site and depot services for imaging systems, patient monitors, ventilators and surgical instruments — with prompt diagnostics, calibration and preventive maintenance that minimize downtime and keep you compliant with ISO and FDA standards.</p>
         <ul class="svc-list">
@@ -353,7 +419,7 @@ footer nav a:hover{color:#fff}
       </article>
 
       <article class="svc reveal" id="svc-ict" data-href="services.html#ict" tabindex="0" role="link" aria-label="View Healthcare ICT on the services page">
-        <div class="svc-media"><img src="assets/images/nursecall.jpg" alt="Visocall IP nurse call panel" loading="lazy"></div>
+        <div class="svc-media"><img src="assets/images/products/nurse-call-panel.webp" width="1000" height="627" alt="Visocall IP nurse call panel" loading="lazy"></div>
         <div class="svc-top"><h3>Healthcare ICT</h3><span class="num">3.0</span></div>
         <p>Intelligent building and communication systems that connect patients, clinicians and facilities — led by the Visocall IP nurse call platform by Schrack Seconet, a fully digital system integrating voice, data and alarm functions into one unified network.</p>
         <ul class="svc-list">
@@ -399,11 +465,11 @@ footer nav a:hover{color:#fff}
       </div>
       <div class="marquee-group reveal">
         <div class="marquee-label"><span class="kicker">Vendor partners</span></div>
-        <div class="marquee "><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logo/stm_sistemi_tecnologie_logo.jpeg" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/lawton_tubes_logo.jpg" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/precision_uk_logo.png" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/busch_logo.jpg" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps & compressors · Germany</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/foxolutions_logo.jpg" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/sumetzberger_logo.png" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/tlv_logo.jpg" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants & bed head units · France</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/schrack_logo.jpg" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call & fire alarms · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/schneider_electric_logo.png" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/dnake_logo.png" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/ata_medica_logo.jpg" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/agora_logo.png" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/stm_sistemi_tecnologie_logo.jpeg" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/lawton_tubes_logo.jpg" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/precision_uk_logo.png" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/busch_logo.jpg" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps & compressors · Germany</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/foxolutions_logo.jpg" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/sumetzberger_logo.png" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/tlv_logo.jpg" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants & bed head units · France</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/schrack_logo.jpg" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call & fire alarms · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/schneider_electric_logo.png" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/dnake_logo.png" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/ata_medica_logo.jpg" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/agora_logo.png" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div></div></div>
+        <div class="marquee "><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logos/stm-sistemi-tecnologie.webp" width="287" height="126" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/lawton-tubes.webp" width="542" height="126" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/precision-uk.webp" width="804" height="126" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/busch.webp" width="379" height="126" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps & compressors · Germany</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/foxolutions.webp" width="379" height="126" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/sumetzberger.webp" width="261" height="70" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/tlv.webp" width="517" height="126" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants & bed head units · France</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/schrack.webp" width="433" height="126" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call & fire alarms · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/schneider-electric.webp" width="126" height="126" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/dnake.webp" width="225" height="126" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/ata-medica.webp" width="126" height="126" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/agora.webp" width="407" height="124" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/stm-sistemi-tecnologie.webp" width="287" height="126" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/lawton-tubes.webp" width="542" height="126" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/precision-uk.webp" width="804" height="126" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/busch.webp" width="379" height="126" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps & compressors · Germany</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/foxolutions.webp" width="379" height="126" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/sumetzberger.webp" width="261" height="70" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/tlv.webp" width="517" height="126" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants & bed head units · France</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/schrack.webp" width="433" height="126" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call & fire alarms · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/schneider-electric.webp" width="126" height="126" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/dnake.webp" width="225" height="126" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/ata-medica.webp" width="126" height="126" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/agora.webp" width="407" height="124" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div></div></div>
       </div>
       <div class="marquee-group reveal" style="margin-bottom:0">
         <div class="marquee-label"><span class="kicker">Client partners</span></div>
-        <div class="marquee slow"><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logo/amref_logo.png" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/nairobi_hospital_logo.png" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants & nurse call</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/kutrrh_logo.png" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS & shielding</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/tenwek_logo.jpg" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/avenue_logo.png" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/jalaram_logo.png" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning & installation</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/amref_logo.png" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/nairobi_hospital_logo.png" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants & nurse call</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/kutrrh_logo.png" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS & shielding</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/tenwek_logo.jpg" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/avenue_logo.png" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/jalaram_logo.png" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning & installation</small></span></div></div></div>
+        <div class="marquee slow"><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logos/amref.webp" width="126" height="126" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/nairobi-hospital.webp" width="147" height="126" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants & nurse call</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/kutrrh.webp" width="512" height="108" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS & shielding</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/tenwek.webp" width="126" height="126" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/avenue.webp" width="126" height="126" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logos/jalaram.webp" width="126" height="126" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning & installation</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/amref.webp" width="126" height="126" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/nairobi-hospital.webp" width="147" height="126" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants & nurse call</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/kutrrh.webp" width="512" height="108" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS & shielding</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/tenwek.webp" width="126" height="126" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/avenue.webp" width="126" height="126" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logos/jalaram.webp" width="126" height="126" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning & installation</small></span></div></div></div>
       </div>
     </div>
   </section>
@@ -506,7 +572,7 @@ footer nav a:hover{color:#fff}
 <footer>
   <div class="wrap">
     <div>
-      <div class="f-brand"><img src="assets/images/logo/medware_logo.png" alt="MedWare Solutions Limited"></div>
+      <div class="f-brand"><img src="assets/images/brand/medware-logo.webp" width="376" height="160" alt="MedWare Solutions Limited" loading="lazy"></div>
       <p>Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
     </div>
     <nav aria-label="Footer">
