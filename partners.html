@@ -227,127 +227,127 @@ footer nav a:hover{color:#fff}
 <link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
-<?php include 'partials/header.php'; ?>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Medware Solutions home">
+      <img class="brand-logo" src="assets/images/logo/medware_logo.png" alt="MedWare Solutions Limited">
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="menu">
+      <a href="index.html">Home</a>
+      <div class="nav-item">
+        <a href="products.html">Products</a>
+        <div class="dropdown">
+          <a href="healthcare-ict.html">Healthcare ICT</a>
+          <a href="medical-gas-systems.html">Medical Gas Systems</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services.html">Services</a>
+        <div class="dropdown">
+          <a href="services.html#infrastructure">Healthcare Infrastructure Development</a>
+          <a href="services.html#biomedical">Biomedical Engineering Services</a>
+          <a href="services.html#ict">Healthcare ICT</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="projects.html#infrastructure">Healthcare Infrastructure Development</a>
+          <a href="projects.html#biomedical">Biomedical Engineering</a>
+          <a href="projects.html#ict">Healthcare ICT</a>
+        </div>
+      </div>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="contact.html">Request a consultation</a>
+    </nav>
+  </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll('.links > a, .links .nav-item > a');
+        
+        function updateActiveLink() {
+            links.forEach(l => l.classList.remove('active'));
+            
+            let path = window.location.pathname.split('/').pop().replace('.html', '');
+            if (path === '' || path === 'www.medwaresolutions.com') path = 'index'; // Handle root
+            const hash = window.location.hash;
+            
+            let activeSet = false;
+
+            // 1. Check exact matches with hashes (e.g., index#about)
+            if (hash) {
+                const exactHashMatch = Array.from(links).find(l => l.getAttribute('href') === (path + hash) || l.getAttribute('href') === ('./' + hash) || l.getAttribute('href') === ('index' + hash));
+                if (exactHashMatch) {
+                    exactHashMatch.classList.add('active');
+                    activeSet = true;
+                }
+            }
+
+            // 2. Check path categories if no hash matched
+            if (!activeSet) {
+                if (['products', 'healthcare-ict', 'medical-gas-systems', 'medical-gas-pipeline-components', 'vacuum-medical-air-plants', 'oxygen-generating-plants', 'pneumatic-tube-systems', 'fire-alarm-systems', 'queue-management-kiosks', 'bms-hardware', 'medware-cmms', 'visocall-ip-nurse-call'].includes(path)) {
+                    const prodLink = Array.from(links).find(l => l.getAttribute('href') === 'products');
+                    if (prodLink) prodLink.classList.add('active');
+                } else if (path.includes('project')) {
+                    const projLink = Array.from(links).find(l => l.getAttribute('href') === 'projects');
+                    if (projLink) projLink.classList.add('active');
+                } else if (path.includes('blog')) {
+                    const blogLink = Array.from(links).find(l => l.getAttribute('href') === 'blog');
+                    if (blogLink) blogLink.classList.add('active');
+                } else if (path.includes('service')) {
+                    const servLink = Array.from(links).find(l => l.getAttribute('href') === 'services');
+                    if (servLink) servLink.classList.add('active');
+                } else if (path === 'contact') {
+                    const cLink = Array.from(links).find(l => l.getAttribute('href') === 'contact');
+                    if (cLink) cLink.classList.add('active');
+                } else if (path === 'about') {
+                    const aLink = Array.from(links).find(l => l.getAttribute('href') === 'about');
+                    if (aLink) aLink.classList.add('active');
+                } else if (path === 'partners') {
+                    const pLink = Array.from(links).find(l => l.getAttribute('href') === 'partners');
+                    if (pLink) pLink.classList.add('active');
+                } else if (path === 'index') {
+                    const homeLink = Array.from(links).find(l => l.getAttribute('href') === './' || l.getAttribute('href') === 'index');
+                    if (homeLink) homeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Run on page load
+        updateActiveLink();
+
+        // Update when user clicks an anchor link within the same page
+        window.addEventListener('hashchange', updateActiveLink);
+        
+        // Also update immediately on click for instant feedback
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href').includes('#')) {
+                    setTimeout(updateActiveLink, 50); // allow hash to update
+                }
+            });
+        });
+    });
+    </script>
+</header>
+
+
+
+
+
+
+
 
 <main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-top reveal">
-        <span class="kicker">Healthcare Infrastructure Development · Biomedical Engineering Services · Healthcare ICT</span>
-        <h1>Healthcare projects delivered with <em>precision.</em></h1>
-        <p class="lede">MedWare Solutions is a biomedical engineering service provider driven by innovation and a dynamic approach. Our versatile team delivers even the most demanding healthcare projects throughout Africa — using the latest medical technologies, modern design ideas and international best standards to make your project succeed in the most economical way possible.</p>
-        <div class="hero-cta">
-          <a class="btn" href="#contact">Talk to our team</a>
-          <a class="btn ghost" href="projects.php">See our projects</a>
-        </div>
-      </div>
-
-      <div class="hero-meta">
-        <div class="reveal"><span>Track record</span><strong>93 facilities equipped under one Global Fund project</strong></div>
-        <div class="reveal"><span>Approach</span><strong>Design → procure → install → commission → maintain</strong></div>
-        <div class="reveal"><span>Trusted by</span><strong>The Nairobi Hospital, KUTRRH, Tenwek, Amref &amp; more</strong></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="kicker">Services</span>
-        <h2>Three disciplines. <em>One accountable partner.</em></h2>
-        <p>From the plant room to the patient bedside — durable medical technology and infrastructure that empowers hospitals and saves lives.</p>
-        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="chip more" href="services.php">Explore all services →</a>
-          <a class="chip" href="products.php">Browse product catalog →</a>
-        </div>
-      </div>
-
-      <article class="svc reveal" id="svc-infrastructure" data-href="services.php#infrastructure" tabindex="0" role="link" aria-label="View Healthcare Infrastructure Development on the services page">
-        <div class="svc-media"><img src="assets/images/modular-theatre.jpg" alt="Modular operating theatre installation" loading="lazy"></div>
-        <div class="svc-top"><h3>Healthcare Infrastructure Development</h3><span class="num">1.0</span></div>
-        <p>Design, installation, commissioning and maintenance of the critical building systems modern hospitals depend on. Our medical gas work spans station sources, manifolds, pipelines, alarms, bed head units and terminal units — engineered to ISO 7396‑1 so supply is continuous, contamination-free and life-safe.</p>
-        <ul class="svc-list">
-          <li>Hospital HVAC systems</li>
-          <li>Medical gas systems</li>
-          <li>Modular operating theatres</li>
-          <li>Imaging radiation protection</li>
-          <li>Pneumatic tube systems</li>
-          <li>Pendants &amp; bed head units</li>
-          <li>Handrails &amp; support bars</li>
-        </ul>
-        <p class="partners"><b>Manufacturer partners:</b> STM sistemi tecnologie (Italy) · Lawton Tubes (UK) · Precision UK · Busch Vacuum (Germany) · Foxolution (South Africa) · Sumetzberger (Austria) · TLV Healthcare (France) · ATA Medica · ClinicAir · Agora Climate Control</p>
-        <div class="proj-preview">
-          <span class="kicker">Completed projects</span>
-          <a class="chip" href="projects.php#amref">Amref Health Africa — 93 facilities</a>
-          <a class="chip" href="projects.php#nairobi-hospital">The Nairobi Hospital</a>
-          <a class="chip" href="projects.php#kutrrh">KUTRRH</a>
-          <a class="chip" href="projects.php#eaki">East Africa Kidney Institute</a>
-          <a class="chip more" href="projects.php#infrastructure">View projects →</a>
-        </div>
-      </article>
-
-      <article class="svc reveal" id="svc-biomedical" data-href="services.php#biomedical" tabindex="0" role="link" aria-label="View Biomedical Engineering Services on the services page">
-        <div class="svc-media"><img src="assets/images/repairs.jpeg" alt="Biomedical engineer repairing hospital equipment" loading="lazy"></div>
-        <div class="svc-top"><h3>Biomedical Engineering Services</h3><span class="num">2.0</span></div>
-        <p>Certified biomedical engineers providing on-site and depot services for imaging systems, patient monitors, ventilators and surgical instruments — with prompt diagnostics, calibration and preventive maintenance that minimize downtime and keep you compliant with ISO and FDA standards.</p>
-        <ul class="svc-list">
-          <li>Medical equipment repair &amp; maintenance</li>
-          <li>Equipment calibration &amp; assessments</li>
-          <li>Biomedical engineer placement</li>
-          <li>Accessories &amp; spare parts supply</li>
-          <li>Equipment planning &amp; budgeting</li>
-        </ul>
-        <p class="partners"><b>Supply chain:</b> genuine, OEM-compatible components sourced from trusted manufacturers across Europe, Asia and the Americas — from ventilator filters and ultrasound probes to defibrillator batteries and surgical instrument parts.</p>
-        <div class="proj-preview">
-          <span class="kicker">Completed projects</span>
-          <a class="chip" href="projects.php#jalaram">Jalaram Medical Services</a>
-          <a class="chip more" href="projects.php#biomedical">View projects →</a>
-        </div>
-      </article>
-
-      <article class="svc reveal" id="svc-ict" data-href="services.php#ict" tabindex="0" role="link" aria-label="View Healthcare ICT on the services page">
-        <div class="svc-media"><img src="assets/images/nursecall.jpg" alt="Visocall IP nurse call panel" loading="lazy"></div>
-        <div class="svc-top"><h3>Healthcare ICT</h3><span class="num">3.0</span></div>
-        <p>Intelligent building and communication systems that connect patients, clinicians and facilities — led by the Visocall IP nurse call platform by Schrack Seconet, a fully digital system integrating voice, data and alarm functions into one unified network.</p>
-        <ul class="svc-list">
-          <li>IP nurse call systems</li>
-          <li>Building management systems (BMS)</li>
-          <li>Queue management systems</li>
-          <li>Fire alarm systems (EN 54 compliant)</li>
-          <li>Computerized maintenance management software (CMMS)</li>
-        </ul>
-        <p class="partners"><b>Technology partners:</b> Schrack Seconet (nurse call &amp; fire alarms) · Schneider Electric (BMS) · Dnake (queue management) · MedWare Software Department (CMMS)</p>
-        <div class="proj-preview">
-          <span class="kicker">Completed projects</span>
-          <a class="chip" href="projects.php#tenwek">Tenwek Cardiothoracic Centre — 160 beds</a>
-          <a class="chip" href="projects.php#avenue">Avenue Healthcare Parklands — 160 beds</a>
-          <a class="chip more" href="projects.php#ict">View projects →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- STANDARDS STRIP -->
-  <div class="strip">
-    <div class="wrap">
-      <span class="kicker">Engineered to standard</span>
-      <ul>
-        <li>ISO 7396‑1 medical gas</li>
-        <li>ISO 13485 / ISO 17025</li>
-        <li>HTM 02‑01</li>
-        <li>EN 54 fire safety</li>
-        <li>FDA-aligned calibration</li>
-      </ul>
-    </div>
-  </div>
-
-
-  <!-- PARTNERS -->
-  <section id="partners">
+<section id="partners">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="kicker">Our network</span>
@@ -364,103 +364,32 @@ footer nav a:hover{color:#fff}
       </div>
     </div>
   </section>
-
-
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="kicker">About Us</span>
-        <h2>Company <em>overview</em></h2>
-      </div>
-      <p class="overview reveal">Our commitment to precision and our adaptability in meeting client needs have established us as <b>the most dependable biomedical engineering service provider in Kenya</b>. Well-defined project management procedures ensure professional conduct, comprehensive record-keeping and on-time project completion — ensuring efficient performance of hospital equipment, minimizing interruptions, and expertly managing technology to improve healthcare.</p>
-
-      <div class="about-grid">
-        <div class="mv mission reveal">
-          <span class="kicker">Our mission</span>
-          <p>Become a leading biomedical equipment and services provider in the region by proactively adapting to the evolving healthcare landscape — prioritizing top-quality products, high-integrity professionals and strong partnerships, on the way to market leadership in healthcare technology solutions.</p>
-        </div>
-        <div class="mv vision reveal">
-          <span class="kicker">Our vision</span>
-          <p>To be the leading and most trusted provider of biomedical engineering solutions in the region — driving excellence in healthcare delivery and contributing to healthier, better lives.</p>
-        </div>
-      </div>
-
-      <ul class="why">
-        <li class="reveal"><h4>Unique qualifications</h4><p>Deep knowledge of healthcare infrastructure and biomedical engineering.</p></li>
-        <li class="reveal"><h4>Quality and reliability</h4><p>Reputable manufacturers, with maintenance and reliability assurance.</p></li>
-        <li class="reveal"><h4>Specialized expertise</h4><p>Best global practices with local expertise and tailored solutions.</p></li>
-        <li class="reveal"><h4>Customer-centric approach</h4><p>Personalized attention, ongoing support and proven success with positive client testimonials.</p></li>
-        <li class="reveal"><h4>Comprehensive range of services</h4><p>Streamlined integrations and end-to-end solutions incorporating cutting-edge technologies.</p></li>
-        <li class="reveal"><h4>Regulatory compliance</h4><p>Meeting industry standards and regulations at every stage.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact-lede reveal">
-        <span class="kicker">Contact</span>
-        <h2>Planning a new facility, <em>or upgrading one?</em></h2>
-        <p>Our team is ready to support you with expert advice and turnkey infrastructure solutions. Reach out — we'll get back to you as soon as possible.</p>
-        <a class="btn" href="mailto:info@medwaresol.com">Email info@medwaresol.com</a>
-      </div>
-      <div class="c-card c-form reveal">
-        <h3>Send us a message</h3>
-        <form id="contact-form">
-          <div class="c-form-row">
-            <div class="c-form-field">
-              <label for="cf-name">Full name</label>
-              <input type="text" id="cf-name" name="name" required="">
-            </div>
-            <div class="c-form-field">
-              <label for="cf-email">Email address</label>
-              <input type="email" id="cf-email" name="email" required="">
-            </div>
-            <div class="c-form-field">
-              <label for="cf-phone">Phone (optional)</label>
-              <input type="tel" id="cf-phone" name="phone">
-            </div>
-          </div>
-          <div class="c-form-field">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" required=""></textarea>
-          </div>
-          <button class="btn" type="submit">Send message</button>
-        </form>
-      </div>
-      <div class="contact-grid">
-        <div class="map-embed reveal">
-          <iframe src="https://www.google.com/maps?q=-1.2612837,36.8215773&amp;z=17&amp;output=embed" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Medware Solutions Ltd location on Google Maps"></iframe>
-        </div>
-        <div class="c-card reveal">
-          <div class="c-field">
-            <span class="kicker">Address</span>
-            <p>2nd Floor, Doctors Park,<br>3rd Parklands Avenue, Nairobi, Kenya</p>
-          </div>
-          <div class="c-field">
-            <span class="kicker">Phone</span>
-            <p><a href="tel:+254735888323">+254 (0) 735 888 323</a><br>
-            <a href="tel:+254714363333">+254 (0) 714 363 333</a></p>
-          </div>
-          <div class="c-field">
-            <span class="kicker">Opening hours</span>
-            <table class="hours">
-              <tbody><tr><td>Monday – Friday</td><td>8:30 am – 5:00 pm</td></tr>
-              <tr><td>Saturday</td><td>9:00 am – 1:00 pm</td></tr>
-              <tr><td>Sunday</td><td>Closed</td></tr>
-            </tbody></table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<?php include 'partials/footer.php'; ?>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand"><img src="assets/images/logo/medware_logo.png" alt="MedWare Solutions Limited"></div>
+      <p>Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+<div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+
+
+
+
+
 
 <script src="assets/js/motion.js" defer=""></script>
 <script>
@@ -478,3 +407,5 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
 
 
 </body></html>
+
+

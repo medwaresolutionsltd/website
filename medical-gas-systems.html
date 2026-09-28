@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Medical Gas Systems — Medware Solutions Ltd</title>
 <meta name="description" content="Medical gas system equipment from Medware Solutions: pipeline components, vacuum and medical air plants, oxygen generating plants and pneumatic tube systems for hospitals across Kenya and East Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#1B75BC;
@@ -122,7 +120,6 @@ footer nav a:hover{color:#fff}
 <link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
-
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
 <header>
@@ -136,7 +133,7 @@ footer nav a:hover{color:#fff}
     <nav class="links" id="menu">
       <a href="index.html">Home</a>
       <div class="nav-item">
-        <a href="products.html" class="active">Products</a>
+        <a href="products.html">Products</a>
         <div class="dropdown">
           <a href="healthcare-ict.html">Healthcare ICT</a>
           <a href="medical-gas-systems.html">Medical Gas Systems</a>
@@ -158,13 +155,89 @@ footer nav a:hover{color:#fff}
           <a href="projects.html#ict">Healthcare ICT</a>
         </div>
       </div>
-      <a href="index.html#partners">Partners</a>
-      <a href="index.html#about">About Us</a>
-      <a href="index.html#contact">Contact</a>
-      <a class="btn" href="index.html#contact">Request a consultation</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="contact.html">Request a consultation</a>
     </nav>
   </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll('.links > a, .links .nav-item > a');
+        
+        function updateActiveLink() {
+            links.forEach(l => l.classList.remove('active'));
+            
+            let path = window.location.pathname.split('/').pop().replace('.html', '');
+            if (path === '' || path === 'www.medwaresolutions.com') path = 'index'; // Handle root
+            const hash = window.location.hash;
+            
+            let activeSet = false;
+
+            // 1. Check exact matches with hashes (e.g., index#about)
+            if (hash) {
+                const exactHashMatch = Array.from(links).find(l => l.getAttribute('href') === (path + hash) || l.getAttribute('href') === ('./' + hash) || l.getAttribute('href') === ('index' + hash));
+                if (exactHashMatch) {
+                    exactHashMatch.classList.add('active');
+                    activeSet = true;
+                }
+            }
+
+            // 2. Check path categories if no hash matched
+            if (!activeSet) {
+                if (['products', 'healthcare-ict', 'medical-gas-systems', 'medical-gas-pipeline-components', 'vacuum-medical-air-plants', 'oxygen-generating-plants', 'pneumatic-tube-systems', 'fire-alarm-systems', 'queue-management-kiosks', 'bms-hardware', 'medware-cmms', 'visocall-ip-nurse-call'].includes(path)) {
+                    const prodLink = Array.from(links).find(l => l.getAttribute('href') === 'products');
+                    if (prodLink) prodLink.classList.add('active');
+                } else if (path.includes('project')) {
+                    const projLink = Array.from(links).find(l => l.getAttribute('href') === 'projects');
+                    if (projLink) projLink.classList.add('active');
+                } else if (path.includes('blog')) {
+                    const blogLink = Array.from(links).find(l => l.getAttribute('href') === 'blog');
+                    if (blogLink) blogLink.classList.add('active');
+                } else if (path.includes('service')) {
+                    const servLink = Array.from(links).find(l => l.getAttribute('href') === 'services');
+                    if (servLink) servLink.classList.add('active');
+                } else if (path === 'contact') {
+                    const cLink = Array.from(links).find(l => l.getAttribute('href') === 'contact');
+                    if (cLink) cLink.classList.add('active');
+                } else if (path === 'about') {
+                    const aLink = Array.from(links).find(l => l.getAttribute('href') === 'about');
+                    if (aLink) aLink.classList.add('active');
+                } else if (path === 'partners') {
+                    const pLink = Array.from(links).find(l => l.getAttribute('href') === 'partners');
+                    if (pLink) pLink.classList.add('active');
+                } else if (path === 'index') {
+                    const homeLink = Array.from(links).find(l => l.getAttribute('href') === './' || l.getAttribute('href') === 'index');
+                    if (homeLink) homeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Run on page load
+        updateActiveLink();
+
+        // Update when user clicks an anchor link within the same page
+        window.addEventListener('hashchange', updateActiveLink);
+        
+        // Also update immediately on click for instant feedback
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href').includes('#')) {
+                    setTimeout(updateActiveLink, 50); // allow hash to update
+                }
+            });
+        });
+    });
+    </script>
 </header>
+
+
+
+
+
+
+
 
 <main id="top">
 
@@ -197,22 +270,10 @@ footer nav a:hover{color:#fff}
         <h2>Equipment in this product line</h2>
       </div>
       <div class="item-list">
-        <div class="item reveal">
-          <h4>Medical Gas Pipeline Components</h4>
-          <p>Manifolds, pipelines, area valve service units and terminal units engineered to ISO 7396‑1.</p>
-        </div>
-        <div class="item reveal">
-          <h4>Vacuum &amp; Medical Air Plants</h4>
-          <p>Busch Vacuum duplex and triplex plants delivering reliable suction and breathing air with redundancy.</p>
-        </div>
-        <div class="item reveal">
-          <h4>Oxygen Generating Plants</h4>
-          <p>On-site PSA oxygen generation for an independent, continuous medical oxygen supply.</p>
-        </div>
-        <div class="item reveal">
-          <h4>Pneumatic Tube Systems</h4>
-          <p>Sumetzberger station-to-station networks for samples, medication and documents.</p>
-        </div>
+        <a class="item item-link reveal" href="medical-gas-pipeline-components"><h4>Medical Gas Pipeline Components</h4><p>Manifolds, pipelines, area valve service units and terminal units engineered to ISO 7396-1.</p><span class="item-cta">Explore products &rarr;</span></a>
+        <a class="item item-link reveal" href="vacuum-medical-air-plants"><h4>Vacuum &amp; Medical Air Plants</h4><p>Busch Vacuum duplex and triplex plants delivering reliable suction and breathing air with redundancy.</p><span class="item-cta">Explore plants &rarr;</span></a>
+        <a class="item item-link reveal" href="oxygen-generating-plants"><h4>Oxygen Generating Plants</h4><p>On-site PSA oxygen generation for an independent, continuous medical oxygen supply.</p><span class="item-cta">Explore generators &rarr;</span></a>
+        <a class="item item-link reveal" href="pneumatic-tube-systems"><h4>Pneumatic Tube Systems</h4><p>Sumetzberger station-to-station networks for samples, medication and documents.</p><span class="item-cta">Explore systems &rarr;</span></a>
       </div>
     </div>
   </section>
@@ -241,14 +302,25 @@ footer nav a:hover{color:#fff}
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="index.html#partners">Partners</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
-<script src="assets/js/motion.js" defer></script>
-</body>
-</html>
+
+
+
+
+
+<script src="assets/js/motion.js" defer=""></script>
+
+
+</body></html>
+
+
+
+

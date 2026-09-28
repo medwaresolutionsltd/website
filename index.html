@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medware Solutions Ltd — Healthcare Infrastructure Development, Biomedical Engineering & Healthcare ICT</title>
+<title>Medware Solutions Ltd — Healthcare Infrastructure Development, Biomedical Engineering &amp; Healthcare ICT</title>
 <meta name="description" content="Medware Solutions Ltd delivers healthcare infrastructure development, biomedical engineering services and healthcare ICT for hospitals across Kenya and East Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#1B75BC;         /* Medware primary blue */
@@ -67,7 +65,7 @@ nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size
 nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);border-bottom:0}
 
 /* hero */
-.hero{padding:130px 0 76px;position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,rgba(40,49,110,.86),rgba(27,117,188,.8)),url('assets/images/hero_1.jpeg') center/cover no-repeat}
+.hero{padding:130px 0 76px;position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%), url('assets/images/hero_1.jpeg') center/cover no-repeat}
 .hero .wrap{position:relative}
 .hero-top{max-width:760px}
 .hero h1{color:#fff;font-size:clamp(2.2rem,5.2vw,3.8rem);font-weight:800;letter-spacing:-.02em;max-width:16ch}
@@ -229,7 +227,6 @@ footer nav a:hover{color:#fff}
 <link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
-
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
 <header>
@@ -241,7 +238,7 @@ footer nav a:hover{color:#fff}
       <span></span><span></span><span></span>
     </button>
     <nav class="links" id="menu">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <div class="nav-item">
         <a href="products.html">Products</a>
         <div class="dropdown">
@@ -265,13 +262,89 @@ footer nav a:hover{color:#fff}
           <a href="projects.html#ict">Healthcare ICT</a>
         </div>
       </div>
-      <a href="#partners">Partners</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#contact">Request a consultation</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="contact.html">Request a consultation</a>
     </nav>
   </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll('.links > a, .links .nav-item > a');
+        
+        function updateActiveLink() {
+            links.forEach(l => l.classList.remove('active'));
+            
+            let path = window.location.pathname.split('/').pop().replace('.html', '');
+            if (path === '' || path === 'www.medwaresolutions.com') path = 'index'; // Handle root
+            const hash = window.location.hash;
+            
+            let activeSet = false;
+
+            // 1. Check exact matches with hashes (e.g., index#about)
+            if (hash) {
+                const exactHashMatch = Array.from(links).find(l => l.getAttribute('href') === (path + hash) || l.getAttribute('href') === ('./' + hash) || l.getAttribute('href') === ('index' + hash));
+                if (exactHashMatch) {
+                    exactHashMatch.classList.add('active');
+                    activeSet = true;
+                }
+            }
+
+            // 2. Check path categories if no hash matched
+            if (!activeSet) {
+                if (['products', 'healthcare-ict', 'medical-gas-systems', 'medical-gas-pipeline-components', 'vacuum-medical-air-plants', 'oxygen-generating-plants', 'pneumatic-tube-systems', 'fire-alarm-systems', 'queue-management-kiosks', 'bms-hardware', 'medware-cmms', 'visocall-ip-nurse-call'].includes(path)) {
+                    const prodLink = Array.from(links).find(l => l.getAttribute('href') === 'products');
+                    if (prodLink) prodLink.classList.add('active');
+                } else if (path.includes('project')) {
+                    const projLink = Array.from(links).find(l => l.getAttribute('href') === 'projects');
+                    if (projLink) projLink.classList.add('active');
+                } else if (path.includes('blog')) {
+                    const blogLink = Array.from(links).find(l => l.getAttribute('href') === 'blog');
+                    if (blogLink) blogLink.classList.add('active');
+                } else if (path.includes('service')) {
+                    const servLink = Array.from(links).find(l => l.getAttribute('href') === 'services');
+                    if (servLink) servLink.classList.add('active');
+                } else if (path === 'contact') {
+                    const cLink = Array.from(links).find(l => l.getAttribute('href') === 'contact');
+                    if (cLink) cLink.classList.add('active');
+                } else if (path === 'about') {
+                    const aLink = Array.from(links).find(l => l.getAttribute('href') === 'about');
+                    if (aLink) aLink.classList.add('active');
+                } else if (path === 'partners') {
+                    const pLink = Array.from(links).find(l => l.getAttribute('href') === 'partners');
+                    if (pLink) pLink.classList.add('active');
+                } else if (path === 'index') {
+                    const homeLink = Array.from(links).find(l => l.getAttribute('href') === './' || l.getAttribute('href') === 'index');
+                    if (homeLink) homeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Run on page load
+        updateActiveLink();
+
+        // Update when user clicks an anchor link within the same page
+        window.addEventListener('hashchange', updateActiveLink);
+        
+        // Also update immediately on click for instant feedback
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href').includes('#')) {
+                    setTimeout(updateActiveLink, 50); // allow hash to update
+                }
+            });
+        });
+    });
+    </script>
 </header>
+
+
+
+
+
+
+
 
 <main id="top">
 
@@ -399,11 +472,11 @@ footer nav a:hover{color:#fff}
       </div>
       <div class="marquee-group reveal">
         <div class="marquee-label"><span class="kicker">Vendor partners</span></div>
-        <div class="marquee "><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logo/stm_sistemi_tecnologie_logo.jpeg" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/lawton_tubes_logo.jpg" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/precision_uk_logo.png" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/busch_logo.jpg" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps & compressors · Germany</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/foxolutions_logo.jpg" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/sumetzberger_logo.png" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/tlv_logo.jpg" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants & bed head units · France</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/schrack_logo.jpg" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call & fire alarms · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/schneider_electric_logo.png" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/dnake_logo.png" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/ata_medica_logo.jpg" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/agora_logo.png" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/stm_sistemi_tecnologie_logo.jpeg" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/lawton_tubes_logo.jpg" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/precision_uk_logo.png" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/busch_logo.jpg" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps & compressors · Germany</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/foxolutions_logo.jpg" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/sumetzberger_logo.png" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/tlv_logo.jpg" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants & bed head units · France</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/schrack_logo.jpg" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call & fire alarms · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/schneider_electric_logo.png" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/dnake_logo.png" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/ata_medica_logo.jpg" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/agora_logo.png" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div></div></div>
+        <div class="marquee "><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logo/stm_sistemi_tecnologie_logo.jpeg" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/lawton_tubes_logo.jpg" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/precision_uk_logo.png" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/busch_logo.jpg" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps &amp; compressors · Germany</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/foxolutions_logo.jpg" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/sumetzberger_logo.png" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/tlv_logo.jpg" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants &amp; bed head units · France</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/schrack_logo.jpg" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call &amp; fire alarms · Austria</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/schneider_electric_logo.png" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/dnake_logo.png" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/ata_medica_logo.jpg" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/agora_logo.png" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/stm_sistemi_tecnologie_logo.jpeg" alt="STM sistemi tecnologie logo"><span><b>STM sistemi tecnologie</b><small>Medical gas systems · Italy</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/lawton_tubes_logo.jpg" alt="Lawton Tubes logo"><span><b>Lawton Tubes</b><small>Medical gas copper pipeline · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/precision_uk_logo.png" alt="Precision UK logo"><span><b>Precision UK</b><small>Gas pipeline systems · UK</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/busch_logo.jpg" alt="Busch Vacuum logo"><span><b>Busch Vacuum</b><small>Vacuum pumps &amp; compressors · Germany</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/foxolutions_logo.jpg" alt="Foxolution logo"><span><b>Foxolution</b><small>Gas pipeline systems · South Africa</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/sumetzberger_logo.png" alt="Sumetzberger logo"><span><b>Sumetzberger</b><small>Pneumatic tube systems · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/tlv_logo.jpg" alt="TLV Healthcare logo"><span><b>TLV Healthcare</b><small>Pendants &amp; bed head units · France</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/schrack_logo.jpg" alt="Schrack Seconet logo"><span><b>Schrack Seconet</b><small>Nurse call &amp; fire alarms · Austria</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/schneider_electric_logo.png" alt="Schneider Electric logo"><span><b>Schneider Electric</b><small>Building management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/dnake_logo.png" alt="Dnake logo"><span><b>Dnake</b><small>Queue management systems</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/ata_medica_logo.jpg" alt="ATA Medica logo"><span><b>ATA Medica</b><small>Hospital HVAC</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/agora_logo.png" alt="Agora Climate Control logo"><span><b>Agora Climate Control</b><small>Air conditioning systems</small></span></div></div></div>
       </div>
       <div class="marquee-group reveal" style="margin-bottom:0">
         <div class="marquee-label"><span class="kicker">Client partners</span></div>
-        <div class="marquee slow"><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logo/amref_logo.png" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/nairobi_hospital_logo.png" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants & nurse call</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/kutrrh_logo.png" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS & shielding</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/tenwek_logo.jpg" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/avenue_logo.png" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/jalaram_logo.png" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning & installation</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/amref_logo.png" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/nairobi_hospital_logo.png" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants & nurse call</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/kutrrh_logo.png" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS & shielding</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/tenwek_logo.jpg" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/avenue_logo.png" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/jalaram_logo.png" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning & installation</small></span></div></div></div>
+        <div class="marquee slow"><div class="marquee-track"><div class="logo-badge"><img class="tile" src="assets/images/logo/amref_logo.png" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/nairobi_hospital_logo.png" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants &amp; nurse call</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/kutrrh_logo.png" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS &amp; shielding</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/tenwek_logo.jpg" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/avenue_logo.png" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge"><img class="tile" src="assets/images/logo/jalaram_logo.png" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning &amp; installation</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/amref_logo.png" alt="Amref Health Africa logo"><span><b>Amref Health Africa</b><small>93 facilities · Global Fund project</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/nairobi_hospital_logo.png" alt="The Nairobi Hospital logo"><span><b>The Nairobi Hospital</b><small>Gas, pendants &amp; nurse call</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/kutrrh_logo.png" alt="KUTRRH logo"><span><b>KUTRRH</b><small>Brachytherapy, BMS &amp; shielding</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/tenwek_logo.jpg" alt="Tenwek Hospital logo"><span><b>Tenwek Hospital</b><small>160-bed Visocall IP · Bomet</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/avenue_logo.png" alt="Avenue Healthcare logo"><span><b>Avenue Healthcare Parklands</b><small>160-bed Visocall IP · Nairobi</small></span></div><div class="logo-badge dup" aria-hidden="true"><img class="tile" src="assets/images/logo/jalaram_logo.png" alt="Jalaram Medical Services logo"><span><b>Jalaram Medical Services</b><small>Turnkey planning &amp; installation</small></span></div></div></div>
       </div>
     </div>
   </section>
@@ -456,11 +529,11 @@ footer nav a:hover{color:#fff}
           <div class="c-form-row">
             <div class="c-form-field">
               <label for="cf-name">Full name</label>
-              <input type="text" id="cf-name" name="name" required>
+              <input type="text" id="cf-name" name="name" required="">
             </div>
             <div class="c-form-field">
               <label for="cf-email">Email address</label>
-              <input type="email" id="cf-email" name="email" required>
+              <input type="email" id="cf-email" name="email" required="">
             </div>
             <div class="c-form-field">
               <label for="cf-phone">Phone (optional)</label>
@@ -469,14 +542,14 @@ footer nav a:hover{color:#fff}
           </div>
           <div class="c-form-field">
             <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" required></textarea>
+            <textarea id="cf-message" name="message" required=""></textarea>
           </div>
           <button class="btn" type="submit">Send message</button>
         </form>
       </div>
       <div class="contact-grid">
         <div class="map-embed reveal">
-          <iframe src="https://www.google.com/maps?q=-1.2612837,36.8215773&amp;z=17&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Medware Solutions Ltd location on Google Maps"></iframe>
+          <iframe src="https://www.google.com/maps?q=-1.2612837,36.8215773&amp;z=17&amp;output=embed" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Medware Solutions Ltd location on Google Maps"></iframe>
         </div>
         <div class="c-card reveal">
           <div class="c-field">
@@ -491,10 +564,10 @@ footer nav a:hover{color:#fff}
           <div class="c-field">
             <span class="kicker">Opening hours</span>
             <table class="hours">
-              <tr><td>Monday – Friday</td><td>8:30 am – 5:00 pm</td></tr>
+              <tbody><tr><td>Monday – Friday</td><td>8:30 am – 5:00 pm</td></tr>
               <tr><td>Saturday</td><td>9:00 am – 1:00 pm</td></tr>
               <tr><td>Sunday</td><td>Closed</td></tr>
-            </table>
+            </tbody></table>
           </div>
         </div>
       </div>
@@ -513,15 +586,21 @@ footer nav a:hover{color:#fff}
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="#partners">Partners</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
-<script src="assets/js/motion.js" defer></script>
+
+
+
+
+
+<script src="assets/js/motion.js" defer=""></script>
 <script>
 document.getElementById('contact-form').addEventListener('submit',e=>{
   e.preventDefault();
@@ -534,5 +613,10 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
   window.location.href=`mailto:info@medwaresol.com?subject=${subject}&body=${body}`;
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
+
+
+
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="out">Loading...</div>
+<script>
+(async () => {
+    try {
+        const response = await fetch('blog-data.json');
+        const data = await response.json();
+        document.getElementById('out').innerHTML = data[0].title;
+    } catch(e) {
+        document.getElementById('out').innerHTML = "ERROR: " + e.message;
+    }
+})();
+</script>
+</body>
+</html>
+

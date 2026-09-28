@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visocall IP Nurse Call Devices — Medware Solutions Ltd</title>
 <meta name="description" content="Schrack Seconet Visocall IP nurse call devices supplied by Medware Solutions: system switches, staff terminals, patient terminals, push buttons and light modules for hospitals across Kenya and East Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#1B75BC;
@@ -133,7 +131,6 @@ footer nav a:hover{color:#fff}
 <link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
-
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
 <header>
@@ -147,7 +144,7 @@ footer nav a:hover{color:#fff}
     <nav class="links" id="menu">
       <a href="index.html">Home</a>
       <div class="nav-item">
-        <a href="products.html" class="active">Products</a>
+        <a href="products.html">Products</a>
         <div class="dropdown">
           <a href="healthcare-ict.html">Healthcare ICT</a>
           <a href="medical-gas-systems.html">Medical Gas Systems</a>
@@ -169,13 +166,89 @@ footer nav a:hover{color:#fff}
           <a href="projects.html#ict">Healthcare ICT</a>
         </div>
       </div>
-      <a href="index.html#partners">Partners</a>
-      <a href="index.html#about">About Us</a>
-      <a href="index.html#contact">Contact</a>
-      <a class="btn" href="index.html#contact">Request a consultation</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="contact.html">Request a consultation</a>
     </nav>
   </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll('.links > a, .links .nav-item > a');
+        
+        function updateActiveLink() {
+            links.forEach(l => l.classList.remove('active'));
+            
+            let path = window.location.pathname.split('/').pop().replace('.html', '');
+            if (path === '' || path === 'www.medwaresolutions.com') path = 'index'; // Handle root
+            const hash = window.location.hash;
+            
+            let activeSet = false;
+
+            // 1. Check exact matches with hashes (e.g., index#about)
+            if (hash) {
+                const exactHashMatch = Array.from(links).find(l => l.getAttribute('href') === (path + hash) || l.getAttribute('href') === ('./' + hash) || l.getAttribute('href') === ('index' + hash));
+                if (exactHashMatch) {
+                    exactHashMatch.classList.add('active');
+                    activeSet = true;
+                }
+            }
+
+            // 2. Check path categories if no hash matched
+            if (!activeSet) {
+                if (['products', 'healthcare-ict', 'medical-gas-systems', 'medical-gas-pipeline-components', 'vacuum-medical-air-plants', 'oxygen-generating-plants', 'pneumatic-tube-systems', 'fire-alarm-systems', 'queue-management-kiosks', 'bms-hardware', 'medware-cmms', 'visocall-ip-nurse-call'].includes(path)) {
+                    const prodLink = Array.from(links).find(l => l.getAttribute('href') === 'products');
+                    if (prodLink) prodLink.classList.add('active');
+                } else if (path.includes('project')) {
+                    const projLink = Array.from(links).find(l => l.getAttribute('href') === 'projects');
+                    if (projLink) projLink.classList.add('active');
+                } else if (path.includes('blog')) {
+                    const blogLink = Array.from(links).find(l => l.getAttribute('href') === 'blog');
+                    if (blogLink) blogLink.classList.add('active');
+                } else if (path.includes('service')) {
+                    const servLink = Array.from(links).find(l => l.getAttribute('href') === 'services');
+                    if (servLink) servLink.classList.add('active');
+                } else if (path === 'contact') {
+                    const cLink = Array.from(links).find(l => l.getAttribute('href') === 'contact');
+                    if (cLink) cLink.classList.add('active');
+                } else if (path === 'about') {
+                    const aLink = Array.from(links).find(l => l.getAttribute('href') === 'about');
+                    if (aLink) aLink.classList.add('active');
+                } else if (path === 'partners') {
+                    const pLink = Array.from(links).find(l => l.getAttribute('href') === 'partners');
+                    if (pLink) pLink.classList.add('active');
+                } else if (path === 'index') {
+                    const homeLink = Array.from(links).find(l => l.getAttribute('href') === './' || l.getAttribute('href') === 'index');
+                    if (homeLink) homeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Run on page load
+        updateActiveLink();
+
+        // Update when user clicks an anchor link within the same page
+        window.addEventListener('hashchange', updateActiveLink);
+        
+        // Also update immediately on click for instant feedback
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href').includes('#')) {
+                    setTimeout(updateActiveLink, 50); // allow hash to update
+                }
+            });
+        });
+    });
+    </script>
 </header>
+
+
+
+
+
+
+
 
 <main id="top">
 
@@ -186,7 +259,7 @@ footer nav a:hover{color:#fff}
       <h1>Visocall IP Nurse Call Devices</h1>
       <p>Schrack Seconet's IP-based nurse call platform — system switches, staff and patient terminals, push buttons and indicator lights that connect every bed, room and corridor into one call network.</p>
       <div class="auth-badge reveal">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4 6v6c0 5 3.4 8.7 8 9.5 4.6-.8 8-4.5 8-9.5V6l-8-3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5L15.5 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4 6v6c0 5 3.4 8.7 8 9.5 4.6-.8 8-4.5 8-9.5V6l-8-3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><path d="m8.5 12 2.5 2.5L15.5 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         <span>Medware Solutions is the only manufacturer-authorised Visocall IP partner in Kenya, serving the wider East Africa region.</span>
       </div>
     </div>
@@ -196,7 +269,7 @@ footer nav a:hover{color:#fff}
   <section>
     <div class="wrap">
       <div class="video-wrap reveal">
-        <iframe src="https://www.youtube.com/embed/Gy3u--78fYc" title="Visocall IP Nurse Call System overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Gy3u--78fYc" title="Visocall IP Nurse Call System overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
       </div>
       <p class="video-caption">Overview: how the Visocall IP nurse call system works.</p>
       <a class="backlink" href="healthcare-ict.html">← Back to Healthcare ICT</a>
@@ -336,14 +409,23 @@ footer nav a:hover{color:#fff}
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="index.html#partners">Partners</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
-<script src="assets/js/motion.js" defer></script>
-</body>
-</html>
+
+
+
+
+
+<script src="assets/js/motion.js" defer=""></script>
+
+
+</body></html>
+
+
