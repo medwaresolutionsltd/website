@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical Gas Systems — Medware Solutions Ltd</title>
-<meta name="description" content="Medical gas system equipment from Medware Solutions: pipeline components, vacuum and medical air plants, oxygen generating plants and pneumatic tube systems for hospitals across Kenya and East Africa.">
-<link rel="canonical" href="https://www.medwaresol.com/medical-gas-systems">
+<title>Vacuum & Medical Air Plants — Medware Solutions Ltd</title>
+<meta name="description" content="Schrack Seconet Visocall IP nurse call devices supplied by Medware Solutions: system switches, staff terminals, patient terminals, push buttons and light modules for hospitals across Kenya and East Africa.">
+<link rel="canonical" href="https://www.medwaresol.com/visocall-ip-nurse-call">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/images/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
@@ -13,9 +13,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Medware Solutions Ltd">
 <meta property="og:locale" content="en_KE">
-<meta property="og:title" content="Medical Gas Systems — Medware Solutions Ltd">
-<meta property="og:description" content="Medical gas system equipment from Medware Solutions: pipeline components, vacuum and medical air plants, oxygen generating plants and pneumatic tube systems for hospitals across Kenya and East Africa.">
-<meta property="og:url" content="https://www.medwaresol.com/medical-gas-systems.html">
+<meta property="og:title" content="Vacuum & Medical Air Plants — Medware Solutions Ltd">
+<meta property="og:description" content="Schrack Seconet Visocall IP nurse call devices supplied by Medware Solutions: system switches, staff terminals, patient terminals, push buttons and light modules for hospitals across Kenya and East Africa.">
+<meta property="og:url" content="https://www.medwaresol.com/visocall-ip-nurse-call.html">
 <meta property="og:image" content="https://www.medwaresol.com/assets/images/brand/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -111,16 +111,24 @@ footer nav a:hover{color:#fff}
 /* product detail page */
 .page-hero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:72px 0 56px}
 .page-hero .kicker{color:#9CC4E8;display:block;margin-bottom:12px}
-.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:20ch}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:24ch}
 .page-hero p{margin-top:14px;color:#D6E4F5;max-width:62ch}
+.auth-badge{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:11px 18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:999px;backdrop-filter:blur(6px);max-width:62ch}
+.auth-badge svg{flex:none;width:19px;height:19px;color:#9CC4E8}
+.auth-badge span{font-size:.88rem;font-weight:600;color:#fff;line-height:1.4}
 
-.product-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
-.product-intro img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
-.product-intro p{color:var(--grey);margin-top:14px}
+/* video */
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -28px rgba(15,90,153,.45);background:#000}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-caption{margin-top:14px;color:var(--grey);font-size:.9rem}
 
-.item-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;margin-top:16px}
-.item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-.item h4{font-size:1.02rem;font-weight:800}
+.item-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+.item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.item .i-media{aspect-ratio:4/3;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:18px}
+.item .i-media img{max-width:100%;max-height:100%;object-fit:contain}
+.item .i-body{padding:22px}
+.item .p-cat{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.item h4{font-size:1.02rem;font-weight:800;margin-top:6px}
 .item p{color:var(--grey);font-size:.9rem;margin-top:8px}
 
 .cta{background:var(--navy);color:#fff;padding:64px 0;text-align:center}
@@ -128,6 +136,9 @@ footer nav a:hover{color:#fff}
 .cta p{margin:14px auto 28px;color:#D6E4F5;max-width:52ch}
 .cta .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 
+@media (max-width:900px){
+  .item-list{grid-template-columns:repeat(2,1fr)}
+}
 @media (max-width:760px){
   nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
   nav.links.open{display:flex}
@@ -137,8 +148,15 @@ footer nav a:hover{color:#fff}
   .menu-btn{display:block}
   .page-hero{padding:52px 0 40px}
   section{padding:52px 0}
-  .product-intro{grid-template-columns:1fr}
+  .item-list{grid-template-columns:1fr}
 }
+/* Click-to-play: the YouTube player (~1 MB) only loads when the visitor presses play */
+.video-facade{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:#000;cursor:pointer}
+.video-facade img{width:100%;height:100%;object-fit:cover}
+.video-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:14px;background:rgba(33,33,33,.8);transition:background .2s}
+.video-play::after{content:"";position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+.video-facade:hover .video-play,.video-facade:focus-visible .video-play{background:#f00}
+.video-facade:focus-visible{outline:3px solid var(--sky);outline-offset:-3px}
 </style>
 <link rel="stylesheet" href="assets/css/motion.css">
 
@@ -210,53 +228,60 @@ nav.links .btn::after {display:none;}
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="wrap">
-      <span class="kicker">Products / Medical Gas Systems</span>
-      <h1>Medical Gas Systems</h1>
-      <p>Pipeline, plant and delivery equipment engineered to ISO 7396‑1 — bringing oxygen, medical air and vacuum reliably to every point of care, plus the pneumatic transport that moves samples and medication around the facility.</p>
+      <span class="kicker">Products / Medical Gas Systems / Vacuum & Medical Air Plants</span>
+      <h1>Vacuum & Medical Air Plants</h1>
+      <p>Busch Vacuum duplex and triplex plants delivering reliable suction and breathing air with redundancy.</p>
+      
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section>
-    <div class="wrap product-intro">
-      <img src="assets/images/products/medical-gas-systems.webp" width="1000" height="514" alt="Medical gas system equipment" loading="lazy">
-      <div>
-        <h2>What it is</h2>
-        <p>Medical Gas Systems cover the full pipeline from plant room to bedside: manifolds and terminal units, vacuum and medical air generation, on-site oxygen production, and pneumatic tube networks for fast internal transport. We supply proven equipment from Busch Vacuum and Sumetzberger, engineered and installed to ISO 7396‑1 for continuous, redundant supply.</p>
-        <a class="backlink" href="products">← Back to all products</a>
-      </div>
-    </div>
-  </section>
+  
 
-  <!-- WHAT'S INCLUDED -->
+  <!-- KEY PRODUCTS -->
   <section style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">What's included</span>
-        <h2>Equipment in this product line</h2>
+        <span class="kicker">Key components</span>
+        <h2>Core Vacuum & Medical Air Plants components</h2>
+        <p>Explore our reliable components designed for optimal performance.</p>
       </div>
       <div class="item-list">
-        <a class="item item-link reveal" href="medical-gas-pipeline">
-          <h4>Medical Gas Pipeline Components</h4>
-          <p>Manifolds, pipelines, area valve service units and terminal units engineered to ISO 7396‑1.</p>
-          <span class="item-cta">Explore devices →</span>
-        </a>
-        <a class="item item-link reveal" href="vacuum-medical-air">
-          <h4>Vacuum &amp; Medical Air Plants</h4>
-          <p>Busch Vacuum duplex and triplex plants delivering reliable suction and breathing air with redundancy.</p>
-          <span class="item-cta">Explore devices →</span>
-        </a>
-        <a class="item item-link reveal" href="oxygen-generating-plants">
-          <h4>Oxygen Generating Plants</h4>
-          <p>On-site PSA oxygen generation for an independent, continuous medical oxygen supply.</p>
-          <span class="item-cta">Explore devices →</span>
-        </a>
-        <a class="item item-link reveal" href="pneumatic-tube-systems">
-          <h4>Pneumatic Tube Systems</h4>
-          <p>Sumetzberger station-to-station networks for samples, medication and documents.</p>
-          <span class="item-cta">Explore devices →</span>
-        </a>
-      </div>
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/services/vacuum-air-plant.webp" alt="MINK Claw Pump" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Vacuum</span>
+            <h4>MINK Claw Pump</h4>
+            <p>Oil-free vacuum technology for medical use.</p>
+          </div>
+        </div>
+        
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/services/vacuum-air-plant.webp" alt="Scroll Compressor" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Compressor</span>
+            <h4>Scroll Compressor</h4>
+            <p>Oil-free medical air compressor.</p>
+          </div>
+        </div>
+        
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/services/vacuum-air-plant.webp" alt="Bacterial Filters" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Filtration</span>
+            <h4>Bacterial Filters</h4>
+            <p>High-efficiency filtration for breathing air.</p>
+          </div>
+        </div>
+        
+        <div class="item reveal">
+          <div class="i-media"><img src="assets/images/services/vacuum-air-plant.webp" alt="Plant Controller" loading="lazy"></div>
+          <div class="i-body">
+            <span class="p-cat">Control</span>
+            <h4>Plant Controller</h4>
+            <p>Redundant control system for duplex/triplex plants.</p>
+          </div>
+        </div>
+        </div>
     </div>
   </section>
 
@@ -264,9 +289,9 @@ nav.links .btn::after {display:none;}
   <div class="cta">
     <div class="wrap">
       <h2>Need it installed or maintained too?</h2>
-      <p>Every product in this line is backed by our own design, installation and biomedical engineering teams.</p>
+      <p>Every device in this range is backed by our own design, installation and biomedical engineering teams.</p>
       <div class="hero-cta">
-        <a class="btn" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Medical%20Gas%20Systems">Enquire about this product</a>
+        <a class="btn" href="mailto:info@medwaresol.com?subject=Product%20enquiry%3A%20Visocall%20IP%20Nurse%20Call%20Devices">Enquire about this product</a>
         <a class="btn ghost" href="index#contact">Talk to our team</a>
       </div>
     </div>
@@ -300,5 +325,17 @@ nav.links .btn::after {display:none;}
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
 <script src="assets/js/motion.js" defer></script>
+<script>
+document.querySelectorAll(".video-facade").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    var f=document.createElement("iframe");
+    f.src="https://www.youtube.com/embed/"+btn.dataset.video+"?autoplay=1";
+    f.title=btn.getAttribute("aria-label").replace("Play video: ","");
+    f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.allowFullscreen=true;
+    btn.replaceWith(f);
+  });
+});
+</script>
 </body>
 </html>

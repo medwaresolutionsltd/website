@@ -1,1 +1,9 @@
-ErrorDocument 404 /404.html
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /projects/website/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+ErrorDocument 404 /projects/website/404.html
