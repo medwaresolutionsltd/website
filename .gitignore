@@ -11,3 +11,6 @@ desktop.ini
 # Local notes / scratch
 *.log
 tmp/
+
+# Contact form test log (must never be published)
+local_emails.log

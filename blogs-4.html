@@ -3,20 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speeding Up Diagnostics with Pneumatic Tubes — Medware Solutions Ltd</title>
-<meta name="description" content="How Sumetzberger pneumatic tube networks transport lab samples securely and instantly.">
-<link rel="canonical" href="https://www.medwaresol.com/">
+<title>Blog & Insights (Page 4) — Medware Solutions Ltd</title>
+<meta name="description" content="Medware Solutions Ltd delivers healthcare infrastructure development, biomedical engineering services and healthcare ICT for hospitals across Kenya and East Africa.">
+<link rel="canonical" href="https://www.medwaresol.com/blogs-4.html">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/images/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
-<meta name="keywords" content="Pneumatic Tubes, Efficiency, Infrastructure">
 <meta name="theme-color" content="#1B75BC">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Medware Solutions Ltd">
 <meta property="og:locale" content="en_KE">
-<meta property="og:title" content="Medware Solutions Ltd — Healthcare Infrastructure Development, Biomedical Engineering &amp; Healthcare ICT">
+<meta property="og:title" content="Blog &amp; Insights (Page 4) — Medware Solutions Ltd">
 <meta property="og:description" content="Medware Solutions Ltd delivers healthcare infrastructure development, biomedical engineering services and healthcare ICT for hospitals across Kenya and East Africa.">
-<meta property="og:url" content="https://www.medwaresol.com/">
+<meta property="og:url" content="https://www.medwaresol.com/blogs-4.html">
 <meta property="og:image" content="https://www.medwaresol.com/assets/images/brand/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -313,20 +312,90 @@ nav.links .btn::after {display:none;}
   0%, 100% {transform: translateY(0);}
   50% {transform: translateY(-8px);}
 }
-.hero h1 {animation: bounceSoft 3s ease-in-out infinite;}
+.hero h1, .page-hero h1, .blogs-hero h1 {animation: bounceSoft 3s ease-in-out infinite;}
 </style>
 
 <style>
+/* Header Enhancements */
+header {box-shadow: 0 4px 20px rgba(0,0,0,0.05);}
+nav.links a {position:relative; overflow:hidden;}
+nav.links a::after {content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--blue); transition:width 0.3s ease;}
+nav.links a:hover::after, nav.links a.active::after {width:100%;}
+nav.links .btn::after {display:none;}
+
+/* Hero Animation */
+@keyframes bounceSoft {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-8px);}
+}
+.hero h1, .page-hero h1, .blogs-hero h1 {animation: bounceSoft 3s ease-in-out infinite;}
+
+/* Blogs Specific Styles */
+.blogs-hero {
+    background-image: url('assets/images/brand/hero-team.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 120px 0 80px;
+    color: #fff;
+}
+.blogs-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(40,49,110,0.7) 0%, rgba(27,117,188,0.8) 100%);
+}
+.blogs-hero .wrap {position: relative; z-index: 2;}
+.blogs-hero h1 {color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.02em;text-shadow: 0 2px 10px rgba(0,0,0,0.5);}
+.blogs-hero p {margin-top:14px;color:#D6E4F5;max-width:62ch;text-shadow: 0 1px 5px rgba(0,0,0,0.5);}
+
+.blog-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:32px;padding:64px 0 32px}
+.blog-card {background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s, box-shadow 0.2s;text-decoration:none}
+.blog-card:hover {transform:translateY(-4px);box-shadow:0 20px 44px -26px rgba(15,90,153,.4)}
+.blog-media {aspect-ratio:16/9;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;font-size:0.9rem;overflow:hidden}
+.blog-media img {width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.blog-card:hover .blog-media img {transform:scale(1.04)}
+.blog-body {padding:24px;display:flex;flex-direction:column;flex:1}
+.blog-meta {font-size:0.8rem;color:var(--grey);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em}
+.blog-title {font-size:1.2rem;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:12px}
+.blog-excerpt {font-size:0.95rem;color:var(--grey);line-height:1.6;margin-bottom:20px;flex:1}
+.blog-readmore {font-size:0.9rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.blog-readmore:hover {color:var(--blue-d)}
+.pagination {display:flex;justify-content:center;gap:8px;padding-bottom:80px;}
+.pagination a {display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 12px;border-radius:8px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:600;text-decoration:none;transition:0.2s;}
+.pagination a:hover {border-color:var(--blue);color:var(--blue);}
+.pagination a.active {background:var(--blue);color:#fff;border-color:var(--blue);}
+
+/* Blog Details Specific */
 .bd-layout {display:grid;grid-template-columns:1fr 320px;gap:48px;padding:64px 0;}
-.blog-details-hero {background:#fff;padding:80px 0 40px;border-bottom:1px solid var(--line)}
-.bd-meta {font-size:0.85rem;color:var(--grey);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;display:block}
-.bd-title {font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;color:var(--navy);line-height:1.15;max-width:20ch;margin-bottom:24px; animation: bounceSoft 3s ease-in-out infinite;}
-.bd-lede {font-size:1.15rem;color:var(--grey);line-height:1.6;max-width:60ch}
-.bd-author {display:flex;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line);max-width:60ch}
-.bd-author-img {width:48px;height:48px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blog-details-hero {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 100px 0 60px;
+    color: #fff;
+}
+.blog-details-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(40,49,110,0.85) 0%, rgba(27,117,188,0.9) 100%);
+}
+.blog-details-hero .wrap {position: relative; z-index: 2;}
+
+.bd-meta {font-size:0.85rem;color:#9CC4E8;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;display:block}
+.bd-title {font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;color:#fff;line-height:1.15;max-width:20ch;margin-bottom:24px; animation: bounceSoft 3s ease-in-out infinite; text-shadow: 0 2px 10px rgba(0,0,0,0.5);}
+.bd-lede {font-size:1.15rem;color:#D6E4F5;line-height:1.6;max-width:60ch; text-shadow: 0 1px 5px rgba(0,0,0,0.5);}
+
+.bd-author {display:flex;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.2);max-width:60ch}
+.bd-author-img {width:48px;height:48px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .bd-author-img img {width:100%;height:100%;object-fit:cover}
-.bd-author-info strong {display:block;font-size:0.95rem;color:var(--navy)}
-.bd-author-info span {font-size:0.85rem;color:var(--grey)}
+.bd-author-info strong {display:block;font-size:0.95rem;color:#fff}
+.bd-author-info span {font-size:0.85rem;color:#9CC4E8}
 
 .bd-media {width:100%;aspect-ratio:21/9;background:var(--bg);border-radius:var(--radius);overflow:hidden;margin-bottom:48px;box-shadow:0 12px 30px -15px rgba(0,0,0,0.1)}
 .bd-media img {width:100%;height:100%;object-fit:cover}
@@ -344,7 +413,7 @@ nav.links .btn::after {display:none;}
 .faq-item summary::-webkit-details-marker {display:none;}
 .faq-item summary::after {content:'+'; font-size:1.5rem; color:var(--blue); transition:0.3s;}
 .faq-item[open] summary::after {content:'−';}
-.faq-item p {padding:16px 20px; margin:0; border-top:1px solid var(--line);}
+.faq-item p {padding:16px 20px; margin:0; border-top:1px solid var(--line); background:#fff;}
 
 .why-medware {background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:40px;margin:48px 0;}
 .why-medware h3 {margin-top:0;}
@@ -370,7 +439,7 @@ nav.links .btn::after {display:none;}
 .sb-tags span {background:var(--bg); border:1px solid var(--line); padding:4px 10px; border-radius:99px; font-size:0.8rem; color:var(--grey);}
 .sb-software {background:var(--blue); color:#fff; border-radius:10px; padding:24px; text-align:center;}
 .sb-software h4 {color:#fff; border:none; margin-bottom:12px;}
-.sb-software p {font-size:0.9rem; margin-bottom:16px;}
+.sb-software p {font-size:0.9rem; margin-bottom:16px; color:#D6E4F5;}
 .sb-software a {display:block; background:#fff; color:var(--blue); text-decoration:none; font-weight:700; padding:10px; border-radius:6px; margin-bottom:10px; transition:0.2s;}
 .sb-software a:hover {background:var(--navy); color:#fff;}
 
@@ -380,45 +449,46 @@ nav.links .btn::after {display:none;}
 }
 </style>
 </head>
+
 <body>
 
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index" aria-label="Medware Solutions home">
+    <a class="brand" href="index.html" aria-label="Medware Solutions home">
       <img class="brand-logo" src="assets/images/brand/medware-logo.webp" width="376" height="160" alt="MedWare Solutions Limited">
     </a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
       <span></span><span></span><span></span>
     </button>
     <nav class="links" id="menu">
-      <a href="index">Home</a>
+      <a href="index.html">Home</a>
       <div class="nav-item">
-        <a href="products">Products</a>
+        <a href="products.html">Products</a>
         <div class="dropdown">
-          <a href="healthcare-ict">Healthcare ICT</a>
-          <a href="medical-gas-systems">Medical Gas Systems</a>
+          <a href="healthcare-ict.html">Healthcare ICT</a>
+          <a href="medical-gas-systems.html">Medical Gas Systems</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="services">Services</a>
+        <a href="services.html">Services</a>
         <div class="dropdown">
-          <a href="services#infrastructure">Healthcare Infrastructure Development</a>
-          <a href="services#biomedical">Biomedical Engineering Services</a>
-          <a href="services#ict">Healthcare ICT</a>
+          <a href="services.html#infrastructure">Healthcare Infrastructure Development</a>
+          <a href="services.html#biomedical">Biomedical Engineering Services</a>
+          <a href="services.html#ict">Healthcare ICT</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="projects">Projects</a>
+        <a href="projects.html">Projects</a>
         <div class="dropdown">
-          <a href="projects#infrastructure">Healthcare Infrastructure Development</a>
-          <a href="projects#biomedical">Biomedical Engineering</a>
-          <a href="projects#ict">Healthcare ICT</a>
+          <a href="projects.html#infrastructure">Healthcare Infrastructure Development</a>
+          <a href="projects.html#biomedical">Biomedical Engineering</a>
+          <a href="projects.html#ict">Healthcare ICT</a>
         </div>
       </div>
       <a href="#partners">Partners</a>
-      <a href="blogs" class="active">Blog</a>
+      <a href="blogs.html" class="active">Blog</a>
       <a href="#about">About Us</a>
       <a href="#contact">Contact</a>
       <a class="btn" href="#contact">Request a consultation</a>
@@ -427,140 +497,26 @@ nav.links .btn::after {display:none;}
 </header>
 
 <main id="top">
-      <section class="blog-details-hero">
+      <section class="blogs-hero">
         <div class="wrap">
-          <a class="backlink" href="blogs" style="margin-bottom:24px;">← Back to Blogs</a>
-          <span class="bd-meta">Healthcare Infrastructure • Sep 18, 2026</span>
-          <h1 class="bd-title">Speeding Up Diagnostics with Pneumatic Tubes</h1>
-          <p class="bd-lede">How Sumetzberger pneumatic tube networks transport lab samples securely and instantly.</p>
-          
-          <div class="bd-author">
-            <div class="bd-author-img"><img src="assets/images/brand/icon-192.png" alt="Author"></div>
-            <div class="bd-author-info">
-              <strong>Medware Editorial Team</strong>
-              <span>Experts in Healthcare Engineering</span>
-            </div>
-          </div>
+          <h1>Latest Insights & News</h1>
+          <p>Expert articles and updates on healthcare infrastructure, biomedical engineering, and ICT solutions.</p>
         </div>
       </section>
-
-      <section class="wrap bd-layout">
-        <div class="bd-main">
-            <div class="bd-media">
-              <img src="assets/images/services/pneumatic-tube-station.webp" alt="Speeding Up Diagnostics with Pneumatic Tubes" loading="lazy">
+      <section class="wrap">
+        <div class="blog-grid">
+    
+          <a href="medical-gas-copper-pipes.html" class="blog-card reveal">
+            <div class="blog-media"><img src="assets/images/services/medical-gas-manifold.webp" alt="Medical Gas Systems: The Importance of Copper Pipes" loading="lazy"></div>
+            <div class="blog-body">
+              <span class="blog-meta">Medical Gas Systems • Sep 10, 2026</span>
+              <h2 class="blog-title">Medical Gas Systems: The Importance of Copper Pipes</h2>
+              <p class="blog-excerpt">Why medical-grade copper pipes are the backbone of any safe hospital medical gas system.</p>
+              <span class="blog-readmore">Read more →</span>
             </div>
-            
-            <div class="bd-body">
-              <h2>Introduction</h2>
-              <p>In modern healthcare, staying ahead of technology is critical. Facilities are under immense pressure to deliver high-quality care while maintaining operational efficiency. Implementing robust solutions in <strong>Healthcare Infrastructure</strong> is the foundational step toward achieving these goals.</p>
-              
-              <h2>Problems & Challenges</h2>
-              <p>Many hospitals face significant hurdles. Outdated infrastructure leads to prolonged equipment downtime, high maintenance costs, and compromised patient safety. The lack of proper engineering support exacerbates these issues, leaving staff frustrated and patients at risk.</p>
-              
-              <h2>Solutions & Features</h2>
-              <p>Addressing these challenges requires a systematic approach. Upgrading to ISO 7396-1 compliant medical gas systems, IP-based nurse calls like Schrack Seconet, or utilizing MedWare CMMS software transforms how a hospital operates. These solutions feature real-time monitoring, redundant safety protocols, and scalable architectures designed specifically for demanding medical environments.</p>
-              
-              <div class="why-medware">
-                <h3>Why Choose Medware Solutions?</h3>
-                <p>At Medware Solutions, we don't just supply equipment; we partner with you for the entire lifecycle of your facility.</p>
-                <ul>
-                    <li><strong>Expert Engineering:</strong> Certified biomeds and technical staff.</li>
-                    <li><strong>ISO Compliance:</strong> Strict adherence to international safety standards.</li>
-                    <li><strong>Turnkey Execution:</strong> From architectural design to final commissioning.</li>
-                    <li><strong>24/7 Support:</strong> Rapid response times for critical hospital systems.</li>
-                </ul>
-              </div>
-              
-              <h2>Frequently Asked Questions</h2>
-              <details class="faq-item">
-                <summary>How long does installation take?</summary>
-                <p>Timelines vary based on hospital size, but our turnkey execution ensures minimal disruption to ongoing operations.</p>
-              </details>
-              <details class="faq-item">
-                <summary>Are your products ISO certified?</summary>
-                <p>Yes, all our medical gas equipment and ICT hardware adhere strictly to international standards like ISO 7396-1 and EN 54.</p>
-              </details>
-              <details class="faq-item">
-                <summary>Do you provide ongoing support?</summary>
-                <p>Absolutely. Our biomedical engineering team offers 24/7 support and preventive maintenance contracts.</p>
-              </details>
-              <details class="faq-item">
-                <summary>Can your software integrate with our existing systems?</summary>
-                <p>MedWare CMMS is designed with robust APIs for seamless integration with existing hospital management systems.</p>
-              </details>
-              <details class="faq-item">
-                <summary>Do you offer staff training?</summary>
-                <p>We provide comprehensive, hands-on training for all clinical and technical staff during the handover process.</p>
-              </details>
-              
-              <h2>Conclusion</h2>
-              <p>Investing in reliable biomedical engineering and healthcare ICT is investing in patient outcomes. By resolving infrastructure challenges with proven technologies, hospitals can focus entirely on what matters most: saving lives.</p>
-              
-              <div class="bd-cta">
-                <h3>Ready to upgrade your facility?</h3>
-                <p>Contact our experts today to discuss your next healthcare project.</p>
-                <a href="index#contact" class="btn">Request a Consultation</a>
-              </div>
-            </div>
-        </div>
+          </a>
         
-        <aside class="sidebar">
-            <div class="sb-widget sb-software">
-                <h4>Try Our Software Demos</h4>
-                <p>Experience our comprehensive MedWare CMMS and store management tools firsthand.</p>
-                <a href="https://medasset-frontend.onrender.com/" target="_blank">MedAsset Demo</a>
-                <a href="https://stores.medwaresol.com/" target="_blank">Stores Management</a>
-                <a href="https://www.medwaresol.com/" target="_blank">Visit Main Website</a>
-            </div>
-            
-            <div class="sb-widget">
-                <h4>Related Articles</h4>
-                <div class="sb-links">
-                    
-        <a href="ip-nurse-call-systems-schrack">
-            <img src="assets/images/products/nurse-call-panel.webp" alt="Modernizing Hospitals with IP Nurse Call Systems" loading="lazy">
-            <div>
-                <h5>Modernizing Hospitals with IP Nurse Call Systems</h5>
-                <span>Oct 15, 2026</span>
-            </div>
-        </a>
-        
-        <a href="medical-gas-pipeline-cpx">
-            <img src="assets/images/services/medical-gas-manifold.webp" alt="Ensuring Safety with CPx Medical Gas Pipelines" loading="lazy">
-            <div>
-                <h5>Ensuring Safety with CPx Medical Gas Pipelines</h5>
-                <span>Oct 12, 2026</span>
-            </div>
-        </a>
-        
-        <a href="biomedical-engineering-maintenance">
-            <img src="assets/images/services/equipment-repairs.webp" alt="The ROI of Preventive Biomedical Maintenance" loading="lazy">
-            <div>
-                <h5>The ROI of Preventive Biomedical Maintenance</h5>
-                <span>Oct 10, 2026</span>
-            </div>
-        </a>
-        
-        <a href="cmms-software-hospital-management">
-            <img src="assets/images/services/cmms-dashboard.webp" alt="Streamlining Operations with MedWare CMMS Software" loading="lazy">
-            <div>
-                <h5>Streamlining Operations with MedWare CMMS Software</h5>
-                <span>Oct 08, 2026</span>
-            </div>
-        </a>
-        
-                </div>
-            </div>
-            
-            <div class="sb-widget">
-                <h4>Tags</h4>
-                <div class="sb-tags">
-                    <span>Pneumatic Tubes</span><span>Efficiency</span><span>Infrastructure</span>
-                </div>
-            </div>
-        </aside>
-      </section>
-    </main>
+        </div><div class="pagination reveal"><a href="blogs.html" >1</a><a href="blogs-2.html" >2</a><a href="blogs-3.html" >3</a><a href="blogs-4.html" class="active">4</a></div></section></main>
 
 <footer>
   <div class="wrap">
@@ -575,11 +531,11 @@ nav.links .btn::after {display:none;}
       <p>Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
     </div>
     <nav aria-label="Footer">
-      <a href="products">Products</a>
-      <a href="services">Services</a>
-      <a href="projects">Projects</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
       <a href="#partners">Partners</a>
-      <a href="blogs">Blog</a>
+      <a href="blogs.html">Blog</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -588,17 +544,5 @@ nav.links .btn::after {display:none;}
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
 <script src="assets/js/motion.js" defer></script>
-<script>
-document.getElementById('contact-form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const name=document.getElementById('cf-name').value;
-  const email=document.getElementById('cf-email').value;
-  const phone=document.getElementById('cf-phone').value;
-  const message=document.getElementById('cf-message').value;
-  const subject=encodeURIComponent(`Website enquiry from ${name}`);
-  const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone||'—'}\n\n${message}`);
-  window.location.href=`mailto:info@medwaresol.com?subject=${subject}&body=${body}`;
-});
-</script>
 </body>
 </html>

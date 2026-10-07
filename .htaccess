@@ -1,9 +1,17 @@
 Options +FollowSymLinks -MultiViews
 RewriteEngine On
-RewriteBase /projects/website/
 
+# Pages link to each other with their file names (services.html). This rule also keeps
+# the older extensionless URLs working: /services is served from services.html.
+# (No RewriteBase, so it works at the domain root and in a local sub-folder alike.)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
-ErrorDocument 404 /projects/website/404.html
+# Custom "page not found" page. The path is from the domain root (the live site).
+ErrorDocument 404 /404.html
+
+# Never serve log files (e.g. a leftover local_emails.log from local testing).
+<FilesMatch "\.log$">
+  Require all denied
+</FilesMatch>
