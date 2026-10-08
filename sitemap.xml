@@ -1,237 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.medwaresol.com/</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/blogs.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/contact.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/products.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/projects.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/services.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/healthcare-ict.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medical-gas-systems.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/building-management-systems.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/fire-alarm-panels.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medical-gas-pipeline.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medware-cmms.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/oxygen-generating-plants.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/pneumatic-tube-systems.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/queue-management-kiosks.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/vacuum-medical-air.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/visocall-ip-nurse-call.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/biomedical-engineering-hospital-maintenance-kenya.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/biomedical-engineering-in-kenya.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/blog-details.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/cmms-software-hospital-asset-management.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/fire-alarm-panels-en54-compliance.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/hospital-bed-head-units-integration.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/hospital-building-management-systems-bms.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/ict-solutions-digital-hospitals.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/ip-nurse-call-systems-configuration-guide.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medical-equipment-calibration-quality-assurance.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medical-gas-copper-pipes.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medical-gas-copper-pipes-installation-standards.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/medical-vacuum-air-plants.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/modular-operating-theatres-design.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/nurse-call-systems-configuration.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/pneumatic-tube-systems-hospital-logistics.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/psa-oxygen-generating-plants.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/queue-management-kiosks-patient-flow.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/radiation-shielding-xray-brachytherapy.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/blogs-2.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/blogs-3.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.medwaresol.com/blogs-4.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://www.medwaresolutions.com/</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/index.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/products.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/healthcare-ict.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medical-gas-systems.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/services.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/projects.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/blogs.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/contact.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/queue-management-kiosks.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medical-gas-pipeline.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medware-cmms.html</loc>
+	<lastmod>2026-10-08T09:49:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/visocall-ip-nurse-call.html</loc>
+	<lastmod>2026-10-08T09:49:41+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/fire-alarm-panels.html</loc>
+	<lastmod>2026-10-08T09:49:41+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/building-management-systems.html</loc>
+	<lastmod>2026-10-08T09:49:41+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/vacuum-medical-air.html</loc>
+	<lastmod>2026-10-08T09:49:42+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/oxygen-generating-plants.html</loc>
+	<lastmod>2026-10-08T09:49:42+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/pneumatic-tube-systems.html</loc>
+	<lastmod>2026-10-08T09:49:42+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/biomedical-engineering-hospital-maintenance-kenya.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/ip-nurse-call-systems-configuration-guide.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medical-gas-copper-pipes-installation-standards.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/cmms-software-hospital-asset-management.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/fire-alarm-panels-en54-compliance.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medical-vacuum-air-plants.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/blogs-2.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/blogs-3.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/blogs-4.html</loc>
+	<lastmod>2026-10-08T09:49:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medical-gas-copper-pipes.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/radiation-shielding-xray-brachytherapy.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/medical-equipment-calibration-quality-assurance.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/hospital-bed-head-units-integration.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/ict-solutions-digital-hospitals.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/blog-details.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/biomedical-engineering-in-kenya.html</loc>
+	<lastmod>2026-10-08T09:49:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/nurse-call-systems-configuration.html</loc>
+	<lastmod>2026-10-08T09:49:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/psa-oxygen-generating-plants.html</loc>
+	<lastmod>2026-10-08T09:49:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/queue-management-kiosks-patient-flow.html</loc>
+	<lastmod>2026-10-08T09:49:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/hospital-building-management-systems-bms.html</loc>
+	<lastmod>2026-10-08T09:49:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/pneumatic-tube-systems-hospital-logistics.html</loc>
+	<lastmod>2026-10-08T09:49:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.medwaresolutions.com/modular-operating-theatres-design.html</loc>
+	<lastmod>2026-10-08T09:49:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
 </urlset>
