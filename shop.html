@@ -21,6 +21,7 @@ h1,h2,h3,h4{font-family:"Montserrat",sans-serif;line-height:1.15;color:var(--nav
 .wrap{width:90%;max-width:1140px;margin:0 auto}
 a{color:inherit}
 img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
 .band{display:flex;height:5px;width:100%}.band span{flex:1}.band .b1{background:var(--blue)}.band .b2{background:var(--navy)}.band .b3{background:var(--sky)}.band .b4{background:var(--grey)}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:96px}
@@ -43,12 +44,11 @@ nav.links .btn:hover{color:#fff}
 nav.links .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size:.86rem;font-weight:600;border-bottom:0}
 nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue)}
 
-/* SHOP */
 .breadcrumb{font-size:.85rem;color:var(--grey);padding:22px 0 0}
 .breadcrumb a{color:var(--blue);text-decoration:none}
 .breadcrumb span{margin:0 8px}
 
-/* banner slider */
+/* slider */
 .slider{position:relative;margin-top:20px;border-radius:14px;overflow:hidden}
 .slides{display:flex;transition:transform .6s ease}
 .slide{flex:0 0 100%;min-height:300px;padding:44px 56px;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden}
@@ -66,14 +66,12 @@ nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue)}
 .dots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:8px;z-index:2}
 .dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
 .dots button.on{background:#fff;width:24px;border-radius:6px}
-
-/* trust strip */
 .perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 0}
 .perk{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;font-size:.88rem;line-height:1.4}
 .perk strong{display:block;font-family:"Montserrat",sans-serif;color:var(--navy);font-size:.95rem;margin-bottom:2px}
 .perk span{color:var(--grey)}
 
-/* layout */
+/* shop layout */
 .shop-layout{display:grid;grid-template-columns:270px 1fr;gap:26px;padding:30px 0 70px;align-items:start}
 .filters{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:sticky;top:116px}
 .filters h3{font-size:1rem;font-weight:800;padding-bottom:10px;margin-bottom:18px;border-bottom:2px solid var(--line);position:relative}
@@ -86,16 +84,14 @@ nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue)}
 .bulk-side{margin-top:22px;background:var(--bg);border-radius:8px;padding:14px;font-size:.86rem}
 .bulk-side strong{display:block;color:var(--navy);font-family:"Montserrat",sans-serif;margin-bottom:4px}
 .bulk-side a{display:inline-block;margin-top:8px;color:#1a8f45;font-weight:700}
-
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin-bottom:18px;font-size:.92rem}
 .toolbar select{padding:9px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:.9rem;background:#fff}
 .count{color:var(--grey)}
-
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
 .card:hover{box-shadow:0 16px 32px -18px rgba(15,90,153,.4);transform:translateY(-3px)}
-.card .media{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:18px;background:#fff;position:relative}
-.card .media img{max-width:100%;max-height:100%;object-fit:contain}
+.card .media{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff;position:relative}
+.card .media img{width:100%;height:100%;object-fit:contain}
 .card .sale{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px}
 .card .body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1;border-top:1px solid var(--line)}
 .card .cat{font-size:.75rem;color:var(--grey)}
@@ -105,14 +101,48 @@ nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue)}
 .card .view{margin-top:10px;text-align:center;border:1.5px solid var(--line);border-radius:8px;padding:10px;font-weight:600;font-size:.88rem;color:var(--navy);transition:.18s}
 .card:hover .view{background:var(--blue);border-color:var(--blue);color:#fff}
 .empty{grid-column:1/-1;text-align:center;padding:48px 20px;background:#fff;border:1px dashed var(--line);border-radius:var(--radius);color:var(--grey)}
-
-/* bulk band */
 .bulk-band{margin-top:26px;border-radius:14px;background:linear-gradient(110deg,#28316E,#1B75BC);color:#fff;padding:34px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .bulk-band h2{color:#fff;font-size:1.5rem;font-weight:800;margin-bottom:6px}
 .bulk-band p{opacity:.92;max-width:52ch}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:700;padding:14px 26px;border-radius:8px;text-decoration:none;transition:.2s}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:700;font-size:1rem;padding:15px 26px;border-radius:8px;text-decoration:none;transition:.2s}
 .btn-wa:hover{background:#1DA851;transform:translateY(-2px)}
-.btn-wa svg{width:20px;height:20px}
+.btn-wa svg{width:20px;height:20px;flex:none}
+
+/* product detail (in this same page) */
+.pd-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:28px 0 40px}
+.pd-gallery{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;align-items:center;justify-content:center;aspect-ratio:1;position:sticky;top:120px;align-self:start}
+.pd-gallery img{width:100%;height:100%;object-fit:contain}
+.kicker{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.pd-info h1{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:800;margin:6px 0 12px}
+.pd-price{font-family:"Montserrat",sans-serif;font-weight:800;font-size:2rem;color:var(--red);margin-bottom:6px}
+.pd-price del{font-size:1.2rem;color:var(--grey);font-weight:500;margin-left:8px}
+.pd-price .save{font-size:.9rem;color:var(--green);font-weight:600;margin-left:8px}
+.stock{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--green);margin-bottom:18px}
+.stock::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.pd-summary{margin-bottom:20px}
+.specs{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:22px}
+.specs h3{font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.spec-row{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.94rem}
+.spec-row:last-child{border-bottom:0}
+.spec-row strong{color:var(--navy);min-width:150px}
+.spec-row span{color:var(--grey)}
+.pd-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.bulk-note{background:rgba(27,117,188,.08);border:1px solid rgba(27,117,188,.25);border-radius:var(--radius);padding:14px 16px;font-size:.92rem}
+.bulk-note strong{color:var(--navy)}
+.pd-long{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:40px;margin-bottom:24px}
+.pd-long h2{font-size:1.45rem;font-weight:800;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.pd-long h2:first-child{margin-top:0}
+.pd-long p{margin-bottom:16px}
+.pd-long ul{margin:0 0 20px 24px}
+.pd-long li{margin-bottom:8px}
+.faq-item{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{padding:16px 20px;background:var(--bg);font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:.98rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.5rem;color:var(--blue)}
+.faq-item[open] summary::after{content:'−'}
+.faq-item p{padding:16px 20px;margin:0;border-top:1px solid var(--line);background:#fff;font-size:.94rem}
+.related{padding:0 0 70px}
+.related h2{font-size:1.5rem;font-weight:800;margin-bottom:20px}
 
 footer{background:linear-gradient(rgba(10,25,47,0.92),rgba(10,25,47,0.92)),url('/assets/images/brand/hero-team.webp') center/cover no-repeat;color:#AEBBDF;padding:34px 0;border-top:1px solid rgba(255,255,255,0.1)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
@@ -124,7 +154,7 @@ footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
 footer nav a:hover{color:#fff}
 :focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
 
-@media(max-width:980px){.shop-layout{grid-template-columns:1fr}.filters{position:static}.perks{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){.shop-layout{grid-template-columns:1fr}.filters{position:static}.perks{grid-template-columns:repeat(2,1fr)}.pd-layout{grid-template-columns:1fr;gap:28px}.pd-gallery{position:static}}
 @media(max-width:760px){
   nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
   nav.links.open{display:flex}
@@ -135,6 +165,7 @@ footer nav a:hover{color:#fff}
   .slide{padding:32px 24px 44px;min-height:280px}
   .grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .bulk-band{padding:26px 22px}
+  .pd-long{padding:24px}
 }
 @media(prefers-reduced-motion:reduce){.slides{transition:none}.card,.btn,.btn-wa{transition:none}}
 </style>
@@ -152,7 +183,7 @@ footer nav a:hover{color:#fff}
     <nav class="links" id="menu">
       <a href="/">Home</a>
       <div class="nav-item">
-        <a href="/shop.html" class="active">Shop</a>
+        <a href="shop.html" class="active">Shop</a>
         <div class="dropdown">
           <a href="/products.html">Products</a>
           <a href="/medical-gas-systems.html">Medical Gas Systems</a>
@@ -185,10 +216,12 @@ footer nav a:hover{color:#fff}
 </header>
 
 <main>
-  <div class="wrap">
+<div class="wrap">
+
+  <!-- ============ LIST VIEW ============ -->
+  <div id="listView">
     <div class="breadcrumb"><a href="/">Home</a><span>›</span>Shop</div>
 
-    <!-- BANNER SLIDER -->
     <section class="slider" aria-roledescription="carousel" aria-label="Offers">
       <div class="slides" id="slides">
         <div class="slide s1">
@@ -226,7 +259,6 @@ footer nav a:hover{color:#fff}
       <div class="perk"><strong>Nationwide delivery</strong><span>To facilities across Kenya</span></div>
     </div>
 
-    <!-- SHOP -->
     <div class="shop-layout" id="products">
       <aside class="filters" aria-label="Filter products">
         <h3>Filter products</h3>
@@ -265,13 +297,18 @@ footer nav a:hover{color:#fff}
             <p>Hospitals, clinics, NGOs and contractors get special pricing on bulk orders and full project supply.</p>
           </div>
           <a class="btn-wa" href="https://wa.me/254714363333?text=Hello%20Medware,%20I%20would%20like%20to%20order%20in%20bulk." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.575-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.052 0C5.495 0 .16 5.333.158 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.332 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>
             Request bulk pricing
           </a>
         </div>
       </section>
     </div>
   </div>
+
+  <!-- ============ DETAIL VIEW (filled by JS) ============ -->
+  <div id="detailView" hidden></div>
+
+</div>
 </main>
 
 <footer>
@@ -281,98 +318,309 @@ footer nav a:hover{color:#fff}
       <p style="margin-top:14px">Registered in Kenya · ©2026 Medware Solutions Limited · www.medwaresol.com</p>
     </div>
     <nav aria-label="Footer">
-      <a href="/shop.html">Shop</a><a href="/products.html">Products</a><a href="/services.html">Services</a><a href="/projects.html">Projects</a><a href="/blogs.html">Blog</a><a href="/#about">About</a><a href="/contact.html">Contact</a>
+      <a href="shop.html">Shop</a><a href="/products.html">Products</a><a href="/services.html">Services</a><a href="/projects.html">Projects</a><a href="/blogs.html">Blog</a><a href="/#about">About</a><a href="/contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 <div class="band" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
 
+<!-- WhatsApp icon, defined once -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="wa" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.575-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.052 0C5.495 0 .16 5.333.158 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.332 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></defs></svg>
+
 <script>
-/* ============ PRODUCT LIST ============
-   To add a product: copy one line, change the values.
-   price: number in KSh, or null to show "Request price"
-   was: optional old price (shows strike-through + Sale badge)
-   url: the product's own detail page                                   */
-const IMG = "https://www.precisionuk.co.uk/wp-content/uploads/2017/09/";
-const PRODUCTS = [
-  {name:"Humidifier Bottle",           cat:"Oxygen accessories", price:4500,  was:5200, url:"/humidifier-bottle.html",  img:IMG+"Flowmeter-Humidifier-Bottle.jpg"},
-  {name:"Single Flowmeter",            cat:"Flowmeters",         price:14000, url:"/single-flowmeter.html",   img:IMG+"CPX-Flowmeter.jpg"},
-  {name:"Double Flowmeter",            cat:"Flowmeters",         price:22000, url:"/double-flowmeter.html",   img:IMG+"CPX-Double-Flowmeter.jpg"},
-  {name:"Oxygen First Fix",            cat:"Terminal units",     price:null,  url:"/oxygen-first-fix.html",   img:""},
-  {name:"Oxygen Second Fix",           cat:"Terminal units",     price:6500,  url:"/oxygen-second-fix.html",  img:IMG+"CPX-Second-Fix.jpg"},
-  {name:"Area Valve Service Unit (AVSU)", cat:"Valve units",     price:95000, url:"/avsu.html",               img:IMG+"CPX-AVSU.jpg"}
+/* =====================================================================
+   PRODUCT DATA  (this is your "database": edit here, nothing else needed)
+   - price: number in KSh, or null to show "Request price"
+   - was:   optional old price (shows strike-through and Sale badge)
+   - art:   built-in illustration used as the image (always shows)
+   - photo: OPTIONAL. Put a real photo path, e.g. "assets/images/products/humidifier.webp".
+            If it is set and loads, it replaces the illustration. If it fails, the
+            illustration is shown, so the image is never blank.
+   ===================================================================== */
+const WA = "254714363333";
+
+const COMMON_FAQS = (name) => [
+  ["Can I order "+name+" in bulk?", "Yes. Hospitals, clinics, NGOs and contractors get special pricing on larger quantities. Tap Request bulk pricing and tell us how many units you need."],
+  ["Do you deliver outside Nairobi?", "Yes. We deliver medical gas components to healthcare facilities across Kenya. Message us on WhatsApp for delivery timelines and costs."],
+  ["How do I order?", "Tap Order on WhatsApp on this page. Your message to us is filled in for you. We confirm availability, delivery and payment details with you directly."]
 ];
 
+const PRODUCTS = [
+  {
+    id:"humidifier-bottle", name:"Humidifier Bottle", cat:"Oxygen accessories", brand:"CPX Precision UK",
+    price:4500, was:5200, art:"bottle", photo:"",
+    summary:"Adds moisture to dry oxygen before it reaches the patient. Polycarbonate, autoclavable, and fits your flowmeter with a moving pipe union.",
+    specs:[["Product type","Flowmeter humidifier bottle"],["Material","Polycarbonate"],["Capacity","150 ml / 200 ml options"],["Sterilisation","Autoclave safe up to 121°C"],["Connection","Moving pipe union to flowmeter"],["Application","Oxygen therapy humidification"],["Suitable for","Hospitals, clinics, home oxygen therapy"]],
+    overview:[
+      "The CPX Flowmeter Humidifier Bottle is a medical device used to add moisture to dry oxygen before it reaches the patient during oxygen therapy. Dry medical oxygen can irritate the nasal passages, throat and airways. Humidification improves patient comfort and tolerance during extended therapy sessions.",
+      "Made from durable polycarbonate, the bottle is shatter-proof, easy to clean, and can be sterilised in an autoclave at 121°C for up to 40 cycles. It connects directly to a medical gas flowmeter using a moving pipe union, so installation is quick and secure."
+    ],
+    features:["Polycarbonate construction: durable, shatter-proof and easy to clean","150 ml and 200 ml capacity options for paediatric and adult oxygen therapy","Autoclave safe: 121°C, 1.3 kPa, 25-minute cycle, maximum 40 times","Moving pipe union for simple connection to most medical gas flowmeters","Quiet bubbling: diffuser design minimises noise","Wide-mouth bottle for easy washing and refilling"],
+    tech:[["Material","Polycarbonate bottle, polycarbonate lid"],["Capacity","150 ml / 200 ml"],["Connection to flowmeter","Moving pipe union"],["Sterilisation","Autoclave 121°C, 1.3 kPa, 25 min cycle (max 40 cycles)"],["Relief valve pressure","20–30 kPa"]],
+    apps:["Oxygen therapy in hospitals and clinics","ICU and HDU respiratory support","Home oxygen therapy","Emergency and ambulance services"],
+    compat:"Used together with a single or double flowmeter, which connects to the wall-mounted or cylinder-mounted oxygen supply through a standard oxygen second fix terminal unit.",
+    faqs:[
+      ["How often should the humidifier bottle be replaced?","The reusable polycarbonate bottle can be sterilised up to 40 times. After 40 autoclave cycles it should be replaced. Disposable versions are also available for single-patient use."],
+      ["Can I use this humidifier bottle with any flowmeter?","It connects through a moving pipe union and is designed for CPX medical gas flowmeters. It also suits most standard flowmeters that use the same connection type."],
+      ["Is the humidifier bottle supplied sterile?","No. It is supplied non-sterile and should be sterilised before first use. It is autoclave safe up to 121°C."]
+    ],
+    related:["single-flowmeter","double-flowmeter","oxygen-second-fix","avsu"]
+  },
+  {
+    id:"single-flowmeter", name:"Single Flowmeter", cat:"Flowmeters", brand:"CPX Precision UK",
+    price:14000, art:"flow1", photo:"",
+    summary:"0–15 L/min oxygen flowmeter with BS5682 probe. Fits the oxygen terminal unit and takes a humidifier bottle.",
+    specs:[["Product type","Single oxygen flowmeter"],["Gas","Oxygen"],["Flow range","0–15 L/min"],["Probe","BS5682"],["Works with","Humidifier bottle, oxygen terminal unit"],["Suitable for","Wards, theatres, ICU, clinics"]],
+    overview:[
+      "The CPX Single Flowmeter controls and shows the flow of oxygen delivered to one patient, from 0 to 15 litres per minute. It plugs into the oxygen terminal unit using a BS5682 probe.",
+      "Add a humidifier bottle to deliver moistened oxygen for longer therapy sessions."
+    ],
+    features:["0–15 L/min flow range","BS5682 probe for the oxygen terminal unit","Accepts a humidifier bottle","Suited to wall-mounted pipeline supply"],
+    tech:[["Flow range","0–15 L/min"],["Probe type","BS5682"],["Gas","Oxygen"]],
+    apps:["General wards","Theatres and recovery","ICU and HDU","Clinics and emergency rooms"],
+    compat:"Plugs into the oxygen second fix terminal unit. Add the Humidifier Bottle for humidified oxygen.",
+    faqs:[["Does it come with a humidifier bottle?","The humidifier bottle is sold separately. You can add it to the same WhatsApp order."]],
+    related:["humidifier-bottle","double-flowmeter","oxygen-second-fix","avsu"]
+  },
+  {
+    id:"double-flowmeter", name:"Double Flowmeter", cat:"Flowmeters", brand:"CPX Precision UK",
+    price:22000, art:"flow2", photo:"",
+    summary:"Dual oxygen flowmeter that serves two patients from one terminal unit.",
+    specs:[["Product type","Double oxygen flowmeter"],["Gas","Oxygen"],["Outlets","Two (two patients)"],["Probe","BS5682"],["Works with","Humidifier bottles, oxygen terminal unit"],["Suitable for","Busy wards, emergency rooms, paediatric bays"]],
+    overview:[
+      "The CPX Double Flowmeter gives you two independently controlled oxygen outlets from a single terminal unit. It saves wall space and cost where two patients are treated side by side.",
+      "Each outlet can take its own humidifier bottle."
+    ],
+    features:["Two flow controls on one unit","Saves wall space and fittings","Each outlet takes a humidifier bottle","BS5682 probe"],
+    tech:[["Outlets","Two"],["Probe type","BS5682"],["Gas","Oxygen"]],
+    apps:["Busy general wards","Emergency rooms","Paediatric bays","Hospital projects"],
+    compat:"Plugs into the oxygen second fix terminal unit. Add one Humidifier Bottle per outlet if needed.",
+    faqs:[["How many humidifier bottles do I need?","One per outlet, so two for a double flowmeter, if you want humidified oxygen on both."]],
+    related:["humidifier-bottle","single-flowmeter","oxygen-second-fix","avsu"]
+  },
+  {
+    id:"oxygen-first-fix", name:"Oxygen First Fix", cat:"Terminal units", brand:"CPX Precision UK",
+    price:null, art:"first", photo:"",
+    summary:"Pipeline terminal connection point, fitted in the wall during installation.",
+    specs:[["Product type","Terminal unit first fix"],["Gas","Oxygen"],["Role","Pipeline connection point"],["Pairs with","Oxygen second fix"],["Price","On request"]],
+    overview:[
+      "The Oxygen First Fix is the pipeline connection point that is installed into the wall during construction. The Oxygen Second Fix is fitted onto it once walls are finished.",
+      "Message us with your quantity and project details and we will send you a price."
+    ],
+    features:["Pipeline terminal connection point","Installed at first fix stage","Pairs with the Oxygen Second Fix"],
+    tech:[["Gas","Oxygen"],["Pairs with","Oxygen Second Fix"]],
+    apps:["New hospital builds","Ward refurbishments","Clinic installations"],
+    compat:"Pairs with the Oxygen Second Fix terminal unit, then a flowmeter plugs into that.",
+    faqs:[["What is the price?","Price depends on quantity and project. Tap Request price and we will reply on WhatsApp."]],
+    related:["oxygen-second-fix","single-flowmeter","double-flowmeter","avsu"]
+  },
+  {
+    id:"oxygen-second-fix", name:"Oxygen Second Fix", cat:"Terminal units", brand:"CPX Precision UK",
+    price:6500, art:"second", photo:"",
+    summary:"Gas-specific second fix assembly. This is the socket your flowmeter plugs into.",
+    specs:[["Product type","Terminal unit second fix"],["Gas","Oxygen (gas-specific)"],["Role","Outlet socket for flowmeter probe"],["Pairs with","Oxygen first fix"],["Suitable for","Wards, theatres, ICU, clinics"]],
+    overview:[
+      "The Oxygen Second Fix is the gas-specific outlet fitted onto the first fix after walls are finished. It is where the flowmeter probe plugs in, and its gas-specific design helps prevent the wrong equipment being connected.",
+      "It is stocked for quick delivery across Kenya."
+    ],
+    features:["Gas-specific design","Fits onto the Oxygen First Fix","Accepts BS5682 flowmeter probes"],
+    tech:[["Gas","Oxygen"],["Pairs with","Oxygen First Fix"],["Accepts","BS5682 probe"]],
+    apps:["Patient bedheads","Theatres and recovery","ICU and HDU","Clinics"],
+    compat:"Fits onto the Oxygen First Fix. A single or double flowmeter plugs into it.",
+    faqs:[["Do I need the first fix as well?","Yes. The second fix is fitted onto the first fix. If your first fix is already installed, you only need the second fix."]],
+    related:["oxygen-first-fix","single-flowmeter","double-flowmeter","humidifier-bottle"]
+  },
+  {
+    id:"avsu", name:"Area Valve Service Unit (AVSU)", cat:"Valve units", brand:"CPX Precision UK",
+    price:95000, art:"avsu", photo:"",
+    summary:"Local gas isolation for maintenance and emergencies, so one area can be shut off without affecting the rest of the building.",
+    specs:[["Product type","Area valve service unit"],["Gas","Oxygen"],["Role","Local gas isolation"],["Use","Maintenance and emergencies"],["Suitable for","Hospital wards, theatres, ICU"]],
+    overview:[
+      "The Area Valve Service Unit lets you isolate the gas supply to one area quickly, for planned maintenance or in an emergency, without shutting down the whole pipeline.",
+      "Our biomedical engineering team can install and commission it as part of your medical gas project."
+    ],
+    features:["Isolates a single ward or zone","Used for maintenance and emergency shut-off","Installation and commissioning available"],
+    tech:[["Gas","Oxygen"],["Function","Local isolation"]],
+    apps:["Hospital wards","Theatres","ICU and HDU","New medical gas projects"],
+    compat:"Installed on the pipeline serving a ward or zone, upstream of the terminal units.",
+    faqs:[["Can you install it?","Yes. Our biomedical engineering team handles installation, commissioning and ongoing technical support."]],
+    related:["oxygen-first-fix","oxygen-second-fix","single-flowmeter","double-flowmeter"]
+  }
+];
+
+/* =====================================================================
+   BUILT-IN STATIC IMAGES (inline SVG, so they always show, no files needed)
+   ===================================================================== */
+const C = {blue:"#1B75BC",navy:"#28316E",sky:"#5FA8DC",grey:"#6D6E71",red:"#E53935",green:"#43A047",cu:"#C7803A",pale:"#E8F3FB",line:"#B9CCDD"};
+const bg = '<circle cx="120" cy="120" r="108" fill="#EEF3F8"/>';
+const flowUnit = (x) => `<g transform="translate(${x} 0)">
+  <rect x="-24" y="26" width="48" height="150" rx="14" fill="${C.pale}" stroke="${C.blue}" stroke-width="3"/>
+  <rect x="-11" y="40" width="22" height="108" rx="8" fill="#fff" stroke="${C.line}" stroke-width="2"/>
+  ${[0,1,2,3].map(i=>`<line x1="-18" y1="${50+i*26}" x2="-11" y2="${50+i*26}" stroke="${C.navy}" stroke-width="2"/><line x1="11" y1="${50+i*26}" x2="18" y2="${50+i*26}" stroke="${C.navy}" stroke-width="2"/>`).join("")}
+  <circle cx="0" cy="92" r="8" fill="${C.red}"/>
+  <rect x="24" y="34" width="22" height="12" rx="4" fill="${C.blue}"/>
+  <circle cx="0" cy="164" r="13" fill="${C.navy}"/><circle cx="0" cy="164" r="5" fill="#fff"/>
+  <rect x="-9" y="176" width="18" height="30" rx="3" fill="${C.grey}"/>
+</g>`;
+const ART = {
+  bottle: `${bg}
+    <clipPath id="cb"><rect x="68" y="70" width="104" height="140" rx="22"/></clipPath>
+    <rect x="68" y="70" width="104" height="140" rx="22" fill="${C.pale}"/>
+    <rect x="62" y="132" width="116" height="84" fill="${C.sky}" opacity=".55" clip-path="url(#cb)"/>
+    <circle cx="96" cy="170" r="5" fill="#fff" opacity=".8"/><circle cx="108" cy="150" r="3.5" fill="#fff" opacity=".8"/><circle cx="140" cy="176" r="6" fill="#fff" opacity=".8"/><circle cx="130" cy="146" r="3" fill="#fff" opacity=".8"/>
+    <rect x="68" y="70" width="104" height="140" rx="22" fill="none" stroke="${C.blue}" stroke-width="3.5"/>
+    <rect x="116" y="52" width="8" height="120" fill="${C.blue}"/>
+    <rect x="96" y="52" width="48" height="18" fill="#CFE3F3" stroke="${C.blue}" stroke-width="2"/>
+    <rect x="82" y="32" width="76" height="22" rx="6" fill="${C.navy}"/>
+    <rect x="158" y="36" width="34" height="12" rx="3" fill="${C.blue}"/><rect x="184" y="32" width="10" height="20" rx="3" fill="${C.navy}"/>
+    <line x1="68" y1="132" x2="82" y2="132" stroke="${C.navy}" stroke-width="2"/><line x1="68" y1="104" x2="82" y2="104" stroke="${C.navy}" stroke-width="2"/>`,
+  flow1: `${bg}${flowUnit(120)}`,
+  flow2: `${bg}<rect x="30" y="20" width="180" height="12" rx="6" fill="${C.navy}"/><g transform="scale(.92) translate(10 8)">${flowUnit(70)}${flowUnit(160)}</g>`,
+  first: `${bg}
+    <rect x="112" y="14" width="16" height="52" fill="${C.cu}"/><rect x="108" y="58" width="24" height="10" rx="3" fill="#A8672B"/>
+    <rect x="40" y="64" width="160" height="128" rx="12" fill="#D6E0EA" stroke="${C.line}" stroke-width="3"/>
+    <circle cx="120" cy="128" r="44" fill="#fff" stroke="${C.blue}" stroke-width="4"/>
+    <circle cx="120" cy="128" r="24" fill="${C.grey}"/><circle cx="120" cy="128" r="10" fill="#EEF3F8"/>
+    ${[[54,78],[186,78],[54,178],[186,178]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="${C.grey}"/>`).join("")}`,
+  second: `${bg}
+    <rect x="48" y="40" width="144" height="160" rx="16" fill="#fff" stroke="${C.line}" stroke-width="3"/>
+    <circle cx="120" cy="108" r="38" fill="${C.blue}"/><circle cx="120" cy="108" r="22" fill="${C.navy}"/>
+    <rect x="115" y="70" width="10" height="12" rx="2" fill="#fff"/>
+    <rect x="90" y="158" width="60" height="24" rx="12" fill="${C.green}"/>
+    <text x="120" y="175" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="14" fill="#fff">O₂</text>
+    ${[[62,54],[178,54],[62,186],[178,186]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${C.grey}"/>`).join("")}`,
+  avsu: `${bg}
+    <rect x="12" y="112" width="24" height="16" fill="${C.cu}"/><rect x="204" y="112" width="24" height="16" fill="${C.cu}"/>
+    <rect x="34" y="52" width="172" height="140" rx="10" fill="#EEF2F7" stroke="${C.line}" stroke-width="3"/>
+    <rect x="50" y="68" width="140" height="74" rx="4" fill="#CFE6F7" stroke="${C.blue}" stroke-width="2.5"/>
+    <rect x="62" y="104" width="116" height="10" fill="${C.cu}"/>
+    <circle cx="120" cy="109" r="17" fill="${C.red}"/><rect x="108" y="102" width="24" height="14" rx="3" fill="#fff" opacity=".9"/>
+    <rect x="70" y="156" width="100" height="24" rx="5" fill="${C.navy}"/>
+    <text x="120" y="173" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="12" fill="#fff">AVSU · O₂</text>`
+};
+const artUri = (key) => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">' + (ART[key] || ART.flow1) + '</svg>');
+
+/* ===================================================================== */
 const $ = id => document.getElementById(id);
 const fmt = n => "KSh " + n.toLocaleString("en-KE");
-const PLACEHOLDER = "/assets/images/products/placeholder.webp";
+const priceText = p => p.price ? fmt(p.price) : "Request price";
+const imgTag = (p, alt) => {
+  const fallback = artUri(p.art);
+  return `<img src="${p.photo || fallback}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">`;
+};
+const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+const TITLE0 = document.title;
 let view = PRODUCTS.slice();
 
-function render(){
+/* ---------- list ---------- */
+function renderGrid(){
   const g = $("grid");
-  if(!view.length){
-    g.innerHTML = '<div class="empty">No products match these filters. Try a wider price range or reset the filters.</div>';
-  } else {
-    g.innerHTML = view.map(p => `
-      <a class="card" href="${p.url}">
-        <div class="media">
-          ${p.was ? '<span class="sale">Sale</span>' : ''}
-          <img src="${p.img || PLACEHOLDER}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER}'">
-        </div>
-        <div class="body">
-          <span class="cat">${p.cat}</span>
-          <h3>${p.name}</h3>
-          <div class="price">${p.price ? fmt(p.price) : "Request price"}${p.was ? '<del>'+fmt(p.was)+'</del>' : ''}</div>
-          <span class="view">View details</span>
-        </div>
-      </a>`).join("");
-  }
+  g.innerHTML = view.length ? view.map(p => `
+    <a class="card" href="#${p.id}">
+      <div class="media">${p.was ? '<span class="sale">Sale</span>' : ''}${imgTag(p, p.name)}</div>
+      <div class="body">
+        <span class="cat">${p.cat}</span>
+        <h3>${p.name}</h3>
+        <div class="price">${priceText(p)}${p.was ? '<del>'+fmt(p.was)+'</del>' : ''}</div>
+        <span class="view">View details</span>
+      </div>
+    </a>`).join("")
+    : '<div class="empty">No products match these filters. Try a wider price range or reset the filters.</div>';
   $("count").textContent = "Showing " + view.length + " of " + PRODUCTS.length + " products";
 }
-
-function apply(){
-  const cat = $("fCat").value;
-  const min = parseFloat($("fMin").value) || 0;
-  const max = parseFloat($("fMax").value) || Infinity;
-  view = PRODUCTS.filter(p =>
-    (!cat || p.cat === cat) &&
-    (p.price === null ? (min === 0 && max === Infinity) : (p.price >= min && p.price <= max))
-  );
+function applyFilters(){
+  const cat = $("fCat").value, min = parseFloat($("fMin").value) || 0, max = parseFloat($("fMax").value) || Infinity;
+  view = PRODUCTS.filter(p => (!cat || p.cat === cat) && (p.price === null ? (min === 0 && max === Infinity) : (p.price >= min && p.price <= max)));
   const s = $("sort").value;
   if(s === "low")  view.sort((a,b)=>(a.price ?? Infinity)-(b.price ?? Infinity));
   if(s === "high") view.sort((a,b)=>(b.price ?? -1)-(a.price ?? -1));
   if(s === "name") view.sort((a,b)=>a.name.localeCompare(b.name));
-  render();
+  renderGrid();
+}
+[...new Set(PRODUCTS.map(p=>p.cat))].forEach(c=>{const o=document.createElement("option");o.value=o.textContent=c;$("fCat").appendChild(o);});
+$("applyBtn").onclick = applyFilters; $("sort").onchange = applyFilters; $("fCat").onchange = applyFilters;
+$("resetBtn").onclick = () => {$("fCat").value="";$("fMin").value="";$("fMax").value="";$("sort").value="default";applyFilters();};
+
+/* ---------- detail ---------- */
+function renderDetail(p){
+  const msg = p.price
+    ? `Hello Medware, I am interested in the ${p.name} (${fmt(p.price)}). Please share more details.`
+    : `Hello Medware, please send me the price for the ${p.name}.`;
+  const bulkMsg = `Hello Medware, I would like bulk pricing for the ${p.name}. Quantity needed: `;
+  const rel = p.related.map(id => PRODUCTS.find(x => x.id === id)).filter(Boolean);
+  const li = arr => arr.map(x => `<li>${x}</li>`).join("");
+  $("detailView").innerHTML = `
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span><a href="#">Shop</a><span>›</span>${p.name}</div>
+    <section class="pd-layout">
+      <div class="pd-gallery">${imgTag(p, p.name + " – " + p.brand)}</div>
+      <div class="pd-info">
+        <span class="kicker">${p.brand}</span>
+        <h1>${p.name}</h1>
+        <div class="pd-price">${priceText(p)}${p.was ? ' <del>'+fmt(p.was)+'</del> <span class="save">(Save '+Math.round((1-p.price/p.was)*100)+'%)</span>' : ''}</div>
+        <div class="stock">In stock</div>
+        <p class="pd-summary">${p.summary}</p>
+        <div class="specs"><h3>Product specifications</h3>
+          ${p.specs.map(s=>`<div class="spec-row"><strong>${s[0]}</strong><span>${s[1]}</span></div>`).join("")}
+        </div>
+        <div class="pd-actions">
+          <a class="btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>${p.price ? "Order on WhatsApp" : "Request price on WhatsApp"}</a>
+          <a class="btn ghost" href="mailto:info@medwaresol.com?subject=${encodeURIComponent("Enquiry: "+p.name)}">Email enquiry</a>
+        </div>
+        <div class="bulk-note"><strong>Buying in bulk?</strong> Hospitals, clinics and contractors get special pricing. <a href="${waLink(bulkMsg)}" target="_blank" rel="noopener" style="color:#1a8f45;font-weight:700">Request bulk pricing</a></div>
+      </div>
+    </section>
+    <section class="pd-long">
+      <h2>${p.name}: Product overview</h2>
+      ${p.overview.map(t=>`<p>${t}</p>`).join("")}
+      <h2>Key features</h2><ul>${li(p.features)}</ul>
+      <h2>Technical specifications</h2><ul>${p.tech.map(t=>`<li><strong>${t[0]}:</strong> ${t[1]}</li>`).join("")}</ul>
+      <h2>Applications</h2><ul>${li(p.apps)}</ul>
+      <h2>Compatibility</h2><p>${p.compat}</p>
+      <h2>Frequently asked questions</h2>
+      ${[...p.faqs, ...COMMON_FAQS(p.name)].map(f=>`<details class="faq-item"><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}
+      <h2>Why buy from Medware Solutions?</h2>
+      <p>Medware Solutions supplies CPX Precision UK medical gas pipeline equipment in Kenya. Our biomedical engineering team supports installation, commissioning and ongoing technical support.</p>
+    </section>
+    <section class="related"><h2>Related products</h2>
+      <div class="grid">${rel.map(r=>`
+        <a class="card" href="#${r.id}">
+          <div class="media">${imgTag(r, r.name)}</div>
+          <div class="body"><h3>${r.name}</h3><div class="price">${priceText(r)}</div><span class="view">View details</span></div>
+        </a>`).join("")}
+      </div>
+    </section>`;
 }
 
-[...new Set(PRODUCTS.map(p=>p.cat))].forEach(c=>{
-  const o=document.createElement("option");o.value=o.textContent=c;$("fCat").appendChild(o);
-});
-$("applyBtn").onclick = apply;
-$("sort").onchange = apply;
-$("fCat").onchange = apply;
-$("resetBtn").onclick = () => { $("fCat").value=""; $("fMin").value=""; $("fMax").value=""; $("sort").value="default"; apply(); };
-apply();
+/* ---------- routing: #product-id shows details, empty hash shows the shop ---------- */
+function route(){
+  const id = decodeURIComponent(location.hash.slice(1));
+  const p = PRODUCTS.find(x => x.id === id);
+  if(p){
+    renderDetail(p);
+    $("listView").hidden = true; $("detailView").hidden = false;
+    document.title = p.name + " Price in Kenya | " + p.brand + " | Medware";
+    window.scrollTo(0,0);
+  } else {
+    $("detailView").hidden = true; $("listView").hidden = false;
+    document.title = TITLE0;
+    if(id === "products") $("products").scrollIntoView();
+  }
+}
+window.addEventListener("hashchange", route);
 
-/* ============ BANNER SLIDER ============ */
+/* ---------- banner slider ---------- */
 const slides = $("slides"), n = slides.children.length, dots = $("dots");
-let i = 0, timer;
-for(let k=0;k<n;k++){
-  const b=document.createElement("button");b.setAttribute("aria-label","Show banner "+(k+1));
-  b.onclick=()=>{go(k);restart()};dots.appendChild(b);
-}
-function go(k){
-  i=(k+n)%n;
-  slides.style.transform="translateX(-"+i*100+"%)";
-  [...dots.children].forEach((d,x)=>d.classList.toggle("on",x===i));
-}
-function restart(){
-  clearInterval(timer);
-  if(!matchMedia("(prefers-reduced-motion: reduce)").matches) timer=setInterval(()=>go(i+1),5500);
-}
+let si = 0, timer;
+for(let k=0;k<n;k++){const b=document.createElement("button");b.setAttribute("aria-label","Show banner "+(k+1));b.onclick=()=>{go(k);restart()};dots.appendChild(b);}
+function go(k){si=(k+n)%n;slides.style.transform="translateX(-"+si*100+"%)";[...dots.children].forEach((d,x)=>d.classList.toggle("on",x===si));}
+function restart(){clearInterval(timer);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)timer=setInterval(()=>go(si+1),5500);}
 go(0); restart();
 
 function toggleMenu(el){const m=$("menu");const open=m.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+
+applyFilters();
+route();
 </script>
 </body>
 </html>
