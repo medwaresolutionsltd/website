@@ -108,7 +108,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 footer .f-brand{display:inline-flex;background:#fff;border-radius:8px;padding:10px 16px}
 footer .f-brand img{height:52px;width:auto;display:block}
 footer p{font-size:.88rem}
-footer nav{display:flex;gap:22px}
+footer nav{display:flex;flex-wrap:wrap;gap:10px 22px}
 footer nav a{text-decoration:none;font-size:.88rem;color:#D2DCF2}
 footer nav a:hover{color:#fff}
 
@@ -124,7 +124,7 @@ footer nav a:hover{color:#fff}
 
 /* product grid */
 .shop{padding:56px 0 80px}
-.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;max-width:760px}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:26px;max-width:760px}
 .product-card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:box-shadow .2s ease,transform .2s ease}
 .product-card:hover{box-shadow:0 20px 44px -26px rgba(15,90,153,.4);transform:translateY(-3px)}
 .product-card .p-media{aspect-ratio:4/3;overflow:hidden;background:var(--bg)}
