@@ -2,7 +2,7 @@
 
 Static marketing site for Medware Solutions Ltd, a healthcare infrastructure development, biomedical engineering and healthcare ICT company based in Nairobi, Kenya.
 
-Live at **https://www.medwaresolutions.com**, the site's only domain: every canonical, share tag and the sitemap use it, and `.htaccess` 301-redirects medwaresol.com, the non-www and http versions to it. Email stays on @medwaresol.com. Plain HTML, CSS and JavaScript with no build step. The only server-side code is `mailer.php`, which sends the contact form.
+Live at **https://www.medwaresolutions.com**, the site's only domain: every canonical, share tag and the sitemap use it. Email stays on @medwaresol.com. Plain HTML, CSS and JavaScript with no build step and no server-side code, hosted as a **Render static site** (see Deployment). The contact form is sent by [Web3Forms](https://web3forms.com).
 
 ## Folder structure
 
@@ -18,8 +18,7 @@ Live at **https://www.medwaresolutions.com**, the site's only domain: every cano
 │                                 medical-gas-pipeline, oxygen-generating-plants, vacuum-medical-air,
 │                                 pneumatic-tube-systems
 ├── projects.html                 Completed projects by discipline (#infrastructure, #biomedical, #ict)
-├── contact.html                  Contact page; its form posts to mailer.php
-├── mailer.php                    Sends the contact form by email, then redirects back to contact.html
+├── contact.html                  Contact page; its form is sent by Web3Forms
 ├── blogs.html, blogs-2…4.html    Blog listing (6 articles per page, newest first)
 ├── <article>.html                Blog articles, one file each (e.g. medical-vacuum-air-plants.html)
 ├── 404.html                      "Page not found" page (uses root-relative /paths)
@@ -38,14 +37,14 @@ Live at **https://www.medwaresolutions.com**, the site's only domain: every cano
 ├── favicon.ico                   Browser tab icon (must stay in the root)
 ├── robots.txt                    Allows all crawlers, points to the sitemap
 ├── sitemap.xml                   List of pages for search engines
-├── .htaccess                     Apache: domain + https redirects, old URL redirects, custom 404, blocks .log files
+├── .htaccess                     Apache only (Render ignores it): same redirects, for a move to Apache hosting
 ├── .gitattributes                Line-ending rules (text vs binary files)
 └── .gitignore                    OS/editor files kept out of git
 ```
 
 Page URLs live in the root on purpose: moving or renaming a page breaks existing links and search rankings.
 
-**Links use the file names.** Pages link to each other as `href="services.html"`, so the site works on any web server, including VS Code Live Server. The `.html` address is each page's one official URL: on the live Apache host `.htaccess` 301-redirects the old extensionless form (`/services` → `/services.html`) and `/index.html` → `/`. Link to the homepage as `href="./"` (or `./#about`), and to the contact form as `contact.html`; the homepage has no `#contact` section.
+**Links use the file names.** Pages link to each other as `href="services.html"`, so the site works on any web server, including VS Code Live Server. The `.html` address is each page's one official URL and its canonical. Render also serves `/services` and `/index.html` (it can't redirect a path where a file exists); the canonical tags tell search engines which URL to index. Link to the homepage as `href="./"` (or `./#about`), and to the contact form as `contact.html`; the homepage has no `#contact` section.
 
 **Blog.** The listing (`blogs.html`, then `blogs-2.html` … `blogs-4.html`) shows every article, newest first, 6 per page. Each article must have its own body text: 15 pages that shared one generic body under different titles were removed in October 2026. A few topics still have two articles (nurse call, medical gas copper pipes, biomedical engineering in Kenya); give each a clearly different angle or merge them.
 
@@ -54,7 +53,7 @@ Page URLs live in the root on purpose: moving or renaming a page breaks existing
 - Each page is a self-contained HTML file with its CSS inline in a `<style>` block. The brand colours are CSS custom properties in `:root` (`--blue`, `--navy`, `--sky`, `--grey`, …), and the fonts are Montserrat and Inter from Google Fonts.
 - The header, footer and design tokens are **repeated in every page**. A change to the nav, footer or colours has to be made in every HTML file, `404.html` included.
 - **Navigation:** Home, then Products / Services / Projects, each with a hover dropdown to its sub-pages or section anchors. Then Partners, Blog, About Us, Contact and a "Request a consultation" button. At 760px wide and below, the dropdowns become an indented list.
-- **Contact form:** `contact.html` posts to `mailer.php`, which emails the enquiry to `ict@medwaresol.com` and redirects back with `?status=success` or `?status=error`. It needs a host with PHP and working outgoing mail. If sending fails, the visitor sees an error; nothing is stored on the server.
+- **Contact form:** `contact.html` sends the form to Web3Forms (`https://api.web3forms.com/submit`), which emails it to the inbox registered on the Web3Forms account; change the recipient in the Web3Forms dashboard, not in the code. The `access_key` in the form is public by design. A script sends it in the background and shows the result above the form; without JavaScript, Web3Forms shows its own confirmation page. A hidden `botcheck` box catches spam bots. Subjects arrive as "Website Contact: …" and the visitor's email (if given) is the reply-to address.
 - **Visocall video:** the page shows a thumbnail (`images/visocall/video-poster.webp`), and the YouTube player only loads when the visitor clicks play.
 
 ## Search and sharing
@@ -95,9 +94,15 @@ Every page's `<head>` has, after the description:
 
 ## Deployment
 
-Upload the whole folder to an **Apache host with PHP** (cPanel hosting, for example). There's nothing to build.
+Hosted on **Render as a static site**, deployed automatically from `main`. There's nothing to build: the publish directory is the repository root.
 
-- **Why Apache:** `.htaccess` provides the domain and https redirects, the old-URL redirects and the custom 404 page, and `mailer.php` needs PHP with outgoing mail. The pages themselves work on any host.
-- **Site at the domain root:** `.htaccess` and `404.html` use paths from the root (`/404.html`, `/assets/...`). In a local sub-folder such as `localhost/projects/website/` the pages work, but a missing URL shows Apache's default error page.
-- **Local preview:** VS Code Live Server (or any static server) is enough for the pages. Two things need Apache with PHP, e.g. XAMPP: the contact form, and the custom 404 page. On XAMPP the form reports an error unless SMTP is configured; that's expected.
-- **After deploying:** check the link previews with LinkedIn's [Post Inspector](https://www.linkedin.com/post-inspector/) or Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/), and submit `sitemap.xml` in Google Search Console.
+Render settings that live in the dashboard, not in this repo:
+
+- **Redirects/Rewrites:** `/contact-us` → `/contact.html`, action **Redirect** (an old URL from the previous site). Add a rule here for any other old URL that Search Console reports as 404. Rules can't redirect the domain root or a path where a file exists.
+- **Custom domains:** `www.medwaresolutions.com` plus the root `medwaresolutions.com`, which Render redirects to www. Turn off the `onrender.com` subdomain so the site has one address.
+- **medwaresol.com** is not on Render. Its registrar forwards it with a **permanent (301) redirect without masking** to `https://www.medwaresolutions.com`. A "masked" or "framed" forward hides the site in an iframe and must not be used. The domain's MX (email) records stay as they are.
+- **Custom 404:** Render serves `404.html` for missing pages.
+
+**Local preview:** VS Code Live Server or any static server. The contact form works locally too, as it posts to Web3Forms.
+
+**After deploying:** check the link previews with LinkedIn's [Post Inspector](https://www.linkedin.com/post-inspector/) or Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/), and submit `sitemap.xml` in Google Search Console.
