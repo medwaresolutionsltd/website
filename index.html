@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biomedical Engineering & Hospital Solutions Kenya | Medware</title>
-<meta name="keywords" content="biomedical engineers, medical gases in Kenya, medical gases, biomedical company, biomedical engineering Kenya, biomedical engineering services, medical piping, biomedical engineering Kenya, hospital maintenance Kenya, medical equipment suppliers Kenya, medical gas pipeline installation Kenya, healthcare ICT Kenya, hospital infrastructure Kenya, medical equipment calibration Kenya, oxygen generating plants Kenya, nurse call systems Kenya">
 <meta name="description" content="Medware Solutions Ltd provides biomedical engineering, medical gas pipeline installation, hospital infrastructure and healthcare ICT solutions in Kenya.">
 <link rel="canonical" href="https://www.medwaresolutions.com/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -372,7 +371,7 @@ nav.links .btn::after {display:none;}
   .slide-content { text-align: center; padding: 0 20px; } 
   .slide-content p.lede { margin: 0 auto 35px; font-size: 1.1rem; } 
   .slide-content .btn-group { justify-content: center; flex-direction: column; }
-  .slide-content h1 { font-size: clamp(2.4rem, 8vw, 3rem); margin-top: -40px; }
+  .slide-content :is(h1,h2) { font-size: clamp(2.4rem, 8vw, 3rem); margin-top: -40px; }
 }
 
 /* Typography styles */
@@ -385,8 +384,8 @@ nav.links .btn::after {display:none;}
   opacity: 0;
   transform: translateY(40px);
 }
-.slide-content h1.accent-text { color: #64ffda; }
-.slide-content h1.styled-text { background: linear-gradient(90deg, #ffffff, #9CC4E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.slide-content :is(h1,h2).accent-text { color: #64ffda; }
+.slide-content :is(h1,h2).styled-text { background: linear-gradient(90deg, #ffffff, #9CC4E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 .slide-content p.lede {
   font-size: 1.25rem;
@@ -415,7 +414,7 @@ nav.links .btn::after {display:none;}
 }
 
 /* Animations Triggered via JS class */
-.hero-slide.active .slide-content h1 {
+.hero-slide.active .slide-content :is(h1,h2) {
   animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 .hero-slide.active .slide-content p.lede {
@@ -501,7 +500,7 @@ nav.links .btn::after {display:none;}
         <!-- Slide 2 -->
         <div class="hero-slide" style="background-image: url('/assets/images/products/nurse-call-panel.webp');">
           <div class="wrap slide-content">
-            <h1 class="accent-text">Advanced Healthcare ICT</h1>
+            <h2 class="accent-text">Advanced Healthcare ICT</h2>
             <p class="lede">Empowering hospital staff with smart IP Nurse Call systems and centralized digital queue management.</p>
             <div class="btn-group">
               <a href="queue-management-kiosks.html" class="btn">View Systems</a>
@@ -512,7 +511,7 @@ nav.links .btn::after {display:none;}
         <!-- Slide 3 -->
         <div class="hero-slide" style="background-image: url('/assets/images/services/modular-theatre.webp');">
           <div class="wrap slide-content">
-            <h1 class="styled-text">Modern Surgical Environments</h1>
+            <h2 class="styled-text">Modern Surgical Environments</h2>
             <p class="lede">State-of-the-art modular operating theatres fully integrated with ISO-compliant medical gases and medical piping infrastructure.</p>
             <div class="btn-group">
               <a href="medical-gas-pipeline.html" class="btn">View Infrastructure</a>
@@ -523,7 +522,7 @@ nav.links .btn::after {display:none;}
         <!-- Slide 4 -->
         <div class="hero-slide" style="background-image: url('/assets/images/services/software-mockups.webp');">
           <div class="wrap slide-content">
-            <h1 class="accent-text" style="color:#FFD700;">Intelligent Hospital Software</h1>
+            <h2 class="accent-text" style="color:#FFD700;">Intelligent Hospital Software</h2>
             <p class="lede">Streamline your facility with custom CMMS, inventory control, and asset management platforms built for clinical engineers.</p>
             <div class="btn-group">
               <a href="medware-cmms.html" class="btn">Explore Software</a>
