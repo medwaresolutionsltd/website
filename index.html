@@ -101,32 +101,58 @@ nav.links .dropdown a:hover{background:rgba(27,117,188,.1);color:var(--blue);bor
 
 /* sections */
 section{padding:80px 0}
-.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head{max-width:680px;margin:0 auto 48px;text-align:center}
 .sec-head .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
-.sec-head .kicker::before{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
+.sec-head .kicker::before,.sec-head .kicker::after{content:"";width:26px;height:3px;background:var(--blue);display:inline-block}
 .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em}
 .sec-head p{margin-top:14px;color:var(--grey)}
 
 /* service blocks */
 #services{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.svc{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);padding:34px;margin-bottom:26px}
-.svc-media{border-radius:8px;overflow:hidden;margin-bottom:22px}
-.svc-media img{width:100%;height:190px;object-fit:cover;display:block}
-.svc-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline;margin-bottom:8px}
-.svc h3{font-size:1.4rem;font-weight:800}
-.svc .num{font-family:"Montserrat",sans-serif;font-weight:800;color:var(--blue);opacity:.35;font-size:1.6rem}
-.svc>p{color:var(--grey);max-width:66ch}
-.svc-list{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;list-style:none}
-.svc-list li{position:relative;padding-left:22px;font-size:.95rem;font-weight:500}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.svc-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .18s,box-shadow .18s,transform .18s}
+.svc-card:hover,.svc-card:focus-within{border-color:var(--blue);box-shadow:0 18px 36px -24px rgba(15,90,153,.45);transform:translateY(-2px)}
+.svc-card .svc-media{aspect-ratio:3/2;background:var(--bg);overflow:hidden}
+.svc-card .svc-media img{width:100%;height:100%;object-fit:cover;display:block}
+.svc-body{display:flex;flex-direction:column;flex:1;padding:26px 26px 28px}
+.svc-id{font-family:"Inter",sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.svc-card h3{font-size:1.3rem;font-weight:800;margin-top:8px}
+.svc-card .svc-lede{color:var(--grey);font-size:.95rem;margin-top:10px}
+.svc-list{margin-top:18px;display:grid;gap:9px;list-style:none}
+.svc-list li{position:relative;padding-left:22px;font-size:.93rem;font-weight:500}
 .svc-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--blue);font-weight:700}
-.partners{margin-top:18px;font-size:.86rem;color:var(--grey)}
-.partners b{color:var(--navy);font-weight:600}
-.proj-preview{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.proj-preview .kicker{font-size:.68rem;margin-right:4px}
-.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:500;text-decoration:none;transition:border-color .15s,color .15s}
-.chip:hover{border-color:var(--blue);color:var(--blue)}
-.chip.more{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
-.chip.more:hover{background:var(--blue-d)}
+.svc-list a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
+.svc-list a:hover,.svc-list a:focus-visible{color:var(--blue);border-bottom-color:var(--blue)}
+.svc-work{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);font-size:.84rem;color:var(--grey)}
+.svc-work b{color:var(--navy);font-weight:600}
+.svc-work a{color:var(--blue);font-weight:600;text-decoration:none}
+.svc-work a:hover{text-decoration:underline}
+.svc-cta{margin-top:auto;padding-top:22px}
+.svc-cta .btn{display:block;text-align:center}
+.svc-card a:focus-visible,.svc-consult a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.svc-consult{margin-top:32px;background:var(--navy);color:#DCE6F5;border-radius:var(--radius);padding:40px 44px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.svc-consult h3{color:#fff;font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:800;max-width:24ch}
+.svc-consult p{margin-top:10px;max-width:52ch;color:#DCE6F5}
+.svc-consult-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.svc-consult .btn{background:#fff;color:var(--navy);font-weight:700}
+.svc-consult .btn:hover{background:var(--sky);color:#fff}
+.svc-consult .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.75)}
+.svc-consult .btn.ghost:hover{background:#fff;color:var(--navy)}
+.svc-consult .wa{flex-basis:100%;margin-top:0;font-size:.88rem}
+.svc-consult .wa a{color:#fff;font-weight:600}
+@media (max-width:980px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-card:nth-child(3){grid-column:1/-1;flex-direction:row}
+  .svc-card:nth-child(3) .svc-media{aspect-ratio:auto;flex:0 0 42%}
+  .svc-card:nth-child(3) .svc-media img{object-position:30% 35%}
+}
+@media (max-width:680px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc-card:nth-child(3){flex-direction:column}
+  .svc-card:nth-child(3) .svc-media{aspect-ratio:3/2;flex:none}
+  .svc-consult{padding:28px 24px}
+}
+@media (prefers-reduced-motion:reduce){.svc-card{transition:none}.svc-card:hover,.svc-card:focus-within{transform:none}}
 
 /* navy strip */
 .strip{background:var(--navy);color:#DCE6F5;padding:36px 0}
@@ -218,7 +244,6 @@ footer nav a:hover{color:#fff}
   .hero-meta{grid-template-columns:1fr}
   .hero-meta div{border-left:0;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.25)}
   section,.disc{padding:56px 0}
-  .svc{padding:24px}
   .scope{grid-template-columns:1fr}
   .c-form-row{grid-template-columns:1fr}
 }
@@ -534,81 +559,82 @@ nav.links .btn::after {display:none;}
     </section>
 
 
-    <!-- SERVICES -->
+  <!-- SERVICES -->
   <section id="services">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="kicker">Services</span>
+        <span class="kicker">Our expertise</span>
         <h2>Three disciplines. <em>One accountable partner.</em></h2>
-        <p>From the plant room to the patient bedside — durable medical technology and infrastructure that empowers hospitals and saves lives. We are a leading biomedical company in Kenya delivering comprehensive healthcare solutions, from medical gases to medical piping.</p>
-        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="chip more" href="services.html">Explore all services →</a>
-          <a class="chip" href="products.html">Browse product catalog →</a>
-        </div>
+        <p>From hospital infrastructure to clinical equipment and connected care, we deliver the systems hospitals across Kenya depend on, from medical gases to medical piping.</p>
       </div>
 
-      <article class="svc reveal" id="svc-infrastructure" data-href="services.html#infrastructure" tabindex="0" role="link" aria-label="View Healthcare Infrastructure Development on the services page">
-        <div class="svc-media"><img src="/assets/images/services/modular-theatre.webp" width="2140" height="1705" alt="Modular operating theatre installation" loading="lazy"></div>
-        <div class="svc-top"><h3>Healthcare Infrastructure Development</h3><span class="num">1.0</span></div>
-        <p>Design, installation, commissioning and maintenance of the critical building systems modern hospitals depend on. As hospital engineering specialists, our medical gas work spans station sources, manifolds, pipelines, alarms, bed head units and terminal units — engineered to ISO 7396‑1 so supply is continuous, contamination-free and life-safe. We also provide hospital equipment suppliers and hospital project contractors for complete infrastructure delivery, including all medical piping and medical gases in Kenya.</p>
-        <ul class="svc-list">
-          <li>Hospital HVAC systems</li>
-          <li>Medical gas systems</li>
-          <li>Modular operating theatres</li>
-          <li>Imaging radiation protection</li>
-          <li>Pneumatic tube systems</li>
-          <li>Pendants &amp; bed head units</li>
-          <li>Handrails &amp; support bars</li>
-        </ul>
-        <p class="partners"><b>Manufacturer partners:</b> STM sistemi tecnologie (Italy) · Lawton Tubes (UK) · Precision UK · Busch Vacuum (Germany) · Foxolution (South Africa) · Sumetzberger (Austria) · TLV Healthcare (France) · ATA Medica · ClinicAir · Agora Climate Control</p>
-        <div class="proj-preview">
-          <span class="kicker">Completed projects</span>
-          <a class="chip" href="projects.html#amref">Amref Health Africa — 93 facilities</a>
-          <a class="chip" href="projects.html#nairobi-hospital">The Nairobi Hospital</a>
-          <a class="chip" href="projects.html#kutrrh">KUTRRH</a>
-          <a class="chip" href="projects.html#eaki">East Africa Kidney Institute</a>
-          <a class="chip more" href="projects.html#infrastructure">View projects →</a>
-        </div>
-      </article>
+      <div class="svc-grid">
+        <article class="svc-card reveal" id="svc-infrastructure">
+          <div class="svc-media"><img src="/assets/images/services/modular-theatre-640.webp" srcset="/assets/images/services/modular-theatre-640.webp 640w, /assets/images/services/modular-theatre-960.webp 960w" sizes="(max-width:680px) 92vw, (max-width:980px) 46vw, 370px" width="640" height="510" alt="Modular operating theatre with integrated medical gas and ceiling services" loading="lazy" decoding="async"></div>
+          <div class="svc-body">
+            <span class="svc-id">01 / Infrastructure</span>
+            <h3>Healthcare Infrastructure Development</h3>
+            <p class="svc-lede">Build safe, reliable clinical environments. Design, installation and commissioning of the critical building systems hospitals run on, with medical gas engineered to ISO 7396‑1.</p>
+            <ul class="svc-list">
+              <li><a href="medical-gas-systems.html">Medical gas systems</a></li>
+              <li><a href="modular-operating-theatres-design.html">Modular operating theatres</a></li>
+              <li><a href="services.html#infrastructure">Hospital HVAC &amp; air filtration</a></li>
+              <li><a href="radiation-shielding-xray-brachytherapy.html">Imaging radiation protection</a></li>
+              <li><a href="pneumatic-tube-systems.html">Pneumatic tube systems</a></li>
+            </ul>
+            <p class="svc-work"><b>Recent work:</b> <a href="projects.html#amref">Amref Health Africa, 93 facilities</a> · <a href="projects.html#nairobi-hospital">The Nairobi Hospital</a></p>
+            <div class="svc-cta"><a class="btn" href="services.html#infrastructure">Explore Infrastructure →</a></div>
+          </div>
+        </article>
 
-      <article class="svc reveal" id="svc-biomedical" data-href="services.html#biomedical" tabindex="0" role="link" aria-label="View Biomedical Engineering Services on the services page">
-        <div class="svc-media"><img src="/assets/images/services/equipment-repairs.webp" width="1600" height="914" alt="Biomedical engineer repairing hospital equipment" loading="lazy"></div>
-        <div class="svc-top"><h3>Biomedical Engineering Services</h3><span class="num">2.0</span></div>
-        <p>Certified biomedical engineers providing on-site and depot services for imaging systems, patient monitors, ventilators and surgical instruments — with prompt diagnostics, calibration and preventive maintenance that minimize downtime and keep you compliant with ISO and FDA standards. Our biomedical engineering services include medical equipment repair, maintenance, calibration and comprehensive biomedical maintenance programs. We are among the best biomedical companies in Kenya, offering reliable biomedical equipment suppliers and medical equipment suppliers for all your clinical engineering needs in biomedical engineering Kenya.</p>
-        <ul class="svc-list">
-          <li>Medical equipment repair &amp; maintenance</li>
-          <li>Equipment calibration &amp; assessments</li>
-          <li>Biomedical engineer placement</li>
-          <li>Accessories &amp; spare parts supply</li>
-          <li>Equipment planning &amp; budgeting</li>
-        </ul>
-        <p class="partners"><b>Supply chain:</b> genuine, OEM-compatible components sourced from trusted manufacturers across Europe, Asia and the Americas — from ventilator filters and ultrasound probes to defibrillator batteries and surgical instrument parts.</p>
-        <div class="proj-preview">
-          <span class="kicker">Completed projects</span>
-          <a class="chip" href="projects.html#jalaram">Jalaram Medical Services</a>
-          <a class="chip more" href="projects.html#biomedical">View projects →</a>
-        </div>
-      </article>
+        <article class="svc-card reveal" id="svc-biomedical">
+          <div class="svc-media"><img src="/assets/images/services/equipment-repairs-640.webp" srcset="/assets/images/services/equipment-repairs-640.webp 640w, /assets/images/services/equipment-repairs-960.webp 960w" sizes="(max-width:680px) 92vw, (max-width:980px) 46vw, 370px" width="640" height="366" alt="Biomedical equipment calibration tools and a device validation service dashboard" loading="lazy" decoding="async"></div>
+          <div class="svc-body">
+            <span class="svc-id">02 / Biomedical</span>
+            <h3>Biomedical Engineering Services</h3>
+            <p class="svc-lede">Keep clinical equipment safe, reliable and ready for patient care, with on-site and depot support that minimises downtime.</p>
+            <ul class="svc-list">
+              <li><a href="biomedical-engineering-hospital-maintenance-kenya.html">Medical equipment repair &amp; maintenance</a></li>
+              <li><a href="medical-equipment-calibration-quality-assurance.html">Equipment calibration &amp; assessments</a></li>
+              <li>Accessories &amp; spare parts supply</li>
+              <li>Equipment planning &amp; budgeting</li>
+              <li>Biomedical engineer placement</li>
+            </ul>
+            <p class="svc-work"><b>Recent work:</b> <a href="projects.html#jalaram">Jalaram Medical Services</a></p>
+            <div class="svc-cta"><a class="btn" href="services.html#biomedical">Explore Biomedical Services →</a></div>
+          </div>
+        </article>
 
-      <article class="svc reveal" id="svc-ict" data-href="services.html#ict" tabindex="0" role="link" aria-label="View Healthcare ICT on the services page">
-        <div class="svc-media"><img src="/assets/images/products/nurse-call-panel.webp" width="1000" height="627" alt="Visocall IP nurse call panel" loading="lazy"></div>
-        <div class="svc-top"><h3>Healthcare ICT</h3><span class="num">3.0</span></div>
-        <p>Intelligent building and communication systems that connect patients, clinicians and facilities — led by the Visocall IP nurse call platform by Schrack Seconet, a fully digital system integrating voice, data and alarm functions into one unified network. Our healthcare technology portfolio includes hospital ICT systems, nurse call systems, hospital software, hospital management systems, hospital communication systems and queue management systems. We provide hospital CMMS software and medical equipment management software to streamline facility operations.</p>
-        <ul class="svc-list">
-          <li>IP nurse call systems</li>
-          <li>Building management systems (BMS)</li>
-          <li>Queue management systems</li>
-          <li>Fire alarm systems (EN 54 compliant)</li>
-          <li>Computerized maintenance management software (CMMS)</li>
-        </ul>
-        <p class="partners"><b>Technology partners:</b> Schrack Seconet (nurse call &amp; fire alarms) · Schneider Electric (BMS) · Dnake (queue management) · MedWare Software Department (CMMS)</p>
-        <div class="proj-preview">
-          <span class="kicker">Completed projects</span>
-          <a class="chip" href="projects.html#tenwek">Tenwek Cardiothoracic Centre — 160 beds</a>
-          <a class="chip" href="projects.html#avenue">Avenue Healthcare Parklands — 160 beds</a>
-          <a class="chip more" href="projects.html#ict">View projects →</a>
+        <article class="svc-card reveal" id="svc-ict">
+          <div class="svc-media"><img src="/assets/images/products/nurse-call-panel-640.webp" srcset="/assets/images/products/nurse-call-panel-640.webp 640w" sizes="(max-width:680px) 92vw, (max-width:980px) 46vw, 370px" width="640" height="401" alt="Visocall IP nurse call panel for hospital wards" loading="lazy" decoding="async"></div>
+          <div class="svc-body">
+            <span class="svc-id">03 / Healthcare ICT</span>
+            <h3>Healthcare ICT</h3>
+            <p class="svc-lede">Connect people, systems and hospital facilities, led by the Visocall IP nurse call platform from Schrack Seconet.</p>
+            <ul class="svc-list">
+              <li><a href="visocall-ip-nurse-call.html">IP nurse call systems (Visocall IP)</a></li>
+              <li><a href="building-management-systems.html">Building management systems</a></li>
+              <li><a href="fire-alarm-panels.html">Fire alarm systems (EN 54)</a></li>
+              <li><a href="queue-management-kiosks.html">Queue management systems</a></li>
+              <li><a href="medware-cmms.html">Maintenance software (CMMS)</a></li>
+            </ul>
+            <p class="svc-work"><b>Recent work:</b> <a href="projects.html#tenwek">Tenwek Hospital, 160 beds</a> · <a href="projects.html#avenue">Avenue Healthcare Parklands</a></p>
+            <div class="svc-cta"><a class="btn" href="services.html#ict">Explore Healthcare ICT →</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="svc-consult reveal">
+        <div>
+          <h3>Planning a new hospital or upgrading an existing facility?</h3>
+          <p>Bring infrastructure, biomedical engineering and healthcare technology together with one experienced delivery partner.</p>
         </div>
-      </article>
+        <div class="svc-consult-actions">
+          <a class="btn" href="contact.html">Request a Consultation</a>
+          <a class="btn ghost" href="projects.html">View Our Projects</a>
+        </div>
+        <p class="wa">Prefer to talk now? <a href="https://wa.me/254714363333?text=Hello%20Medware%20Solutions%20Ltd,%20I%20am%20chatting%20from%20medwaresolutions.com" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p>
+      </div>
     </div>
   </section>
 
