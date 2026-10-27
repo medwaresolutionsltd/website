@@ -66,6 +66,7 @@ nav.links{display:flex;gap:26px;align-items:center}
 nav.links a{text-decoration:none;font-size:.92rem;font-weight:700;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .18s,color .18s}
 nav.links a:hover,nav.links a.active{color:var(--blue);border-bottom-color:var(--blue)}
 nav.links .btn{font-weight:700;padding:11px 22px}
+nav.links a.btn,nav.links a.btn:hover{color:#fff}
 .btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:11px 22px;border-radius:8px;transition:background .18s,transform .18s}
 .btn:hover{background:var(--blue-d);transform:translateY(-1px)}
 .btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
@@ -135,7 +136,7 @@ footer nav a:hover{color:#fff}
   nav.links{display:none;position:absolute;top:96px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;align-items:flex-start}
   nav.links.open{display:flex}
   .nav-item{flex-direction:column;align-items:flex-start;width:100%}
-  .dropdown{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:0;background:transparent;padding:2px 0 0 14px;margin:0;min-width:0}
+  .dropdown{display:none}
   nav.links .dropdown a{padding:6px 0;font-size:.85rem;font-weight:600;color:var(--grey)}
   .menu-btn{display:block}
   .page-hero{padding:52px 0 40px}
