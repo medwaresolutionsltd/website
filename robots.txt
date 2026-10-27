@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.medwaresol.com/sitemap.xml
+Sitemap: https://www.medwaresolutions.com/sitemap.xml
