@@ -2,7 +2,7 @@
 
 Static marketing site for Medware Solutions Ltd, a healthcare infrastructure development, biomedical engineering and healthcare ICT company based in Nairobi, Kenya.
 
-Live at **https://www.medwaresol.com**. Plain HTML, CSS and JavaScript with no build step. The only server-side code is `mailer.php`, which sends the contact form.
+Live at **https://www.medwaresolutions.com**, the site's only domain: every canonical, share tag and the sitemap use it, and `.htaccess` 301-redirects medwaresol.com, the non-www and http versions to it. Email stays on @medwaresol.com. Plain HTML, CSS and JavaScript with no build step. The only server-side code is `mailer.php`, which sends the contact form.
 
 ## Folder structure
 
@@ -38,14 +38,14 @@ Live at **https://www.medwaresol.com**. Plain HTML, CSS and JavaScript with no b
 ├── favicon.ico                   Browser tab icon (must stay in the root)
 ├── robots.txt                    Allows all crawlers, points to the sitemap
 ├── sitemap.xml                   List of pages for search engines
-├── .htaccess                     Apache: custom 404 page, old extensionless URLs, blocks .log files
+├── .htaccess                     Apache: domain + https redirects, old URL redirects, custom 404, blocks .log files
 ├── .gitattributes                Line-ending rules (text vs binary files)
 └── .gitignore                    OS/editor files kept out of git
 ```
 
 Page URLs live in the root on purpose: moving or renaming a page breaks existing links and search rankings.
 
-**Links use the file names.** Pages link to each other as `href="services.html"`, so the site works on any web server, including VS Code Live Server. Extensionless URLs such as `/services` still work on the live Apache host through `.htaccess`, but don't write new links that way: they fail everywhere else with "Cannot GET /services".
+**Links use the file names.** Pages link to each other as `href="services.html"`, so the site works on any web server, including VS Code Live Server. The `.html` address is each page's one official URL: on the live Apache host `.htaccess` 301-redirects the old extensionless form (`/services` → `/services.html`) and `/index.html` → `/`. Link to the homepage as `href="./"` (or `./#about`), and to the contact form as `contact.html`; the homepage has no `#contact` section.
 
 **Blog.** The listing (`blogs.html`, then `blogs-2.html` … `blogs-4.html`) shows every article, newest first, 6 per page. Each article must have its own body text: 15 pages that shared one generic body under different titles were removed in October 2026. A few topics still have two articles (nurse call, medical gas copper pipes, biomedical engineering in Kenya); give each a clearly different angle or merge them.
 
@@ -61,7 +61,7 @@ Page URLs live in the root on purpose: moving or renaming a page breaks existing
 
 Every page's `<head>` has, after the description:
 
-- `<link rel="canonical">`: the page's own full URL (e.g. `https://www.medwaresol.com/services.html`; the homepage is `https://www.medwaresol.com/`)
+- `<link rel="canonical">`: the page's own full URL (e.g. `https://www.medwaresolutions.com/services.html`; the homepage is `https://www.medwaresolutions.com/`)
 - Open Graph and Twitter tags: title, description and `brand/og-image.jpg` (1200×630), for link previews on WhatsApp, LinkedIn, Facebook and X
 - favicon and app icons, and `theme-color`
 
@@ -97,7 +97,7 @@ Every page's `<head>` has, after the description:
 
 Upload the whole folder to an **Apache host with PHP** (cPanel hosting, for example). There's nothing to build.
 
-- **Why Apache:** `.htaccess` provides the custom 404 page and keeps old extensionless URLs working, and `mailer.php` needs PHP with outgoing mail. The pages themselves work on any host.
+- **Why Apache:** `.htaccess` provides the domain and https redirects, the old-URL redirects and the custom 404 page, and `mailer.php` needs PHP with outgoing mail. The pages themselves work on any host.
 - **Site at the domain root:** `.htaccess` and `404.html` use paths from the root (`/404.html`, `/assets/...`). In a local sub-folder such as `localhost/projects/website/` the pages work, but a missing URL shows Apache's default error page.
 - **Local preview:** VS Code Live Server (or any static server) is enough for the pages. Two things need Apache with PHP, e.g. XAMPP: the contact form, and the custom 404 page. On XAMPP the form reports an error unless SMTP is configured; that's expected.
 - **After deploying:** check the link previews with LinkedIn's [Post Inspector](https://www.linkedin.com/post-inspector/) or Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/), and submit `sitemap.xml` in Google Search Console.

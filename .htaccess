@@ -1,12 +1,44 @@
 Options +FollowSymLinks -MultiViews
 RewriteEngine On
 
-# Pages link to each other with their file names (services.html). This rule also keeps
-# the older extensionless URLs working: /services is served from services.html.
-# (No RewriteBase, so it works at the domain root and in a local sub-folder alike.)
+# --- 1. One domain: https://www.medwaresolutions.com ------------------------------
+# medwaresol.com (with or without www) and bare medwaresolutions.com -> www.medwaresolutions.com.
+# Only these exact hosts are redirected, so localhost / XAMPP previews are unaffected and
+# stores.medwaresol.com is not touched. Email (@medwaresol.com) is DNS, not this file.
+RewriteCond %{HTTP_HOST} ^(www\.)?medwaresol\.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^medwaresolutions\.com$ [NC]
+RewriteRule ^ https://www.medwaresolutions.com%{REQUEST_URI} [R=301,L,NE]
+
+# http -> https on the main domain. The X-Forwarded-Proto check prevents a redirect loop
+# on hosts where a proxy in front of Apache handles SSL.
+RewriteCond %{HTTP_HOST} ^www\.medwaresolutions\.com$ [NC]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://www.medwaresolutions.com%{REQUEST_URI} [R=301,L,NE]
+
+# --- 2. One URL per page -----------------------------------------------------------
+# Each page's official URL is its file name (services.html), the homepage is /.
+# (No RewriteBase and no hard-coded paths, so this also works in a local sub-folder.)
+# On the live domain the redirects below go straight to https://www... in one hop;
+# anywhere else (localhost, XAMPP) they stay relative.
+RewriteRule ^ - [E=CANON_HOST:]
+RewriteCond %{HTTP_HOST} ^www\.medwaresolutions\.com$ [NC]
+RewriteRule ^ - [E=CANON_HOST:https://www.medwaresolutions.com]
+
+# /index.html -> / . THE_REQUEST is what the browser asked for, so Apache serving
+# index.html for "/" does not loop.
+RewriteCond %{THE_REQUEST} \s(/[^?\s]*?)index\.html[\s?] [NC]
+RewriteRule ^ %{ENV:CANON_HOST}%1 [R=301,L,NE]
+
+# Old extensionless URLs -> the .html page: /services -> /services.html
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.+)$ $1.html [L]
+RewriteCond %{REQUEST_URI} ^(.+)$
+RewriteRule ^ %{ENV:CANON_HOST}%1.html [R=301,L,NE]
+
+# Old URLs from the previous website
+RewriteCond %{REQUEST_URI} ^(.*/)contact-us/?$ [NC]
+RewriteRule ^ %{ENV:CANON_HOST}%1contact.html [R=301,L]
 
 # Custom "page not found" page. The path is from the domain root (the live site).
 ErrorDocument 404 /404.html
